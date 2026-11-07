@@ -471,6 +471,48 @@ footer .fl svg{width:18px;height:23px}
 @keyframes lpW{from{opacity:0;transform:translateY(34px) scale(.92)}to{opacity:1;transform:none}}
 @keyframes lpS{from{opacity:0;scale:0}to{opacity:1;scale:1}}
 @media (prefers-reduced-motion: reduce){.logo-panel,.lp,.logo-panel .wm,.logo-panel .stamp{animation:none!important;transition:none!important;translate:none!important;transform:none!important}}
+.deal{font:500 .8rem var(--f-mono);color:var(--ok)}
+/* events stage */
+[data-view="events"]{overflow-x:clip}
+.stage{position:relative;overflow:hidden;background:#0D0B12;color:#F5F4F8;padding-block:clamp(4.5rem,11vw,8.5rem) clamp(5rem,10vw,7rem);isolation:isolate}
+.stage .eyebrow{color:#FEC200}
+.stage h1{font-size:clamp(3rem,9vw,7rem);font-weight:800;letter-spacing:-0.035em;line-height:.95;max-width:12ch;text-shadow:0 6px 40px rgba(0,0,0,.6)}
+.stage .hl{background:#FEC200;color:#16131F;padding:0 .1em;border-radius:.12em;box-shadow:0 0 60px rgba(254,194,0,.55)}
+.stage-in{position:relative;z-index:2;display:grid;gap:1.2rem}
+.stage-in > p:not(.eyebrow){color:#C9C4D8;font-size:1.12rem;max-width:58ch}
+.stage .ctas{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:.6rem}
+.stage .btn.ghost{color:#F5F4F8;border-color:#F5F4F8}
+.beams{position:absolute;inset:0;z-index:0;pointer-events:none;translate:calc(var(--px,0)*40px) 0}
+.beam{position:absolute;top:-8%;width:70vmax;height:130%;margin-left:-35vmax;transform-origin:50% 0;mix-blend-mode:screen;-webkit-mask-image:linear-gradient(#000 10%,transparent 88%);mask-image:linear-gradient(#000 10%,transparent 88%)}
+.beam.b1{left:16%;background:conic-gradient(from 166deg at 50% 0%,transparent 0deg,rgba(254,194,0,.55) 14deg,transparent 28deg);animation:sweep1 7s ease-in-out infinite alternate}
+.beam.b2{left:50%;background:conic-gradient(from 166deg at 50% 0%,transparent 0deg,rgba(176,127,203,.6) 14deg,transparent 28deg);animation:sweep2 9s ease-in-out infinite alternate}
+.beam.b3{left:84%;background:conic-gradient(from 166deg at 50% 0%,transparent 0deg,rgba(64,190,238,.55) 14deg,transparent 28deg);animation:sweep3 8s ease-in-out infinite alternate}
+@keyframes sweep1{from{transform:rotate(-28deg)}to{transform:rotate(18deg)}}
+@keyframes sweep2{from{transform:rotate(22deg)}to{transform:rotate(-24deg)}}
+@keyframes sweep3{from{transform:rotate(-14deg)}to{transform:rotate(30deg)}}
+.haze{position:absolute;inset:auto 0 0 0;height:55%;z-index:1;pointer-events:none;background:radial-gradient(60% 80% at 50% 100%,rgba(146,85,162,.45),transparent 70%),radial-gradient(40% 60% at 20% 100%,rgba(254,194,0,.18),transparent 70%)}
+.eq{position:absolute;left:0;right:0;bottom:0;height:64px;z-index:1;display:flex;align-items:flex-end;gap:5px;padding:0 10px;opacity:.85;pointer-events:none}
+.eq i{flex:1;min-width:3px;border-radius:3px 3px 0 0;background:#9255A2;height:30%;animation:lvl .9s ease-in-out infinite alternate}
+.eq i:nth-child(3n){background:#40BEEE}.eq i:nth-child(4n){background:#FEC200}
+.ticker{background:#FEC200;color:#16131F;overflow:hidden;border-block:2px solid #16131F;transform:rotate(-1.2deg);margin:-14px -10px 0;position:relative;z-index:3}
+.tk{display:flex;width:max-content;animation:tick 22s linear infinite}
+.tk span{font:800 clamp(1.1rem,2.6vw,1.6rem)/1 var(--f-display);text-transform:uppercase;letter-spacing:.02em;padding:.8rem 0;white-space:nowrap}
+@keyframes tick{to{transform:translateX(-50%)}}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:900px){.tiles{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.tiles{grid-template-columns:1fr}}
+.tile{border-radius:22px;padding:24px;min-height:220px;display:flex;flex-direction:column;gap:.7rem;position:relative;overflow:hidden;transition:transform .2s cubic-bezier(.34,1.56,.64,1)}
+.tile:hover{transform:translateY(-6px) rotate(-.6deg)}
+.tile .no{font:800 3.4rem/1 var(--f-display);opacity:.25;letter-spacing:-.04em}
+.tile h3{font:800 clamp(1.5rem,2.4vw,1.9rem)/1.05 var(--f-display);margin-top:auto}
+.tile p{font-size:.98rem;opacity:.85}
+.t-yellow{background:#FEC200;color:#16131F}.t-purple{background:#9255A2;color:#FFFFFF}.t-blue{background:#40BEEE;color:#0B2533}.t-ink{background:#16131F;color:#F5F4F8;border:1px solid var(--line)}
+.live-dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#FF5A4E;margin-right:.5rem;vertical-align:middle;box-shadow:0 0 0 0 rgba(255,90,78,.7);animation:livep 1.6s ease-out infinite}
+@keyframes livep{to{box-shadow:0 0 0 12px rgba(255,90,78,0)}}
+@media (prefers-reduced-motion: reduce){.beam,.eq i,.tk,.live-dot{animation:none!important}.tile{transition:none}}
+.feature.rev{margin-top:3.5rem;grid-template-columns:.75fr 1.25fr}
+.feature.rev .yt{order:2}
+@media (max-width:880px){.feature.rev{grid-template-columns:1fr}.feature.rev .yt{order:0}}
 </style>
 </head>
 <body>
@@ -572,7 +614,7 @@ footer .fl svg{width:18px;height:23px}
 <section style="padding-top:3rem">
   <div class="wrap">
     <ol class="ladder" aria-label="Creator packages">
-      <li class="rung" style="--c:var(--blue)"><span class="k">Step 1</span><h3>Rent the space</h3><p>Book the podcast and content studio by the hour and shoot on your own. Two set walls with different backdrops.</p><ul><li>Podcast ₹1,500/hr · up to 6</li><li>Content ₹1,000/hr · up to 4</li></ul><span class="st live">Open now</span><a class="btn" href="#book">Book a slot</a></li>
+      <li class="rung" style="--c:var(--blue)"><span class="k">Step 1</span><h3>Rent the space</h3><p>Book the podcast and content studio by the hour and shoot on your own. Two set walls with different backdrops.</p><ul><li>Podcast ₹2,000/hr · up to 6 people</li><li>Content ₹1,000/hr · up to 4 people</li><li>10% off for 4+ hours</li></ul><span class="st live">Open now</span><a class="btn" href="#book">Book a slot</a></li>
       <li class="rung" style="--c:var(--purple)"><span class="k">Step 2 · Space +</span><h3>Shoot &amp; edit</h3><p>Add a camera person and an editor. You talk, we shoot, and you get the edited content back.</p><ul><li>Camera operator +₹1,000/hr</li><li>Editing on quote</li></ul><span class="st live">Open now</span><a class="btn" href="#book">Book with crew</a></li>
       <li class="rung" style="--c:var(--yellow)"><span class="k">Step 3 · Shoot &amp; edit +</span><h3>Fully managed</h3><p>Shooting, editing, posting and content strategy, all handled by us. You just show up.</p><span class="st live">Open now</span><a class="btn ghost" href="#crForm">Enquire</a></li>
       <li class="rung" style="--c:var(--ink)"><span class="k">Step 4 · As you grow</span><h3>Go big</h3><p>PR, events and brand deals. We bridge you to the brands and stages that fit your audience.</p><span class="st live">Enquiries open</span><a class="btn ghost" href="#crForm">Enquire</a></li>
@@ -649,7 +691,8 @@ footer .fl svg{width:18px;height:23px}
         <div class="body">
           <h3>Podcast studio</h3>
           <p style="color:var(--muted)">A ready podcast set with two backdrops, a green screen and lighting built for camera.</p>
-          <div class="price"><b>₹1,500</b><span>/ hour · up to 6 people</span></div>
+          <div class="price"><b>₹2,000</b><span>/ hour · up to 6 people</span></div>
+          <p class="deal">10% off the studio rate when you book 4+ hours</p>
           <ul><li>2 podcast mics</li><li>Main light + 2 RGB fill lights</li><li>White and grey backdrops</li><li>Green screen</li><li>2 tripods</li><li>Add a camera operator</li></ul>
           <div class="foot"><button class="btn" type="button" data-pick="podcast">Book this</button></div>
         </div>
@@ -660,6 +703,7 @@ footer .fl svg{width:18px;height:23px}
           <h3>Content shoot</h3>
           <p style="color:var(--muted)">Use the room and its backdrops for reels, product shoots and photo sessions.</p>
           <div class="price"><b>₹1,000</b><span>/ hour · up to 4 people</span></div>
+          <p class="deal">10% off the studio rate when you book 4+ hours</p>
           <ul><li>Main light + 2 RGB fill lights</li><li>White and grey backdrops</li><li>Green screen and 2 tripods</li><li>Add a camera operator</li><li>Editing quoted per project</li></ul>
           <div class="foot"><button class="btn" type="button" data-pick="content">Book this</button></div>
         </div>
@@ -670,7 +714,7 @@ footer .fl svg{width:18px;height:23px}
           <h3>Music studio</h3>
           <p style="color:var(--muted)">A fully treated jam room for recording and band practice, with a separate control room for mixing and mastering.</p>
           <div class="price"><b>Soon</b><span>· pricing at launch</span></div>
-          <ul><li>Jam room by the hour for band practice</li><li>Electric drum kit</li><li>2 guitar amps: Marshall and Blackstar</li><li>Markbass bass amp</li><li>3 Shure vocal mics + condenser mic</li><li>2 Alto PA speakers + 2 studio monitors</li><li>Apollo mixer</li></ul>
+          <ul><li>Jam room by the hour for band practice</li><li>Electric drum kit</li><li>2 guitar amps: Marshall and Blackstar</li><li>Markbass bass amp</li><li>3 Shure SM58 vocal mics + condenser mic</li><li>2 Alto PA speakers + 2 studio monitors</li><li>Apollo mixer</li></ul>
           <div class="foot"><a class="btn ghost" href="https://wa.me/919871920493?text=Please%20add%20me%20to%20the%20music%20studio%20waitlist" target="_blank" rel="noopener">Join the waitlist</a></div>
         </div>
       </article>
@@ -730,6 +774,7 @@ footer .fl svg{width:18px;height:23px}
           <div class="li"><dt>Hours</dt><dd id="sHours">—</dd></div>
           <div class="li"><dt>People</dt><dd id="sPeople">—</dd></div>
           <div class="li"><dt>Studio</dt><dd id="sBase">₹0</dd></div>
+          <div class="li"><dt>4+ hours, 10% off</dt><dd id="sDisc">−₹0</dd></div>
           <div class="li"><dt>Add-ons</dt><dd id="sAdd">₹0</dd></div>
         </dl>
         <div class="total"><span>Estimate</span><b id="sTotal">₹0</b></div>
@@ -791,19 +836,30 @@ footer .fl svg{width:18px;height:23px}
 </div>
 
 <div data-view="events" hidden>
-<section class="page-head"><div class="wrap"><p class="eyebrow">Events</p><h1>Where the <span style="background:var(--yellow);color:var(--yellow-ink);padding:0 .1em;border-radius:.12em">spotlight</span> lands.</h1><p>Festivals, concerts, corporate and experiential events. This is where artists step into the spotlight, creators meet their audience and brands become part of the moment.</p></div></section>
-<section style="padding-top:3rem">
+<section class="stage" id="stage">
+  <div class="beams" aria-hidden="true"><i class="beam b1"></i><i class="beam b2"></i><i class="beam b3"></i></div>
+  <div class="haze" aria-hidden="true"></div>
+  <div class="wrap stage-in">
+    <p class="eyebrow">Events</p>
+    <h1>Where the <span class="hl">spotlight</span> lands.</h1>
+    <p>Festivals, concerts, corporate and experiential events. This is where artists step into the spotlight, creators meet their audience and brands become part of the moment.</p>
+    <div class="ctas"><a class="btn yellow" href="#evForm">Plan an event</a><a class="btn ghost" href="#artists">Play a show</a></div>
+  </div>
+  <div class="eq" aria-hidden="true"></div>
+</section>
+<div class="ticker" aria-hidden="true"><div class="tk"><span>Festivals ✦ Concerts ✦ Open mics ✦ Corporate ✦ Experiential ✦ Campus ✦ </span><span>Festivals ✦ Concerts ✦ Open mics ✦ Corporate ✦ Experiential ✦ Campus ✦ </span></div></div>
+<section style="padding-top:4rem">
   <div class="wrap">
-    <div class="agency-grid">
-      <div class="svc"><h3>Festivals</h3><p>Bigger stages through our festival partners, for artists ready to step up.</p></div>
-      <div class="svc"><h3>Concerts &amp; gigs</h3><p>Shows for bands and solo musicians, from line-up to show day.</p></div>
-      <div class="svc"><h3>Campus &amp; brand events</h3><p>College fests, campus tours and brand launches with live music at the centre.</p></div>
-      <div class="svc"><h3>Open mics</h3><p>Low-pressure nights for new artists to test songs and find their crowd.</p></div>
-      <div class="svc"><h3>Corporate events</h3><p>Annual days, offsites, award nights and client evenings, with live acts, hosts and content handled.</p></div>
-      <div class="svc"><h3>Experiential events</h3><p>Pop-ups, brand activations and immersive experiences that people remember, film and share.</p></div>
+    <div class="tiles">
+      <div class="tile t-yellow"><span class="no">01</span><h3>Festivals</h3><p>Bigger stages through our festival partners, for artists ready to step up.</p></div>
+      <div class="tile t-purple"><span class="no">02</span><h3>Concerts &amp; gigs</h3><p>Shows for bands and solo musicians, from line-up to show day.</p></div>
+      <div class="tile t-blue"><span class="no">03</span><h3>Campus &amp; brand events</h3><p>College fests, campus tours and brand launches with live music at the centre.</p></div>
+      <div class="tile t-ink"><span class="no">04</span><h3>Open mics</h3><p>Low-pressure nights for new artists to test songs and find their crowd.</p></div>
+      <div class="tile t-purple"><span class="no">05</span><h3>Corporate events</h3><p>Annual days, offsites, award nights and client evenings, with live acts, hosts and content handled.</p></div>
+      <div class="tile t-yellow"><span class="no">06</span><h3>Experiential events</h3><p>Pop-ups, brand activations and immersive experiences that people remember, film and share.</p></div>
     </div>
     <div class="side-card" style="margin-top:2.5rem">
-      <div><p class="eyebrow">Upcoming</p><h3>First events announced soon.</h3><p>Follow <a href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">@bigwebstudios</a> to hear first about open mics, gigs and festival slots.</p></div>
+      <div><p class="eyebrow"><span class="live-dot"></span>Announcing soon</p><h3>First events announced soon.</h3><p>Follow <a href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">@bigwebstudios</a> to hear first about open mics, gigs and festival slots.</p></div>
       <a class="btn ghost" href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">Follow on Instagram</a>
     </div>
     <div class="ev-forms">
@@ -839,7 +895,7 @@ footer .fl svg{width:18px;height:23px}
 <section style="padding-top:3rem">
   <div class="wrap">
     <div class="feature">
-      <button class="yt" type="button" id="ytBtn" data-id="zADmBGpJlTE" aria-label="Play Yaad School Ki, official music video">
+      <button class="yt" type="button" data-id="zADmBGpJlTE" data-title="Yaad School Ki, official music video" aria-label="Play Yaad School Ki, official music video">
         <img src="https://i.ytimg.com/vi/zADmBGpJlTE/maxresdefault.jpg" alt="" width="1280" height="720">
         <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
       </button>
@@ -851,6 +907,19 @@ footer .fl svg{width:18px;height:23px}
         <a class="btn ghost" href="https://www.youtube.com/watch?v=zADmBGpJlTE" target="_blank" rel="noopener">Watch on YouTube ↗</a>
       </div>
     </div>
+    <div class="feature rev">
+      <button class="yt" type="button" data-id="OSxY08nQVpc" data-title="This Moment, Live It Up, short film" aria-label="Play This Moment, Live It Up, short film">
+        <img src="https://i.ytimg.com/vi/OSxY08nQVpc/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy">
+        <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+      </button>
+      <div class="feature-txt">
+        <p class="eyebrow">Featured · short film</p>
+        <h2>This Moment, Live It Up.</h2>
+        <p>AkioLife Productions' first short film, powered by Big Web Studios and directed by Akshay Manoharan. A story about putting the phone down and living the moment while it lasts.</p>
+        <ul class="tags"><li>Short film</li><li>Direction</li><li>Production</li></ul>
+        <a class="btn ghost" href="https://www.youtube.com/watch?v=OSxY08nQVpc" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+      </div>
+</div>
     <div class="sec-head" style="margin-top:4rem"><p class="eyebrow">Gallery</p><h2>From our Instagram.</h2><p>Reels and shoots from the studio, straight from <a href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">@bigwebstudios</a>.</p></div>
     <div class="ig-grid" id="igGrid">
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DILMl9lJRqi/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DILMl9lJRqi/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
@@ -920,8 +989,8 @@ footer .fl svg{width:18px;height:23px}
 (function(){
   const WA = "919871920493";
   const SPACES = {
-    podcast:{name:"Podcast studio",rate:1500,max:6,open:true,sub:"₹1,500/hr · up to 6"},
-    content:{name:"Content shoot",rate:1000,max:4,open:true,sub:"₹1,000/hr · up to 4"},
+    podcast:{name:"Podcast studio",rate:2000,max:6,open:true,sub:"₹2,000/hr · up to 6 people"},
+    content:{name:"Content shoot",rate:1000,max:4,open:true,sub:"₹1,000/hr · up to 4 people"},
     jam:{name:"Jam room",rate:0,max:6,open:false,sub:"Coming soon"}
   };
   const ADDONS = [
@@ -929,7 +998,7 @@ footer .fl svg{width:18px;height:23px}
     {id:"cam",name:"Camera operator",note:"One operator, you bring or rent cameras",rate:1000,unit:"hr"},
     {id:"edit",name:"Editing",note:"Episode edit and short clips",rate:0,unit:"quote"}
   ];
-  const OPEN=10, CLOSE=22;
+  const OPEN=10, CLOSE=22, DEAL_HRS=4, DEAL_PCT=10;
   const state={space:"podcast",date:null,week:0,slots:new Set(),people:2,addons:new Set()};
   const $=id=>document.getElementById(id);
   const inr=n=>"₹"+n.toLocaleString("en-IN");
@@ -1054,7 +1123,8 @@ footer .fl svg{width:18px;height:23px}
   function calc(){
     const sp=SPACES[state.space]; const hrs=state.slots.size; const base=sp.rate*hrs;
     let add=0, quote=false; ADDONS.forEach(a=>{ if(state.addons.has(a.id)){ if(a.rate) add+=a.rate*hrs; else quote=true; } });
-    return {sp,hrs,base,add,quote,total:base+add};
+    const disc=hrs>=DEAL_HRS?Math.round(base*DEAL_PCT/100):0;
+    return {sp,hrs,base,add,quote,disc,total:base-disc+add};
   }
   function fmtDate(k){const d=dateFromKey(k); return WD[d.getDay()]+" "+d.getDate()+" "+MO[d.getMonth()]+" "+d.getFullYear();}
   function render(){
@@ -1065,10 +1135,11 @@ footer .fl svg{width:18px;height:23px}
     $("sSpace").textContent=sp.name;
     $("sDate").textContent=state.date?fmtDate(state.date):"—";
     const r=ranges(); $("sHours").textContent=r.length?r.map(([a,b])=>pad(a)+":00–"+pad(b)+":00").join(", ")+" ("+c.hrs+"h)":"Pick hours";
-    $("sPeople").textContent=state.people;
+    $("sPeople").textContent=state.people+" of "+sp.max+" max";
     $("sBase").textContent=c.hrs?inr(c.base):"₹0";
     $("sAdd").textContent=inr(c.add)+(c.quote?" + edit quote":"");
     $("sTotal").textContent=inr(c.total);
+    $("sDisc").textContent=c.disc?"−"+inr(c.disc):(c.hrs?"Add "+(DEAL_HRS-c.hrs)+"h to unlock":"−₹0");
     $("ref").textContent=state.date&&c.hrs?"BWS-"+state.date.slice(5).replace("-","")+"-"+pad([...state.slots].sort((a,b)=>a-b)[0]):"BWS-—";
   }
   function setErr(id,msg){$(id).textContent=msg;}
@@ -1094,7 +1165,7 @@ footer .fl svg{width:18px;height:23px}
     const addons=ADDONS.filter(a=>state.addons.has(a.id)).map(a=>a.name).join(", ")||"None";
     const msg=["Booking request · "+$("ref").textContent,
       "Space: "+c.sp.name,"Date: "+fmtDate(state.date),"Hours: "+$("sHours").textContent,
-      "People: "+state.people,"Add-ons: "+addons,"Estimate: "+inr(c.total)+(c.quote?" + editing quote":""),
+      "People: "+state.people,"Add-ons: "+addons,c.disc?"4+ hour discount: −"+inr(c.disc):"","Estimate: "+inr(c.total)+(c.quote?" + editing quote":""),
       "Name: "+name,"WhatsApp: "+phone+(email?"\nEmail: "+email:""),
       $("fNote").value.trim()?"Note: "+$("fNote").value.trim():""].filter(Boolean).join("\n");
     const box=$("confirmBox"); box.hidden=false;
@@ -1186,13 +1257,12 @@ footer .fl svg{width:18px;height:23px}
     });},{passive:true});
   })();
   (function work(){
-    const yt=$("ytBtn");
-    yt.addEventListener("click",()=>{
+    document.querySelectorAll(".yt").forEach(yt=>yt.addEventListener("click",()=>{
       const f=document.createElement("iframe");
       f.src="https://www.youtube-nocookie.com/embed/"+yt.dataset.id+"?autoplay=1&rel=0";
-      f.title="Yaad School Ki, official music video"; f.allow="autoplay; encrypted-media; picture-in-picture; fullscreen"; f.allowFullscreen=true;
+      f.title=yt.dataset.title; f.allow="autoplay; encrypted-media; picture-in-picture; fullscreen"; f.allowFullscreen=true;
       yt.replaceChildren(f); yt.style.cursor="default";
-    },{once:true});
+    },{once:true}));
     let igLoaded=false;
     window.loadIG=function(){
       if(igLoaded){ if(window.instgrm) window.instgrm.Embeds.process(); return; }
@@ -1222,6 +1292,14 @@ footer .fl svg{width:18px;height:23px}
       if(hero.closest("[data-view]").hidden) return;
       const r=lp.getBoundingClientRect(); const sp=Math.max(0,Math.min(1,(90-r.top)/(r.height*.85))); lp.style.setProperty("--sp",sp.toFixed(3));
     });},{passive:true});
+  })();
+  (function stageFx(){
+    const st=$("stage"); if(!st) return;
+    const eq=st.querySelector(".eq"); const n=Math.round(innerWidth/14);
+    for(let i=0;i<n;i++){const b=document.createElement("i"); b.style.animationDelay=(-Math.random()*0.9).toFixed(2)+"s"; b.style.animationDuration=(0.6+Math.random()*0.7).toFixed(2)+"s"; eq.appendChild(b);}
+    if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    st.addEventListener("pointermove",e=>{ if(e.pointerType!=="mouse") return; const r=st.getBoundingClientRect(); st.style.setProperty("--px",(((e.clientX-r.left)/r.width-.5)*2).toFixed(3)); });
+    st.addEventListener("pointerleave",()=>st.style.setProperty("--px","0"));
   })();
   const VIEWS=["home","artists","creators","brands","spaces","events","work","about"];
   function route(){
