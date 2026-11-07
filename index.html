@@ -376,6 +376,7 @@ footer .fl svg{width:18px;height:23px}
 /* ladders + new blocks */
 .ladder{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:stretch;grid-auto-rows:1fr}
 @media (max-width:980px){.ladder{grid-template-columns:1fr 1fr}}
+@media (min-width:981px){.ladder{grid-auto-rows:auto}.rung:nth-child(1){margin-top:168px}.rung:nth-child(2){margin-top:112px}.rung:nth-child(3){margin-top:56px}}
 @media (max-width:600px){.ladder{grid-template-columns:1fr}}
 .rung{position:relative;overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px 20px 20px;display:flex;flex-direction:column;gap:.75rem;min-width:0}
 .rung::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:var(--c,var(--purple))}
@@ -513,6 +514,9 @@ footer .fl svg{width:18px;height:23px}
 .feature.rev{margin-top:3.5rem;grid-template-columns:.75fr 1.25fr}
 .feature.rev .yt{order:2}
 @media (max-width:880px){.feature.rev{grid-template-columns:1fr}.feature.rev .yt{order:0}}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+.sent{display:grid;gap:.7rem;padding:16px;border-radius:12px;background:var(--surface);color:var(--ink);border:2px solid var(--ok)}
+.sent b{color:var(--ok);font-size:1.05rem}
 </style>
 </head>
 <body>
@@ -591,11 +595,12 @@ footer .fl svg{width:18px;height:23px}
         <h3>Tell us about your music.</h3>
         <p>Send a link and tell us what you need next. We'll come back on WhatsApp with what we'd do next.</p>
       </div>
-      <form id="arForm" novalidate>
+      <form id="arForm" novalidate><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="row two">
           <div class="field"><label for="arName">Artist or band name</label><input id="arName"><span class="err" id="earName"></span></div>
           <div class="field"><label for="arPhone">WhatsApp number</label><input id="arPhone" inputmode="tel" placeholder="+91 98xxx xxxxx"><span class="err" id="earPhone"></span></div>
         </div>
+        <div class="field"><label for="arEmail">Email</label><input id="arEmail" type="email" autocomplete="email" placeholder="you@email.com"><span class="err" id="earEmail"></span></div>
         <div class="row two">
           <div class="field"><label for="arGenre">Genre</label><input id="arGenre" placeholder="Indie, rock, folk, hip-hop…"></div>
           <div class="field"><label for="arStep">What do you need?</label><select id="arStep"><option>Record</option><option>Release</option><option>Grow: video and promotion</option><option>Perform: live shows</option><option>Jam room waitlist</option><option>Not sure yet</option></select></div>
@@ -624,11 +629,12 @@ footer .fl svg{width:18px;height:23px}
         <h3>Want a package?</h3>
         <p>Tell us about your channel and what you'd like to hand over. We'll reply on WhatsApp with a plan and a quote.</p>
       </div>
-      <form id="crForm" novalidate>
+      <form id="crForm" novalidate><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="row two">
           <div class="field"><label for="crName">Your name or channel</label><input id="crName"><span class="err" id="ecrName"></span></div>
           <div class="field"><label for="crPhone">WhatsApp number</label><input id="crPhone" inputmode="tel" placeholder="+91 98xxx xxxxx"><span class="err" id="ecrPhone"></span></div>
         </div>
+        <div class="field"><label for="crEmail">Email</label><input id="crEmail" type="email" autocomplete="email" placeholder="you@email.com"><span class="err" id="ecrEmail"></span></div>
         <div class="field"><label for="crPkg">Package</label><select id="crPkg"><option>Shoot &amp; edit</option><option>Fully managed</option><option>Go big: PR, events, brand deals</option><option>Not sure yet</option></select></div>
         <div class="field"><label for="crMsg">About your channel</label><textarea id="crMsg" placeholder="Links, how often you post, what you need"></textarea><span class="err" id="ecrMsg"></span></div>
         <div><button class="btn" type="submit">Prepare my enquiry</button></div>
@@ -666,11 +672,12 @@ footer .fl svg{width:18px;height:23px}
         <h3>Let's find your artist.</h3>
         <p>Tell us about your brand and who you want to reach. We'll come back with matches and ideas.</p>
       </div>
-      <form id="brForm" novalidate>
+      <form id="brForm" novalidate><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="row two">
           <div class="field"><label for="brName">Brand</label><input id="brName"><span class="err" id="ebrName"></span></div>
           <div class="field"><label for="brPhone">WhatsApp number</label><input id="brPhone" inputmode="tel" placeholder="+91 98xxx xxxxx"><span class="err" id="ebrPhone"></span></div>
         </div>
+        <div class="field"><label for="brEmail">Email</label><input id="brEmail" type="email" autocomplete="email" placeholder="you@email.com"><span class="err" id="ebrEmail"></span></div>
         <div class="field"><label for="brType">Interested in</label><select id="brType"><option>Artist or creator sponsorship</option><option>Product or brand shoot</option><option>Brand video and content</option><option>Event partnership</option><option>Something else</option></select></div>
         <div class="field"><label for="brMsg">About your brand</label><textarea id="brMsg" placeholder="Product, audience, timeline, budget range"></textarea><span class="err" id="ebrMsg"></span></div>
         <div><button class="btn" type="submit">Prepare my enquiry</button></div>
@@ -730,7 +737,7 @@ footer .fl svg{width:18px;height:23px}
       <p>Choose the space and the slots you need. We'll confirm on WhatsApp within a few hours. Pay at the studio or by UPI once confirmed.</p>
     </div>
     <div class="booker">
-      <form class="steps" id="bookForm" novalidate>
+      <form class="steps" id="bookForm" novalidate><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="step">
           <h3><span class="n">1</span>Choose a space</h3>
           <div class="chips" id="spaceChips" role="group" aria-label="Space"></div>
@@ -779,8 +786,8 @@ footer .fl svg{width:18px;height:23px}
         </dl>
         <div class="total"><span>Estimate</span><b id="sTotal">₹0</b></div>
         <div class="act">
-          <button class="btn" type="button" id="submitBtn">Request this booking</button>
-          <p class="note">Nothing is charged here. We confirm availability first, then you pay at the venue or by UPI.</p>
+          <button class="btn" type="button" id="submitBtn">Book this session</button>
+          <p class="note">Nothing is charged online. You'll get an email with a calendar invite and the studio rules. Pay at the studio or by UPI.</p>
         </div>
       </aside>
     </div>
@@ -863,13 +870,14 @@ footer .fl svg{width:18px;height:23px}
       <a class="btn ghost" href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">Follow on Instagram</a>
     </div>
     <div class="ev-forms">
-      <form class="panel y" id="evForm" novalidate>
+      <form class="panel y" id="evForm" novalidate><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <h3>Book an artist or plan an event</h3>
         <p>Tell us what you have in mind. We'll come back with ideas, artists and a quote.</p>
         <div class="row two">
           <div class="field"><label for="evName">Your name or organisation</label><input id="evName" placeholder="Name, college or brand"><span class="err" id="eevName"></span></div>
           <div class="field"><label for="evPhone">WhatsApp number</label><input id="evPhone" inputmode="tel" placeholder="+91 98xxx xxxxx"><span class="err" id="eevPhone"></span></div>
         </div>
+        <div class="field"><label for="evEmail">Email</label><input id="evEmail" type="email" autocomplete="email" placeholder="you@email.com"><span class="err" id="eevEmail"></span></div>
         <div class="row">
           <div class="field"><label for="evType">What do you need?</label><select id="evType"><option>Artist or band booking</option><option>Festival</option><option>Concert or gig</option><option>College fest</option><option>Open mic</option><option>Corporate event</option><option>Experiential event or brand activation</option><option>Brand or private event</option><option>Something else</option></select></div>
           <div class="field"><label for="evDate">Event date</label><input id="evDate" type="date"></div>
@@ -1154,54 +1162,85 @@ footer .fl svg{width:18px;height:23px}
     const done=()=>{ if(btn){const o=btn.textContent; btn.textContent="Copied"; setTimeout(()=>btn.textContent=o,1600);} };
     try{ navigator.clipboard.writeText(text).then(done,()=>{ if(btn) btn.textContent="Select and copy"; }); }catch(e){ if(btn) btn.textContent="Select and copy"; }
   }
-  $("submitBtn").addEventListener("click",()=>{
+  const hp=f=>{const h=$(f).querySelector(".hp"); return h?h.value:"";};
+  async function post(url,data){
+    const r=await fetch(url,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)});
+    const j=await r.json().catch(()=>({})); if(!r.ok||!j.ok) throw new Error(j.error||"Failed"); return j;
+  }
+  $("submitBtn").addEventListener("click",async()=>{
     let ok=true; const c=calc();
     if(!c.hrs){setErr("slotErr","Pick at least one hour to continue."); ok=false;}
     const name=$("fName").value.trim(), phone=$("fPhone").value.trim(), email=$("fEmail").value.trim();
     if(!name){setErr("eName","Enter your name."); ok=false;}
     if(phone.replace(/\D/g,"").length<10){setErr("ePhone","Enter a 10-digit number."); ok=false;}
-    if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){setErr("eEmail","Check the email address."); ok=false;}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){setErr("eEmail","Enter your email for the calendar invite."); ok=false;}
     if(!ok){ (document.querySelector(".err:not(:empty)")||$("arr")).scrollIntoView({block:"center"}); return; }
     const addons=ADDONS.filter(a=>state.addons.has(a.id)).map(a=>a.name).join(", ")||"None";
     const msg=["Booking request · "+$("ref").textContent,
       "Space: "+c.sp.name,"Date: "+fmtDate(state.date),"Hours: "+$("sHours").textContent,
       "People: "+state.people,"Add-ons: "+addons,c.disc?"4+ hour discount: −"+inr(c.disc):"","Estimate: "+inr(c.total)+(c.quote?" + editing quote":""),
-      "Name: "+name,"WhatsApp: "+phone+(email?"\nEmail: "+email:""),
+      "Name: "+name,"WhatsApp: "+phone,"Email: "+email,
       $("fNote").value.trim()?"Note: "+$("fNote").value.trim():""].filter(Boolean).join("\n");
-    const box=$("confirmBox"); box.hidden=false;
-    box.innerHTML='<div class="confirm"><h3>Your request is ready</h3><p>Send it to us on WhatsApp and we’ll confirm the slot. If WhatsApp doesn’t open, copy the request and message +91 98719 20493.</p><pre id="reqText"></pre><div class="acts"><a class="btn" id="waBtn" target="_blank" rel="noopener">Send on WhatsApp</a><button class="btn ghost" type="button" id="copyReq">Copy request</button></div></div>';
-    $("reqText").textContent=msg;
-    $("waBtn").href="https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
-    $("copyReq").addEventListener("click",e=>copyText(msg,e.currentTarget));
+    const btn=$("submitBtn"), box=$("confirmBox"); btn.disabled=true; btn.textContent="Booking…";
+    try{
+      const j=await post("/api/book",{space:state.space,date:state.date,hours:[...state.slots],people:state.people,addons:[...state.addons],name,phone,email,note:$("fNote").value.trim(),website:hp("bookForm")});
+      box.hidden=false;
+      box.innerHTML='<div class="confirm"><h3>You\u2019re booked ✓</h3><p></p><div class="acts"><a class="btn ghost" id="waBtn" target="_blank" rel="noopener">Questions? WhatsApp us</a></div></div>';
+      box.querySelector("p").textContent="Booking "+j.ref+". We\u2019ve emailed "+email+" the details, a calendar invite and the studio rules. Pay at the studio or by UPI when you arrive.";
+      $("waBtn").href="https://wa.me/"+WA+"?text="+encodeURIComponent("Hi! About my booking "+j.ref);
+      btn.textContent="Booked ✓";
+    }catch(err){
+      btn.disabled=false; btn.textContent="Book this session"; box.hidden=false;
+      box.innerHTML='<div class="confirm"><h3>Send your booking on WhatsApp</h3><p>Our email didn\u2019t go through just now. Send this on WhatsApp and we\u2019ll confirm your slot. If WhatsApp doesn\u2019t open, copy it and message +91 98719 20493.</p><pre id="reqText"></pre><div class="acts"><a class="btn" id="waBtn" target="_blank" rel="noopener">Send on WhatsApp</a><button class="btn ghost" type="button" id="copyReq">Copy request</button></div></div>';
+      $("reqText").textContent=msg; $("waBtn").href="https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
+      $("copyReq").addEventListener("click",e=>copyText(msg,e.currentTarget));
+    }
     box.scrollIntoView({behavior:"smooth",block:"center"});
   });
   document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",()=>copyText($(b.dataset.copy).textContent,b)));
   buildSpaces(); ensureDate(); buildTimeline(); buildAddons(); render();
-  function wireForm(formId,outId,checks,build){
+  const okEmail=v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  const tel=v=>v.replace(/\D/g,"").length>=10;
+  function wireForm(formId,outId,type,pre,checks,build,fields){
     const f=$(formId);
-    f.addEventListener("submit",e=>{
+    checks=checks.concat([[pre+"Email",okEmail,"Enter your email so we can send you a copy."]]);
+    f.addEventListener("submit",async e=>{
       e.preventDefault(); let ok=true;
       checks.forEach(([id,test,msg])=>{const el=$(id); const bad=!test(el.value.trim()); setErr("e"+id,bad?msg:""); if(bad) ok=false;});
       if(!ok) return;
-      const msg=build(); const out=$(outId); out.hidden=false;
-      out.innerHTML='<pre></pre><div style="display:flex;gap:.6rem;flex-wrap:wrap"><a class="btn" target="_blank" rel="noopener">Send on WhatsApp</a><button class="btn ghost" type="button">Copy</button></div>';
-      out.querySelector("pre").textContent=msg;
-      out.querySelector("a").href="https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
-      out.querySelector("button").addEventListener("click",ev=>copyText(msg,ev.currentTarget));
+      const msg=build(); const out=$(outId); const btn=f.querySelector('button[type="submit"]'); const label=btn.textContent;
+      btn.disabled=true; btn.textContent="Sending…";
+      try{
+        await post("/api/enquiry",{type,name:$(pre+"Name").value.trim(),phone:$(pre+"Phone").value.trim(),email:$(pre+"Email").value.trim(),fields:fields(),website:hp(formId)});
+        out.hidden=false;
+        out.innerHTML='<div class="sent"><b>Sent ✓</b><span></span><div><a class="btn ghost" target="_blank" rel="noopener">Also WhatsApp us</a></div></div>';
+        out.querySelector("span").textContent="Thanks! We\u2019ve emailed a copy to "+$(pre+"Email").value.trim()+" and we\u2019ll get back to you within 1\u20132 working days.";
+        out.querySelector("a").href="https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
+        btn.textContent="Sent ✓"; f.reset();
+      }catch(err){
+        btn.disabled=false; btn.textContent=label; out.hidden=false;
+        out.innerHTML='<p style="font-weight:600">Our email didn\u2019t go through just now. Send this on WhatsApp instead:</p><pre></pre><div style="display:flex;gap:.6rem;flex-wrap:wrap"><a class="btn" target="_blank" rel="noopener">Send on WhatsApp</a><button class="btn ghost" type="button">Copy</button></div>';
+        out.querySelector("pre").textContent=msg;
+        out.querySelector("a").href="https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
+        out.querySelector("button").addEventListener("click",ev=>copyText(msg,ev.currentTarget));
+      }
     });
     checks.forEach(([id])=>$(id).addEventListener("input",()=>setErr("e"+id,"")));
   }
-  wireForm("evForm","evOut",[["evName",v=>v.length>0,"Add your name or organisation."],["evPhone",v=>v.replace(/\D/g,"").length>=10,"Enter a 10-digit number."],["evMsg",v=>v.length>=10,"Tell us a little more about the event."]],()=>{
-    const d=$("evDate").value;
-    return ["Event enquiry","From: "+$("evName").value.trim(),"WhatsApp: "+$("evPhone").value.trim(),"Need: "+$("evType").value,d?"Date: "+fmtDate(d):"Date: not fixed yet","Audience: "+$("evSize").value,$("evCity").value.trim()?"Where: "+$("evCity").value.trim():"","",$("evMsg").value.trim()].filter((x,i)=>x!==""||i===7).join("\n");
-  });
-  const tel=v=>v.replace(/\D/g,"").length>=10;
-  wireForm("arForm","arOut",[["arName",v=>v.length>0,"Add your artist or band name."],["arPhone",tel,"Enter a 10-digit number."],["arLink",v=>v.length>3,"Add a link to your music."]],()=>
-    ["Artist enquiry","Artist: "+$("arName").value.trim(),"WhatsApp: "+$("arPhone").value.trim(),$("arGenre").value.trim()?"Genre: "+$("arGenre").value.trim():"","Need: "+$("arStep").value,"Music: "+$("arLink").value.trim()].filter(Boolean).join("\n"));
-  wireForm("crForm","crOut",[["crName",v=>v.length>0,"Add your name or channel."],["crPhone",tel,"Enter a 10-digit number."],["crMsg",v=>v.length>=10,"Tell us a little more about your channel."]],()=>
-    ["Creator enquiry","From: "+$("crName").value.trim(),"WhatsApp: "+$("crPhone").value.trim(),"Package: "+$("crPkg").value,"",$("crMsg").value.trim()].join("\n"));
-  wireForm("brForm","brOut",[["brName",v=>v.length>0,"Add your brand name."],["brPhone",tel,"Enter a 10-digit number."],["brMsg",v=>v.length>=10,"Tell us a little more about your brand."]],()=>
-    ["Brand enquiry","Brand: "+$("brName").value.trim(),"WhatsApp: "+$("brPhone").value.trim(),"Interested in: "+$("brType").value,"",$("brMsg").value.trim()].join("\n"));
+  const v=id=>$(id).value.trim();
+  wireForm("evForm","evOut","event","ev",[["evName",x=>x.length>0,"Add your name or organisation."],["evPhone",tel,"Enter a 10-digit number."],["evMsg",x=>x.length>=10,"Tell us a little more about the event."]],()=>{
+    const d=v("evDate");
+    return ["Event enquiry","From: "+v("evName"),"WhatsApp: "+v("evPhone"),"Need: "+v("evType"),d?"Date: "+fmtDate(d):"Date: not fixed yet","Audience: "+v("evSize"),v("evCity")?"Where: "+v("evCity"):"","",v("evMsg")].filter((x,i)=>x!==""||i===7).join("\n");
+  },()=>[["Need",v("evType")],["Event date",v("evDate")?fmtDate(v("evDate")):"Not fixed yet"],["Audience",v("evSize")],["City / venue",v("evCity")],["Details",v("evMsg")]]);
+  wireForm("arForm","arOut","artist","ar",[["arName",x=>x.length>0,"Add your artist or band name."],["arPhone",tel,"Enter a 10-digit number."],["arLink",x=>x.length>3,"Add a link to your music."]],()=>
+    ["Artist enquiry","Artist: "+v("arName"),"WhatsApp: "+v("arPhone"),v("arGenre")?"Genre: "+v("arGenre"):"","Need: "+v("arStep"),"Music: "+v("arLink")].filter(Boolean).join("\n"),
+    ()=>[["Genre",v("arGenre")],["Needs",v("arStep")],["Music link",v("arLink")]]);
+  wireForm("crForm","crOut","creator","cr",[["crName",x=>x.length>0,"Add your name or channel."],["crPhone",tel,"Enter a 10-digit number."],["crMsg",x=>x.length>=10,"Tell us a little more about your channel."]],()=>
+    ["Creator enquiry","From: "+v("crName"),"WhatsApp: "+v("crPhone"),"Package: "+v("crPkg"),"",v("crMsg")].join("\n"),
+    ()=>[["Package",v("crPkg")],["About the channel",v("crMsg")]]);
+  wireForm("brForm","brOut","brand","br",[["brName",x=>x.length>0,"Add your brand name."],["brPhone",tel,"Enter a 10-digit number."],["brMsg",x=>x.length>=10,"Tell us a little more about your brand."]],()=>
+    ["Brand enquiry","Brand: "+v("brName"),"WhatsApp: "+v("brPhone"),"Interested in: "+v("brType"),"",v("brMsg")].join("\n"),
+    ()=>[["Interested in",v("brType")],["About the brand",v("brMsg")]]);
   (function visitingCard(){
     const st=$("vstage"); if(!st) return;
     const card=$("vcard"), pops=$("vpops"), qr=card.querySelector(".qr");
