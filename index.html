@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Big Web Studios, New Delhi. Podcast and content studio, creative agency, event marketing and artist bookings. From studio to stage.">
+<meta name="description" content="Big Web Studios, New Delhi. Studio, agency and stage for musicians, creators and brands. From the studio to the spotlight.">
 <meta property="og:title" content="Big Web Studios">
-<meta property="og:description" content="From studio to stage. Studio, agency, artists and events in New Delhi.">
+<meta property="og:description" content="From the studio to the spotlight. For artists, creators and brands in New Delhi.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Big Web Studios</title>
@@ -371,19 +371,43 @@ footer .fl svg{width:18px;height:23px}
 .ig-foot:hover{color:var(--yellow)}
 
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* ladders + new blocks */
+.ladder{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:end}
+@media (max-width:980px){.ladder{grid-template-columns:1fr 1fr;align-items:stretch}}
+@media (max-width:600px){.ladder{grid-template-columns:1fr}}
+.rung{background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--c,var(--purple));border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:.75rem;min-width:0}
+@media (min-width:981px){.rung:nth-child(1){min-height:300px}.rung:nth-child(2){min-height:345px}.rung:nth-child(3){min-height:390px}.rung:nth-child(4){min-height:435px}}
+.rung .k{font:500 .74rem var(--f-mono);color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.rung h3{font-size:1.6rem;font-weight:800}
+.rung p{color:var(--muted);font-size:.96rem}
+.rung ul{margin:0;padding:0;list-style:none;display:grid;gap:.3rem;font:500 .85rem var(--f-mono)}
+.rung .btn{margin-top:auto;align-self:flex-start;padding:.6rem 1.05rem;font-size:.92rem}
+.st{align-self:flex-start;font:500 .72rem var(--f-mono);letter-spacing:.06em;text-transform:uppercase;padding:.3rem .65rem;border-radius:999px;background:var(--soft);color:var(--ink);white-space:nowrap}
+.st.live{background:var(--yellow);color:var(--yellow-ink)}
+.rung .st{margin-top:auto}
+.rung .st + .btn{margin-top:0}
+.side-card{margin-top:18px;border:2px dashed var(--line);border-radius:var(--r);padding:20px 22px;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.side-card h3{margin:.3rem 0 .4rem}
+.side-card p{color:var(--muted);max-width:60ch}
+.hero-story{background:#16131F;color:#F5F4F8;border-radius:28px;padding:clamp(24px,5vw,48px);display:grid;gap:1rem}
+.hero-story .eyebrow{color:var(--yellow)}
+.hero-story h2{color:#F5F4F8;max-width:20ch}
+.hero-story p{color:#C9C4D8;font-size:1.1rem;max-width:62ch}
+.spaces.mini .space{text-decoration:none;color:inherit;transition:transform .18s}
+.spaces.mini .space:hover{transform:translateY(-3px)}
+.door h3{font-size:clamp(1.7rem,2.6vw,2.2rem)}
+.enquire .btn.ghost{color:inherit;border-color:currentColor}
+.enquire .field label,.enquire .err{color:inherit}
 </style>
 </head>
 <body>
-
-
-
 
 <header class="top">
   <div class="wrap nav">
     <a class="brand" href="#home" aria-label="Big Web Studios home"><svg class="logo" viewBox="0 0 600 776" aria-hidden="true"><defs><clipPath id="lg-h"><path d="M0 0H288A200 200 0 0 1 288 400H0Z"/></clipPath></defs><path d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#9255A2"/><path d="M0 0H288A200 200 0 0 1 288 400H0Z" fill="#40BEEE"/><path clip-path="url(#lg-h)" d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#5789C8"/><circle cx="152" cy="624" r="152" fill="#FEC200"/></svg><span class="wm"><b>bigweb</b><small>STUDIOS</small></span></a>
     <nav class="links" aria-label="Main">
-      <a href="#studio" data-nav="studio">Studio</a><a href="#agency" data-nav="agency">Agency</a><a href="#events" data-nav="events">Artists &amp; Events</a><a href="#about" data-nav="about">About</a><a href="#contact" data-nav="contact">Contact</a>
-      <a class="btn" href="#book">Book a session</a>
+      <a href="#artists" data-nav="artists">Artists</a><a href="#creators" data-nav="creators">Creators</a><a href="#brands" data-nav="brands">Brands</a><a href="#spaces" data-nav="spaces">Spaces</a><a href="#events" data-nav="events">Events</a><a href="#about" data-nav="about">About</a>
+      <a class="btn" href="#book">Book Now</a>
     </nav>
   </div>
 </header>
@@ -393,16 +417,16 @@ footer .fl svg{width:18px;height:23px}
 <section class="home-hero">
   <div class="wrap hh">
     <div>
-      <p class="eyebrow">Studio · Agency · Artists &amp; Events · New Delhi</p>
-      <h1 style="margin-top:1rem"><span class="s">From studio</span> to <span class="t">stage.</span></h1>
-      <p class="lede">Big Web Studios is where artists and brands make things, get them seen and take them live. Record in our studio, let our agency run the campaign, and bring us in for the event.</p>
+      <p class="eyebrow">Artists · Creators · Brands · New Delhi</p>
+      <h1 style="margin-top:1rem"><span class="s">From the studio</span> to the <span class="t">spotlight.</span></h1>
+      <p class="lede">One place for musicians, creators and brands to go from zero to the end: create it, produce it, promote it and get it on stage.</p>
       <div class="ctas">
-        <a class="btn yellow" href="#book">Book a session</a>
-        <a class="btn ghost" href="#events">Plan an event</a>
+        <a class="btn yellow" href="#book">Book the studio</a>
+        <a class="btn ghost" href="https://wa.me/919871920493" target="_blank" rel="noopener">WhatsApp us</a>
       </div>
     </div>
     <div class="logo-panel">
-      <span class="stamp s1">Record</span><span class="stamp s2">Release</span><span class="stamp s3">Take it live</span>
+      <span class="stamp s1">Create</span><span class="stamp s2">Promote</span><span class="stamp s3">Spotlight</span>
       <svg class="big" viewBox="0 0 600 776" aria-hidden="true"><defs><clipPath id="lg-hero"><path d="M0 0H288A200 200 0 0 1 288 400H0Z"/></clipPath></defs><path d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#9255A2"/><path d="M0 0H288A200 200 0 0 1 288 400H0Z" fill="#40BEEE"/><path clip-path="url(#lg-hero)" d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#5789C8"/><circle cx="152" cy="624" r="152" fill="#FEC200"/></svg>
       <div class="wm"><b>bigweb</b><small>STUDIOS</small></div>
     </div>
@@ -411,43 +435,152 @@ footer .fl svg{width:18px;height:23px}
 <section style="padding-top:0">
   <div class="wrap">
     <div class="doors">
-      <a class="door d-blue" href="#studio"><span class="k">01 · Make it</span><h3>Studio</h3><ul><li>Podcast studio with two sets</li><li>Content and reel shoots</li><li>Jam room, coming soon</li></ul><span class="go">Book the studio →</span></a>
-      <a class="door d-purple" href="#agency"><span class="k">02 · Get it seen</span><h3>Agency</h3><ul><li>Branding and identity</li><li>Music videos and content</li><li>Marketing and promotion</li></ul><span class="go">Work with the agency →</span></a>
-      <a class="door d-yellow" href="#events"><span class="k">03 · Take it live</span><h3>Artists &amp; Events</h3><ul><li>Event marketing and promotions</li><li>Artist bookings and live shows</li><li>Artist management</li></ul><span class="go">Plan an event →</span></a>
+      <a class="door d-purple" href="#artists"><span class="k">For Artists · musicians &amp; bands</span><h3>Record. Release. Rise.</h3><ul><li>Music production and distribution</li><li>Music videos and promotion</li><li>Live shows and stage bookings</li></ul><span class="go">Climb the artist ladder →</span></a>
+      <a class="door d-blue" href="#creators"><span class="k">For Creators · open now</span><h3>Shoot. Share. Shine.</h3><ul><li>Podcast and content space by the hour</li><li>Camera person and editor packages</li><li>Fully managed content</li></ul><span class="go">Start creating →</span></a>
+      <a class="door d-yellow" href="#brands"><span class="k">For Brands</span><h3>Spot. Sponsor. Stand out.</h3><ul><li>Features in artist and creator content</li><li>Product and brand shoots</li><li>Event partnerships</li></ul><span class="go">Put your brand on stage →</span></a>
     </div>
-    <div class="status" aria-label="Studio status"><span><i></i>Podcast studio · open</span><span><i></i>Content shoots · open</span><span><i class="soon"></i>Jam room · coming soon</span><span><i></i>Event enquiries · open</span></div>
+    <div class="status" aria-label="What's open"><span><i></i>Podcast &amp; content space · open</span><span><i></i>Creator packages · open</span><span><i></i>Brand work · open</span><span><i class="soon"></i>Music studio &amp; jam room · coming soon</span></div>
   </div>
 </section>
 <section style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">One roof</p><h2>One team from the first take to the front row.</h2><p>Most artists and brands juggle a studio, a video crew, a marketing agency and an events team. We run it all from one place, so your project has one plan and one point of contact.</p></div>
-    <div class="flow" aria-label="How a project runs" style="margin-top:0">
-      <div><span class="k">Studio</span><b>Record</b><span>Music, podcasts and content</span></div>
-      <div><span class="k">Studio</span><b>Shoot</b><span>Videos, reels and photos</span></div>
-      <div><span class="k">Agency</span><b>Promote</b><span>Campaigns that get it seen</span></div>
-      <div><span class="k">Events</span><b>Take it live</b><span>Shows, gigs and festivals</span></div>
+    <div class="sec-head"><p class="eyebrow">How it fits together</p><h2>A rising artist, a brand that believes in them, and one studio in between.</h2><p>Picture a guitar amp in the background of a rising artist's music video. The artist gets real backing, the brand earns credibility with a new wave of fans, and we make the content and get it seen.</p></div>
+    <div class="flow" aria-label="The artist and brand story" style="margin-top:0">
+      <div><span class="k">Artist</span><b>Create</b><span>Record and shoot the video with us</span></div>
+      <div><span class="k">Brand</span><b>Sponsor</b><span>Featured in the content, naturally</span></div>
+      <div><span class="k">Big Web</span><b>Promote</b><span>Instagram, socials and the full funnel</span></div>
+      <div><span class="k">Everyone</span><b>Spotlight</b><span>On stage at live shows and events</span></div>
+    </div>
+    <p style="margin-top:1.4rem"><a class="btn ghost" href="#brands">How brand features work</a></p>
+  </div>
+</section>
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">The Spaces</p><h2>Every ladder starts in the studio.</h2><p>The whole ground floor of our place in Dwarka is set up for making things. The podcast and content space is open now; the music studio is being built next.</p></div>
+    <div class="spaces mini">
+      <a class="space" href="#spaces"><div class="art a1"><span class="dims">Two sets</span><span class="tag live">Open now</span></div><div class="body"><h3>Podcast &amp; content studio</h3><p style="color:var(--muted)">Two set walls with different backdrops. From ₹1,000/hr.</p></div></a>
+      <a class="space" href="#spaces"><div class="art a3"><span class="dims">Control room + jam room</span><span class="tag">Coming soon</span></div><div class="body"><h3>Music studio</h3><p style="color:var(--muted)">Record, rehearse, mix and master under one roof.</p></div></a>
+      <a class="space" href="#events"><div class="art a2"><span class="dims">The top of every ladder</span><span class="tag live">Enquire</span></div><div class="body"><h3>Events &amp; stages</h3><p style="color:var(--muted)">Open mics, concerts and festivals.</p></div></a>
     </div>
   </div>
 </section>
 <section style="padding-top:0">
-  <div class="wrap"><div class="cta-band"><h2>Got something to make, release or put on stage?</h2><div style="display:flex;gap:.8rem;flex-wrap:wrap"><a class="btn yellow" href="#book">Book a session</a><a class="btn ghost" href="#contact">Talk to us</a></div></div></div>
+  <div class="wrap"><div class="cta-band"><h2>Ready to start climbing?</h2><div style="display:flex;gap:.8rem;flex-wrap:wrap"><a class="btn yellow" href="#book">Book a slot</a><a class="btn ghost" href="https://wa.me/919871920493" target="_blank" rel="noopener">WhatsApp us</a></div></div></div>
 </section>
 </div>
-<div data-view="studio" hidden>
-<section class="page-head"><div class="wrap"><p class="eyebrow">Studio</p><h1>Make it here.</h1><p>Book the podcast studio or the open floor by the hour. Work on your own, or add an engineer or camera operator.</p></div></section>
-<section id="spaces">
+
+<div data-view="artists" hidden>
+<section class="page-head"><div class="wrap"><p class="eyebrow">For Artists · musicians and bands</p><h1>Record. Release. <span style="background:var(--purple);color:var(--purple-ink);padding:0 .1em;border-radius:.12em">Rise.</span></h1><p>Start from scratch and end on stage. Each step builds on the one before, so you only take on what you need right now.</p></div></section>
+<section style="padding-top:3rem">
   <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">The spaces</p>
-      <h2>Two ways to use the room today. One more on the way.</h2>
-      <p>Everything runs from the ground floor of our place in Qutub Vihar, opposite Dwarka Sector 19. Book by the hour and work on your own, or add an engineer or camera operator.</p>
+    <ol class="ladder" aria-label="The artist ladder">
+      <li class="rung" style="--c:var(--purple)"><span class="k">Step 1</span><h3>Record</h3><p>Music production in our studio. Record and practise in the jam room, then mix and master in the control room.</p><span class="st">Music studio · coming soon</span></li>
+      <li class="rung" style="--c:var(--blue)"><span class="k">Step 2 · Record +</span><h3>Release</h3><p>Production plus distribution, so your track lands on Spotify, Apple Music, YouTube and the rest.</p><span class="st">Music studio · coming soon</span></li>
+      <li class="rung" style="--c:var(--yellow)"><span class="k">Step 3 · Release +</span><h3>Grow</h3><p>Music video production, Instagram and social media, and the full promotion funnel around your release.</p><span class="st live">Videos &amp; promotion · open now</span></li>
+      <li class="rung" style="--c:var(--ink)"><span class="k">Step 4 · Grow +</span><h3>Perform</h3><p>Live shows, stage bookings and events, through our festival and venue partners.</p><span class="st live">Enquiries open</span></li>
+    </ol>
+    <div class="side-card">
+      <div><p class="eyebrow">For bands</p><h3>Jam room by the hour</h3><p>A treated jam room for band practice, booked by the hour. Being built now. Get on the list and we'll tell you first.</p></div>
+      <span class="st">Coming soon</span>
     </div>
+    <div class="enquire">
+      <div>
+        <h3>Tell us about your music.</h3>
+        <p>Send a link and tell us where you are on the ladder. We'll come back on WhatsApp with what we'd do next.</p>
+      </div>
+      <form id="arForm" novalidate>
+        <div class="row two">
+          <div class="field"><label for="arName">Artist or band name</label><input id="arName"><span class="err" id="earName"></span></div>
+          <div class="field"><label for="arPhone">WhatsApp number</label><input id="arPhone" inputmode="tel" placeholder="+91 98xxx xxxxx"><span class="err" id="earPhone"></span></div>
+        </div>
+        <div class="row two">
+          <div class="field"><label for="arGenre">Genre</label><input id="arGenre" placeholder="Indie, rock, folk, hip-hop…"></div>
+          <div class="field"><label for="arStep">What do you need?</label><select id="arStep"><option>Record</option><option>Release</option><option>Grow: video and promotion</option><option>Perform: live shows</option><option>Jam room waitlist</option><option>Not sure yet</option></select></div>
+        </div>
+        <div class="field"><label for="arLink">Link to your music</label><input id="arLink" placeholder="Spotify, YouTube or Instagram"><span class="err" id="earLink"></span></div>
+        <div><button class="btn yellow" type="submit">Prepare my message</button></div>
+        <div class="enq-out" id="arOut" hidden></div>
+      </form>
+    </div>
+  </div>
+</section>
+</div>
+
+<div data-view="creators" hidden>
+<section class="page-head"><div class="wrap"><p class="eyebrow">For Creators · podcasters, influencers, content creators</p><h1>Shoot. Share. <span style="background:var(--blue);color:var(--blue-ink);padding:0 .1em;border-radius:.12em">Shine.</span></h1><p>Start by renting the space and shooting on your own. Hand over more as you grow, until we run the whole thing for you.</p></div></section>
+<section style="padding-top:3rem">
+  <div class="wrap">
+    <ol class="ladder" aria-label="The creator ladder">
+      <li class="rung" style="--c:var(--blue)"><span class="k">Step 1</span><h3>Rent the space</h3><p>Book the podcast and content studio by the hour and shoot on your own. Two set walls with different backdrops.</p><ul><li>Podcast ₹1,500/hr · up to 6</li><li>Content ₹1,000/hr · up to 4</li></ul><span class="st live">Open now</span><a class="btn" href="#book">Book a slot</a></li>
+      <li class="rung" style="--c:var(--purple)"><span class="k">Step 2 · Space +</span><h3>Shoot &amp; edit</h3><p>Add a camera person and an editor. You talk, we shoot, and you get the edited content back.</p><ul><li>Camera operator +₹1,000/hr</li><li>Editing on quote</li></ul><span class="st live">Open now</span><a class="btn" href="#book">Book with crew</a></li>
+      <li class="rung" style="--c:var(--yellow)"><span class="k">Step 3 · Shoot &amp; edit +</span><h3>Fully managed</h3><p>Shooting, editing, posting and content strategy, all handled by us. You just show up.</p><span class="st live">Open now</span><a class="btn ghost" href="#crForm">Enquire</a></li>
+      <li class="rung" style="--c:var(--ink)"><span class="k">Step 4 · As you grow</span><h3>Go big</h3><p>PR, events and brand deals. We bridge you to the brands and stages that fit your audience.</p><span class="st live">Enquiries open</span><a class="btn ghost" href="#crForm">Enquire</a></li>
+    </ol>
+    <div class="enquire" style="background:var(--blue);color:var(--blue-ink)">
+      <div>
+        <h3>Want a package?</h3>
+        <p>Tell us about your channel and what you'd like to hand over. We'll reply on WhatsApp with a plan and a quote.</p>
+      </div>
+      <form id="crForm" novalidate>
+        <div class="row two">
+          <div class="field"><label for="crName">Your name or channel</label><input id="crName"><span class="err" id="ecrName"></span></div>
+          <div class="field"><label for="crPhone">WhatsApp number</label><input id="crPhone" inputmode="tel" placeholder="+91 98xxx xxxxx"><span class="err" id="ecrPhone"></span></div>
+        </div>
+        <div class="field"><label for="crPkg">Package</label><select id="crPkg"><option>Shoot &amp; edit</option><option>Fully managed</option><option>Go big: PR, events, brand deals</option><option>Not sure yet</option></select></div>
+        <div class="field"><label for="crMsg">About your channel</label><textarea id="crMsg" placeholder="Links, how often you post, what you need"></textarea><span class="err" id="ecrMsg"></span></div>
+        <div><button class="btn" type="submit">Prepare my enquiry</button></div>
+        <div class="enq-out" id="crOut" hidden></div>
+      </form>
+    </div>
+  </div>
+</section>
+</div>
+
+<div data-view="brands" hidden>
+<section class="page-head"><div class="wrap"><p class="eyebrow">For Brands</p><h1>Spot. Sponsor. <span style="background:var(--yellow);color:var(--yellow-ink);padding:0 .1em;border-radius:.12em">Stand out.</span></h1><p>Reach people through the artists and creators they already follow, in content that feels earned, not bought.</p></div></section>
+<section style="padding-top:3rem">
+  <div class="wrap">
+    <div class="hero-story">
+      <p class="eyebrow">The headline act</p>
+      <h2>Back a budding artist. Borrow their credibility.</h2>
+      <p>Your guitar amp in the background of a rising artist's music video. Your headphones on a creator's podcast set. We match your brand with artists and creators we work with, build the content around it, and promote it to the people who care.</p>
+    </div>
+    <div class="agency-grid" style="margin-top:2.5rem">
+      <div class="svc"><h3>Artist &amp; creator sponsorships</h3><p>Get featured in music videos and creator content, matched to your audience and pitched as backing new talent.</p></div>
+      <div class="svc"><h3>Product &amp; brand shoots</h3><p>Product photography and brand photo shoots in our studio, with bold backdrops built for camera.</p></div>
+      <div class="svc"><h3>Brand videos &amp; content</h3><p>Brand films, reels and social content, planned, shot and edited by one team.</p></div>
+      <div class="svc"><h3>Event partnerships</h3><p>Sponsor open mics, concerts and festivals, and be part of the moment artists step into the spotlight.</p></div>
+    </div>
+    <div class="enquire" style="background:var(--yellow);color:var(--yellow-ink)">
+      <div>
+        <h3>Let's find your artist.</h3>
+        <p>Tell us about your brand and who you want to reach. We'll come back with matches and ideas.</p>
+      </div>
+      <form id="brForm" novalidate>
+        <div class="row two">
+          <div class="field"><label for="brName">Brand</label><input id="brName"><span class="err" id="ebrName"></span></div>
+          <div class="field"><label for="brPhone">WhatsApp number</label><input id="brPhone" inputmode="tel" placeholder="+91 98xxx xxxxx"><span class="err" id="ebrPhone"></span></div>
+        </div>
+        <div class="field"><label for="brType">Interested in</label><select id="brType"><option>Artist or creator sponsorship</option><option>Product or brand shoot</option><option>Brand video and content</option><option>Event partnership</option><option>Something else</option></select></div>
+        <div class="field"><label for="brMsg">About your brand</label><textarea id="brMsg" placeholder="Product, audience, timeline, budget range"></textarea><span class="err" id="ebrMsg"></span></div>
+        <div><button class="btn" type="submit">Prepare my enquiry</button></div>
+        <div class="enq-out" id="brOut" hidden></div>
+      </form>
+    </div>
+  </div>
+</section>
+</div>
+
+<div data-view="spaces" hidden>
+<section class="page-head"><div class="wrap"><p class="eyebrow">The Spaces</p><h1>Book the room.</h1><p>Book by the hour and work on your own, or add a sound engineer or camera operator.</p></div></section>
+<section id="space-list" style="padding-top:3rem">
+  <div class="wrap">
     <div class="spaces">
       <article class="space">
         <div class="art a1"><span class="dims">~13'6" × 19'</span><span class="tag live">Open now</span></div>
         <div class="body">
           <h3>Podcast studio</h3>
-          <p style="color:var(--muted)">Two ready sets in one big room: a sofa corner for long conversations and a table set for interviews.</p>
+          <p style="color:var(--muted)">Two set walls with two different backdrops, designed for looks and vibe, not the usual studio grey.</p>
           <div class="price"><b>₹1,500</b><span>/ hour · up to 6 people</span></div>
           <ul><li>Studio mic, stand and audio interface</li><li>Studio monitor for playback</li><li>Studio lighting rig</li><li>Bring your own cameras, or add an operator</li></ul>
           <div class="foot"><button class="btn" type="button" data-pick="podcast">Book this</button></div>
@@ -457,20 +590,20 @@ footer .fl svg{width:18px;height:23px}
         <div class="art a2"><span class="dims">Same room, open floor</span><span class="tag live">Open now</span></div>
         <div class="body">
           <h3>Content shoot</h3>
-          <p style="color:var(--muted)">Clear the sets and use the room for reels, product shoots, dance clips and photo sessions.</p>
+          <p style="color:var(--muted)">Use the room and its backdrops for reels, product shoots and photo sessions.</p>
           <div class="price"><b>₹1,000</b><span>/ hour · up to 4 people</span></div>
-          <ul><li>Studio lighting rig</li><li>Bold feature walls as backdrops</li><li>Separate guest entry from the parking side</li><li>Editing quoted per project</li></ul>
+          <ul><li>Studio lighting rig</li><li>Two bold backdrops</li><li>Add a camera operator</li><li>Editing quoted per project</li></ul>
           <div class="foot"><button class="btn" type="button" data-pick="content">Book this</button></div>
         </div>
       </article>
       <article class="space">
-        <div class="art a3"><span class="dims">~220 sq ft + control room</span><span class="tag">Coming soon</span></div>
+        <div class="art a3"><span class="dims">Jam room + control room</span><span class="tag">Coming soon</span></div>
         <div class="body">
-          <h3>Jam room &amp; music studio</h3>
-          <p style="color:var(--muted)">A fully treated L-shaped jam room with a separate control room behind glass, for rehearsals and recording.</p>
+          <h3>Music studio</h3>
+          <p style="color:var(--muted)">A fully treated jam room for recording and band practice, with a separate control room for mixing and mastering.</p>
           <div class="price"><b>Soon</b><span>· pricing at launch</span></div>
-          <ul><li>Room for a 4 to 5 piece band</li><li>Two MIDI keyboards and guitars on site</li><li>Load-in door straight from parking</li><li>Recording with producer inputs</li></ul>
-          <div class="foot"><a class="btn ghost" href="#contact">Join the waitlist</a></div>
+          <ul><li>Jam room by the hour for band practice</li><li>Two MIDI keyboards and guitars on site</li><li>Load-in door from parking</li><li>Recording with producer inputs</li></ul>
+          <div class="foot"><a class="btn ghost" href="https://wa.me/919871920493?text=Please%20add%20me%20to%20the%20music%20studio%20waitlist" target="_blank" rel="noopener">Join the waitlist</a></div>
         </div>
       </article>
     </div>
@@ -587,80 +720,32 @@ footer .fl svg{width:18px;height:23px}
     </div>
   </div>
 </section>
-
 </div>
-<div data-view="agency" hidden>
-<section class="page-head"><div class="wrap"><p class="eyebrow">Agency</p><h1>Get it seen.</h1><p>Recording, shoots, branding and campaigns for artists and brands, planned and run by one team.</p></div></section>
-<section id="agency" style="padding-top:3rem">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">The agency</p>
-      <h2>One roof, from the first take to the final post.</h2>
-      <p>Most artists and brands juggle a recording studio, a video crew and a marketing agency. We run all three from one place, with trusted freelance engineers and editors, so your project has one team and one plan.</p>
-    </div>
-    <div class="agency-grid">
-      <div class="svc"><h3>Music recording</h3><p>Record vocals, instruments and full tracks, with producer inputs when you want them.</p></div>
-      <div class="svc"><h3>Music videos &amp; shoots</h3><p>Concept, shoot and edit in the studio or on location.</p></div>
-      <div class="svc"><h3>Podcast production</h3><p>Multi-camera recording, editing and clips cut for reels and shorts.</p></div>
-      <div class="svc"><h3>Branding &amp; identity</h3><p>Names, logos, visual systems and the look that ties your work together.</p></div>
-      <div class="svc"><h3>Marketing &amp; promotion</h3><p>Release plans, performance ads and creator campaigns that actually get measured.</p></div>
-      <div class="svc"><h3>Brand integrations</h3><p>Match artists and creators with brands, and build the content around it.</p></div>
-    </div>
-    <div class="flow" aria-label="How an agency project runs">
-      <div><span class="k">Step 1</span><b>Brief</b><span>What you're making and who it's for</span></div>
-      <div><span class="k">Step 2</span><b>Record</b><span>Audio in the studio</span></div>
-      <div><span class="k">Step 3</span><b>Shoot</b><span>Video, photos and clips</span></div>
-      <div><span class="k">Step 4</span><b>Launch</b><span>Release, promote, report</span></div>
-    </div>
-    <div class="enquire">
-      <div>
-        <h3>Got a project in mind?</h3>
-        <p>Tell us what you're working on. We'll come back with a plan and a quote, usually within two working days.</p>
-      </div>
-      <form id="enqForm" novalidate>
-        <div class="row two">
-          <div class="field"><label for="qName">Name or brand</label><input id="qName" placeholder="Your name or brand"><span class="err" id="eqName"></span></div>
-          <div class="field"><label for="qType">Project type</label>
-            <select id="qType"><option>Music single + video</option><option>Podcast series</option><option>Brand campaign</option><option>Branding &amp; identity</option><option>Something else</option></select></div>
-        </div>
-        <div class="field"><label for="qMsg">About the project</label><textarea id="qMsg" placeholder="Timeline, budget range, links to your work"></textarea><span class="err" id="eqMsg"></span></div>
-        <div><button class="btn yellow" type="submit">Prepare my enquiry</button></div>
-        <div class="enq-out" id="enqOut" hidden></div>
-      </form>
-    </div>
-  </div>
-</section>
 
-</div>
 <div data-view="events" hidden>
-<section class="page-head"><div class="wrap"><p class="eyebrow">Artists &amp; Events</p><h1>Take it <span style="background:var(--yellow);color:var(--yellow-ink);padding:0 .1em;border-radius:.12em">live.</span></h1><p>We market events, book artists and help put on shows people talk about, from campus nights and café gigs to brand launches and multi-artist festivals.</p></div></section>
+<section class="page-head"><div class="wrap"><p class="eyebrow">Events</p><h1>The <span style="background:var(--yellow);color:var(--yellow-ink);padding:0 .1em;border-radius:.12em">stage</span> at the top of every ladder.</h1><p>Open mics, concerts and festivals. This is where artists step into the spotlight, creators meet their audience and brands become part of the moment.</p></div></section>
 <section style="padding-top:3rem">
   <div class="wrap">
     <div class="agency-grid">
-      <div class="svc"><h3>Event marketing &amp; promotions</h3><p>Launch campaigns, social media, creator and influencer pushes, and ticket sales drives that fill the room.</p></div>
-      <div class="svc"><h3>Artist bookings</h3><p>The right act for your stage, from solo performers and bands to DJs, with the logistics handled.</p></div>
-      <div class="svc"><h3>Live shows &amp; gigs</h3><p>Plan and run gigs, showcases and multi-genre nights, from line-up to show day.</p></div>
-      <div class="svc"><h3>Artist management</h3><p>Help for independent artists with releases, branding, content and getting booked.</p></div>
-      <div class="svc"><h3>Event content</h3><p>Aftermovies, artist interviews, reels and podcast episodes recorded around the event.</p></div>
-      <div class="svc"><h3>Campus &amp; brand events</h3><p>College fests, brand launches and corporate nights with music at the centre.</p></div>
+      <div class="svc"><h3>Open mics</h3><p>Low-pressure nights for new artists to test songs and find their crowd.</p></div>
+      <div class="svc"><h3>Concerts &amp; gigs</h3><p>Shows for bands and solo musicians, from line-up to show day.</p></div>
+      <div class="svc"><h3>Festivals</h3><p>Bigger stages through our festival partners, for artists ready to step up.</p></div>
+      <div class="svc"><h3>Campus &amp; brand events</h3><p>College fests, brand launches and private nights with live music at the centre.</p></div>
     </div>
-    <div class="who" aria-label="Who we work with"><span>Colleges &amp; fests</span><span>Venues &amp; cafés</span><span>Brands</span><span>Private events</span><span>Independent artists</span></div>
-    <div class="flow" aria-label="How an event runs">
-      <div><span class="k">Step 1</span><b>Brief</b><span>Your event, audience and budget</span></div>
-      <div><span class="k">Step 2</span><b>Line-up</b><span>Artists, format and plan</span></div>
-      <div><span class="k">Step 3</span><b>Promote</b><span>Campaigns and ticket push</span></div>
-      <div><span class="k">Step 4</span><b>Show day</b><span>On stage, on camera, online</span></div>
+    <div class="side-card" style="margin-top:2.5rem">
+      <div><p class="eyebrow">Upcoming</p><h3>First events announced soon.</h3><p>Follow <a href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">@bigwebstudios</a> to hear first about open mics, gigs and festival slots.</p></div>
+      <a class="btn ghost" href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">Follow on Instagram</a>
     </div>
     <div class="ev-forms">
       <form class="panel y" id="evForm" novalidate>
-        <h3>Plan an event or book an artist</h3>
+        <h3>Book an artist or plan an event</h3>
         <p>Tell us what you have in mind. We'll come back with ideas, artists and a quote.</p>
         <div class="row two">
           <div class="field"><label for="evName">Your name or organisation</label><input id="evName" placeholder="Name, college or brand"><span class="err" id="eevName"></span></div>
           <div class="field"><label for="evPhone">WhatsApp number</label><input id="evPhone" inputmode="tel" placeholder="+91 98xxx xxxxx"><span class="err" id="eevPhone"></span></div>
         </div>
         <div class="row">
-          <div class="field"><label for="evType">What do you need?</label><select id="evType"><option>Event marketing &amp; promotions</option><option>Artist booking</option><option>Full live show or gig</option><option>College fest</option><option>Brand or corporate event</option><option>Private event</option><option>Something else</option></select></div>
+          <div class="field"><label for="evType">What do you need?</label><select id="evType"><option>Artist or band booking</option><option>Open mic</option><option>Concert or gig</option><option>Festival</option><option>College fest</option><option>Brand or private event</option><option>Something else</option></select></div>
           <div class="field"><label for="evDate">Event date</label><input id="evDate" type="date"></div>
           <div class="field"><label for="evSize">Expected audience</label><select id="evSize"><option>Under 100</option><option>100 to 500</option><option>500 to 2,000</option><option>2,000+</option><option>Not sure yet</option></select></div>
         </div>
@@ -669,19 +754,16 @@ footer .fl svg{width:18px;height:23px}
         <div><button class="btn" type="submit">Prepare my enquiry</button></div>
         <div class="out" id="evOut" hidden></div>
       </form>
-      <form class="panel o" id="arForm" novalidate>
-        <h3>Are you an artist?</h3>
-        <p style="color:var(--muted)">Send us your music. We're always looking for artists to record, promote and book.</p>
-        <div class="field"><label for="arName">Artist or band name</label><input id="arName"><span class="err" id="earName"></span></div>
-        <div class="field"><label for="arGenre">Genre</label><input id="arGenre" placeholder="Indie, rock, folk, hip-hop…"></div>
-        <div class="field"><label for="arLink">Link to your music</label><input id="arLink" placeholder="Spotify, YouTube or Instagram"><span class="err" id="earLink"></span></div>
-        <div><button class="btn" type="submit">Prepare my submission</button></div>
-        <div class="out" id="arOut" hidden></div>
-      </form>
+      <div class="panel o">
+        <h3>Want to play?</h3>
+        <p style="color:var(--muted)">Musicians and bands: send us your music and we'll keep you in mind for open mics, gigs and festival slots.</p>
+        <div><a class="btn" href="#artists">Send your music</a></div>
+      </div>
     </div>
   </div>
 </section>
 </div>
+
 <div data-view="about" hidden>
 <section class="page-head"><div class="wrap"><p class="eyebrow">About</p><h1>Started as a hustle. Now it has a home.</h1></div></section>
 <section id="story" style="padding-top:3rem">
@@ -696,30 +778,30 @@ footer .fl svg{width:18px;height:23px}
     <div>
       <div class="sec-head" style="margin-bottom:1.8rem">
         <p class="eyebrow">Our story</p>
-        <h2>Started as a hustle. Now it has a home.</h2>
+        <h2>The perfect studio to get set and conquer the big digital space.</h2>
       </div>
       <div class="timeline">
-        <div class="tl"><span class="when">May 2020</span><b>The idea</b><p>A group of college friends wanted one place for branding, advertising, video, music and podcasts. We printed cards before we had a room.</p></div>
-        <div class="tl"><span class="when">2022</span><b>The space</b><p>A new home with the whole ground floor kept aside for a studio.</p></div>
-        <div class="tl"><span class="when">Now</span><b>From studio to stage</b><p>The podcast and content studio is open, the jam room is on the way, and we now market events and book artists for live shows. One team for making it, getting it seen and taking it live.</p></div>
+        <div class="tl"><span class="when">May 2020</span><b>The idea</b><p>Akio and a group of college friends wanted one place for branding, marketing, video, music and podcasts. We printed cards before we had a room.</p></div>
+        <div class="tl"><span class="when">2022</span><b>The space</b><p>A new home in Dwarka, with the whole ground floor kept aside for a studio.</p></div>
+        <div class="tl"><span class="when">Now</span><b>From the studio to the spotlight</b><p>Big Web Studios is back as a premium studio and agency. The podcast and content space is open, the music studio is on the way, and we help musicians, creators and brands go from the first take to the stage.</p></div>
       </div>
     </div>
   </div>
 </section>
-</div>
-<div data-view="contact" hidden><section id="contact" class="contact">
+<section id="contact" class="contact">
   <div class="wrap contact-grid">
     <div>
       <p class="eyebrow">Visit or get in touch</p>
-      <h2 style="margin-top:1rem">Come see the room, or tell us about your event.</h2>
+      <h2 style="margin-top:1rem">Come see the room, or tell us what you're making.</h2>
       <div class="hours">
         <div><span>Studio sessions</span><span>10:00 – 22:00, daily</span></div>
-        <div><span>Agency calls</span><span>Mon – Sat</span></div>
+        <div><span>Package calls</span><span>Mon – Sat</span></div>
         <div><span>Event enquiries</span><span>Any day, on WhatsApp</span></div>
       </div>
     </div>
     <div class="clist">
-      <div class="citem"><div><div class="k">Phone / WhatsApp</div><div class="v" id="cPhone">+91 98719 20493</div></div><button class="copy" type="button" data-copy="cPhone">Copy</button></div>
+      <a class="citem ig-item" href="https://wa.me/919871920493" target="_blank" rel="noopener"><div><div class="k">WhatsApp</div><div class="v">+91 98719 20493</div></div><span class="copy" aria-hidden="true">Chat ↗</span></a>
+      <div class="citem"><div><div class="k">Phone</div><div class="v" id="cPhone">+91 98719 20493</div></div><button class="copy" type="button" data-copy="cPhone">Copy</button></div>
       <div class="citem"><div><div class="k">Email</div><div class="v" id="cEmail">bigwebstudio.com@gmail.com</div></div><button class="copy" type="button" data-copy="cEmail">Copy</button></div>
       <div class="citem"><div><div class="k">Address</div><div class="v" id="cAddr">Plot 45, Qutub Vihar Phase 1, opp. Dwarka Sector 19, New Delhi 110071</div></div><button class="copy" type="button" data-copy="cAddr">Copy</button></div>
       <a class="citem ig-item" href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener"><span class="ig-wrap"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg><span><span class="k" style="display:block">Instagram</span><span class="v">@bigwebstudios</span></span></span><span class="copy" aria-hidden="true">Follow ↗</span></a>
@@ -728,7 +810,7 @@ footer .fl svg{width:18px;height:23px}
 </section>
 </div>
 </main>
-<footer><div class="wrap"><span class="fl"><svg class="" viewBox="0 0 600 776" aria-hidden="true"><defs><clipPath id="lg-f"><path d="M0 0H288A200 200 0 0 1 288 400H0Z"/></clipPath></defs><path d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#9255A2"/><path d="M0 0H288A200 200 0 0 1 288 400H0Z" fill="#40BEEE"/><path clip-path="url(#lg-f)" d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#5789C8"/><circle cx="152" cy="624" r="152" fill="#FEC200"/></svg><b style="font-family:var(--f-display)">bigweb</b> STUDIOS · From studio to stage</span><span style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap"><span>Studio · Agency · Artists &amp; Events · New Delhi</span><a class="ig-foot" href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener" aria-label="Big Web Studios on Instagram"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg>@bigwebstudios</a></span></div></footer>
+<footer><div class="wrap"><span class="fl"><svg class="" viewBox="0 0 600 776" aria-hidden="true"><defs><clipPath id="lg-f"><path d="M0 0H288A200 200 0 0 1 288 400H0Z"/></clipPath></defs><path d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#9255A2"/><path d="M0 0H288A200 200 0 0 1 288 400H0Z" fill="#40BEEE"/><path clip-path="url(#lg-f)" d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#5789C8"/><circle cx="152" cy="624" r="152" fill="#FEC200"/></svg><b style="font-family:var(--f-display)">bigweb</b> STUDIOS · From the studio to the spotlight</span><span style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap"><a class="ig-foot" href="https://wa.me/919871920493" target="_blank" rel="noopener">WhatsApp +91 98719 20493</a><a class="ig-foot" href="mailto:bigwebstudio.com@gmail.com">bigwebstudio.com@gmail.com</a><a class="ig-foot" href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener" aria-label="Big Web Studios on Instagram"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg>@bigwebstudios</a></span></div></footer>
 
 <script>
 (function(){
@@ -918,20 +1000,6 @@ footer .fl svg{width:18px;height:23px}
     $("copyReq").addEventListener("click",e=>copyText(msg,e.currentTarget));
     box.scrollIntoView({behavior:"smooth",block:"center"});
   });
-  $("enqForm").addEventListener("submit",e=>{
-    e.preventDefault(); let ok=true;
-    const n=$("qName").value.trim(), m=$("qMsg").value.trim();
-    setErr("eqName",""); setErr("eqMsg","");
-    if(!n){setErr("eqName","Add your name or brand."); ok=false;}
-    if(m.length<10){setErr("eqMsg","Tell us a little more about the project."); ok=false;}
-    if(!ok) return;
-    const msg="Agency enquiry\nFrom: "+n+"\nProject: "+$("qType").value+"\n\n"+m;
-    const out=$("enqOut"); out.hidden=false;
-    out.innerHTML='<pre id="enqText"></pre><div style="display:flex;gap:.6rem;flex-wrap:wrap"><a class="btn" id="enqWa" target="_blank" rel="noopener">Send on WhatsApp</a><button class="btn ghost" type="button" id="enqCopy" style="color:var(--purple-ink);border-color:var(--purple-ink)">Copy enquiry</button></div>';
-    $("enqText").textContent=msg; $("enqWa").href="https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
-    $("enqCopy").addEventListener("click",ev=>copyText(msg,ev.currentTarget));
-  });
-  ["qName","qMsg"].forEach(id=>$(id).addEventListener("input",()=>setErr("eq"+id.slice(1),"")));
   document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",()=>copyText($(b.dataset.copy).textContent,b)));
   buildSpaces(); ensureDate(); buildTimeline(); buildAddons(); render();
   function wireForm(formId,outId,checks,build){
@@ -952,9 +1020,14 @@ footer .fl svg{width:18px;height:23px}
     const d=$("evDate").value;
     return ["Event enquiry","From: "+$("evName").value.trim(),"WhatsApp: "+$("evPhone").value.trim(),"Need: "+$("evType").value,d?"Date: "+fmtDate(d):"Date: not fixed yet","Audience: "+$("evSize").value,$("evCity").value.trim()?"Where: "+$("evCity").value.trim():"","",$("evMsg").value.trim()].filter((x,i)=>x!==""||i===7).join("\n");
   });
-  wireForm("arForm","arOut",[["arName",v=>v.length>0,"Add your artist or band name."],["arLink",v=>v.length>3,"Add a link to your music."]],()=>
-    ["Artist submission","Artist: "+$("arName").value.trim(),$("arGenre").value.trim()?"Genre: "+$("arGenre").value.trim():"","Music: "+$("arLink").value.trim()].filter(Boolean).join("\n"));
-  const VIEWS=["home","studio","agency","events","about","contact"];
+  const tel=v=>v.replace(/\D/g,"").length>=10;
+  wireForm("arForm","arOut",[["arName",v=>v.length>0,"Add your artist or band name."],["arPhone",tel,"Enter a 10-digit number."],["arLink",v=>v.length>3,"Add a link to your music."]],()=>
+    ["Artist enquiry","Artist: "+$("arName").value.trim(),"WhatsApp: "+$("arPhone").value.trim(),$("arGenre").value.trim()?"Genre: "+$("arGenre").value.trim():"","Need: "+$("arStep").value,"Music: "+$("arLink").value.trim()].filter(Boolean).join("\n"));
+  wireForm("crForm","crOut",[["crName",v=>v.length>0,"Add your name or channel."],["crPhone",tel,"Enter a 10-digit number."],["crMsg",v=>v.length>=10,"Tell us a little more about your channel."]],()=>
+    ["Creator enquiry","From: "+$("crName").value.trim(),"WhatsApp: "+$("crPhone").value.trim(),"Package: "+$("crPkg").value,"",$("crMsg").value.trim()].join("\n"));
+  wireForm("brForm","brOut",[["brName",v=>v.length>0,"Add your brand name."],["brPhone",tel,"Enter a 10-digit number."],["brMsg",v=>v.length>=10,"Tell us a little more about your brand."]],()=>
+    ["Brand enquiry","Brand: "+$("brName").value.trim(),"WhatsApp: "+$("brPhone").value.trim(),"Interested in: "+$("brType").value,"",$("brMsg").value.trim()].join("\n"));
+  const VIEWS=["home","artists","creators","brands","spaces","events","about"];
   function route(){
     let t=(location.hash||"#home").slice(1), target=null;
     if(!VIEWS.includes(t)){const el=t&&document.getElementById(t); const v=el&&el.closest("[data-view]"); if(v){target=el; t=v.dataset.view;} else t="home";}
@@ -968,6 +1041,9 @@ footer .fl svg{width:18px;height:23px}
 
 })();
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
