@@ -398,6 +398,33 @@ footer .fl svg{width:18px;height:23px}
 .door h3{font-size:clamp(1.7rem,2.6vw,2.2rem)}
 .enquire .btn.ghost{color:inherit;border-color:currentColor}
 .enquire .field label,.enquire .err{color:inherit}
+/* animated visiting card */
+.vstage{position:relative;perspective:1100px;padding:104px 0 8px;max-width:520px;margin:0 auto;touch-action:pan-y;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.vstage .card{position:relative;margin:0 auto;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .55s cubic-bezier(.2,.8,.2,1),opacity .7s ease;will-change:transform}
+.vstage.track .card{transition:transform .12s linear,opacity .7s ease}
+.vstage:not(.is-in) .card{opacity:0;transform:translateY(46px) rotateX(58deg) scale(.82)}
+.vstage .card .l{transform:translate(calc(var(--px,0)*-8px),calc(var(--py,0)*-8px)) scale(1.06)}
+.vstage .card .r::before{transform:translate(calc(var(--px,0)*10px),calc(var(--py,0)*10px))}
+.vstage .card .qr{display:grid;place-items:center;transform:translate(calc(var(--px,0)*18px),calc(var(--py,0)*18px)) scale(var(--qs,1));transition:transform .6s cubic-bezier(.34,1.56,.64,1),background-color .5s ease}
+.vstage.is-open .qr{--qs:1.14;animation:vring 1.1s ease-out 1}
+.vstage.is-logo .qr{--qs:1.32;background:#F5F4F8}
+@keyframes vring{0%{box-shadow:0 0 0 0 rgba(254,194,0,.75)}100%{box-shadow:0 0 0 46px rgba(254,194,0,0)}}
+.vstage .qr svg{width:62%;height:auto;transform:scale(0) rotate(-140deg);transition:transform .8s cubic-bezier(.34,1.56,.64,1)}
+.vstage.is-logo .qr svg{transform:none}
+.vstage .glare{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.45),transparent 55%);mix-blend-mode:soft-light;opacity:0;transition:opacity .3s}
+.vstage.track .glare{opacity:1}
+.pops{position:absolute;left:0;top:0;width:0;height:0;pointer-events:none;z-index:3;transform:translate(calc(var(--px,0)*28px),calc(var(--py,0)*28px))}
+.pop{position:absolute;left:0;top:0;opacity:0;transform:translate(-50%,-50%) scale(0);transition:transform .75s cubic-bezier(.34,1.56,.64,1) var(--d,0s),opacity .25s ease var(--d,0s);white-space:nowrap}
+.vstage.is-open .pop{opacity:1;transform:translate(calc(-50% + var(--x,0px)),calc(-50% + var(--y,0px))) rotate(var(--r,0deg)) scale(1)}
+.pop span{display:block;font:800 clamp(.82rem,2.2vw,1.02rem)/1 var(--f-display);letter-spacing:-.01em;padding:.55rem .9rem;border-radius:999px;background:var(--bg);color:var(--fg);border:1.5px solid rgba(255,255,255,.28);box-shadow:0 12px 26px -12px rgba(22,19,31,.6)}
+.vstage.is-open .pop span{animation:vbob 3.4s ease-in-out var(--b,0s) infinite alternate}
+@keyframes vbob{from{transform:translateY(-5px)}to{transform:translateY(6px)}}
+.vwm{text-align:center;margin-top:104px;opacity:0;transform:translateY(14px) scale(.9);transition:opacity .5s ease,transform .7s cubic-bezier(.34,1.56,.64,1)}
+.vstage.is-logo .vwm{opacity:1;transform:none}
+.vwm b{font:800 clamp(1.7rem,4vw,2.2rem)/1 var(--f-display);letter-spacing:-.035em}
+.vwm small{font:500 .8rem var(--f-mono);letter-spacing:.35em;color:var(--purple);margin-left:.55rem}
+.vhint{font:500 .74rem var(--f-mono);color:var(--muted);text-align:center;margin-top:.9rem}
+@media (prefers-reduced-motion: reduce){.vstage .card,.vstage .qr,.vstage .qr svg,.pop,.vwm{transition:none!important;animation:none!important}.pop span{animation:none!important}}
 </style>
 </head>
 <body>
@@ -769,11 +796,16 @@ footer .fl svg{width:18px;height:23px}
 <section id="story" style="padding-top:3rem">
   <div class="wrap story">
     <div>
-      <div class="card" aria-hidden="true">
-        <div class="l"><div class="k"></div><div class="bl"><b>Bigweb<br>Studios</b><small>Founder &amp; Creative Director</small></div><div class="yl"></div></div>
-        <div class="r"><div class="qr"></div></div>
+      <div class="vstage" id="vstage" aria-hidden="true">
+        <div class="card" id="vcard">
+          <div class="l"><div class="k"></div><div class="bl"><b>Bigweb<br>Studios</b></div><div class="yl"></div></div>
+          <div class="r"><div class="qr"><svg viewBox="0 0 600 776" aria-hidden="true"><defs><clipPath id="lg-card"><path d="M0 0H288A200 200 0 0 1 288 400H0Z"/></clipPath></defs><path d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#9255A2"/><path d="M0 0H288A200 200 0 0 1 288 400H0Z" fill="#40BEEE"/><path clip-path="url(#lg-card)" d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#5789C8"/><circle cx="152" cy="624" r="152" fill="#FEC200"/></svg></div></div>
+          <i class="glare"></i>
+        </div>
+        <div class="pops" id="vpops"></div>
+        <div class="vwm"><b>bigweb</b><small>STUDIOS</small></div>
       </div>
-      <p class="card-cap">Our first visiting card, 2020</p>
+      <p class="vhint">Tap the card to replay</p>
     </div>
     <div>
       <div class="sec-head" style="margin-bottom:1.8rem">
@@ -1027,6 +1059,60 @@ footer .fl svg{width:18px;height:23px}
     ["Creator enquiry","From: "+$("crName").value.trim(),"WhatsApp: "+$("crPhone").value.trim(),"Package: "+$("crPkg").value,"",$("crMsg").value.trim()].join("\n"));
   wireForm("brForm","brOut",[["brName",v=>v.length>0,"Add your brand name."],["brPhone",tel,"Enter a 10-digit number."],["brMsg",v=>v.length>=10,"Tell us a little more about your brand."]],()=>
     ["Brand enquiry","Brand: "+$("brName").value.trim(),"WhatsApp: "+$("brPhone").value.trim(),"Interested in: "+$("brType").value,"",$("brMsg").value.trim()].join("\n"));
+  (function visitingCard(){
+    const st=$("vstage"); if(!st) return;
+    const card=$("vcard"), pops=$("vpops"), qr=card.querySelector(".qr");
+    const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const ITEMS=[["Artists","#9255A2","#FFFFFF"],["Creators","#40BEEE","#0B2533"],["Brands","#FEC200","#16131F"],["Events","#16131F","#FEC200"],["Studio","#F5F4F8","#16131F"],["Podcasts","#5789C8","#FFFFFF"],["Music videos","#FFFFFF","#9255A2"],["Spotlight","#FEC200","#16131F"]];
+    ITEMS.forEach(([t,bg,fg],i)=>{
+      const p=document.createElement("div"); p.className="pop";
+      p.style.setProperty("--d",(i*0.085).toFixed(3)+"s"); p.style.setProperty("--b",(-i*0.45).toFixed(2)+"s");
+      p.style.setProperty("--r",((i%2?1:-1)*(2+(i%3)*2))+"deg");
+      const sp=document.createElement("span"); sp.textContent=t; sp.style.setProperty("--bg",bg); sp.style.setProperty("--fg",fg);
+      p.appendChild(sp); pops.appendChild(p);
+    });
+    function layout(){
+      const sr=st.getBoundingClientRect(), cr=card.getBoundingClientRect(); if(!sr.width) return;
+      const qx=card.offsetLeft+qr.offsetParent.offsetLeft+qr.offsetLeft+qr.offsetWidth/2;
+      const qy=card.offsetTop+qr.offsetParent.offsetTop+qr.offsetTop+qr.offsetHeight/2;
+      pops.style.left=qx+"px"; pops.style.top=qy+"px";
+      const W=sr.width, T=card.offsetTop, Bt=T+card.offsetHeight, L=card.offsetLeft, CW=card.offsetWidth;
+      [...pops.children].forEach((p,i)=>{
+        const w=p.firstChild.offsetWidth, h=p.firstChild.offsetHeight, j=i%4, up=i<4, out=j%2?h*0.95:0;
+        let x=L+CW*(0.13+j*0.25)+(up?0:CW*0.04);
+        let y=up?T-20-out-h/2:Bt+20+out+h/2;
+        x=Math.max(w/2+2,Math.min(W-w/2-2,x));
+        p.style.setProperty("--x",(x-qx).toFixed(1)+"px"); p.style.setProperty("--y",(y-qy).toFixed(1)+"px");
+      });
+    }
+    let timers=[];
+    function play(){
+      timers.forEach(clearTimeout); timers=[]; layout();
+      if(reduce){st.classList.add("is-in","is-open","is-logo"); return;}
+      st.classList.remove("is-open","is-logo"); void st.offsetWidth; st.classList.add("is-in");
+      timers.push(setTimeout(()=>st.classList.add("is-open"),700));
+      timers.push(setTimeout(()=>st.classList.add("is-logo"),700+ITEMS.length*85+750));
+    }
+    let shown=false;
+    new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting&&!shown){shown=true; play();} else if(!e.isIntersecting) shown=false; }),{threshold:.35}).observe(st);
+    st.addEventListener("click",play);
+    window.addEventListener("resize",layout);
+    const setV=(px,py,tilt)=>{st.style.setProperty("--px",px.toFixed(3)); st.style.setProperty("--py",py.toFixed(3)); st.style.setProperty("--ry",(px*tilt)+"deg"); st.style.setProperty("--rx",(-py*tilt*.85)+"deg");};
+    if(reduce) return;
+    st.addEventListener("pointermove",e=>{
+      if(e.pointerType!=="mouse") return;
+      const r=card.getBoundingClientRect(); const c=v=>Math.max(-1.4,Math.min(1.4,v));
+      const px=c(((e.clientX-r.left)/r.width-.5)*2), py=c(((e.clientY-r.top)/r.height-.5)*2);
+      st.classList.add("track"); setV(px,py,13);
+      card.style.setProperty("--gx",((px/2+.5)*100)+"%"); card.style.setProperty("--gy",((py/2+.5)*100)+"%");
+    });
+    st.addEventListener("pointerleave",()=>{st.classList.remove("track"); setV(0,0,0);});
+    let raf=0;
+    window.addEventListener("scroll",()=>{ if(raf||st.classList.contains("track")) return; raf=requestAnimationFrame(()=>{ raf=0;
+      const r=st.getBoundingClientRect(), vh=innerHeight; if(r.bottom<0||r.top>vh) return;
+      const py=Math.max(-1,Math.min(1,((r.top+r.height/2)-vh/2)/(vh/2))); setV(0,py,7);
+    });},{passive:true});
+  })();
   const VIEWS=["home","artists","creators","brands","spaces","events","about"];
   function route(){
     let t=(location.hash||"#home").slice(1), target=null;
