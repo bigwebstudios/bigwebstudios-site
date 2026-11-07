@@ -278,6 +278,8 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backgroun
 .citem{border:1px solid color-mix(in srgb,var(--paper) 20%,transparent);border-radius:12px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
 .citem .k{font:500 .75rem var(--f-mono);text-transform:uppercase;letter-spacing:.1em;opacity:.65}
 .citem .v{font-size:1.05rem;font-weight:500;user-select:all;overflow-wrap:anywhere}
+.cbtns{display:flex;gap:.5rem;flex-wrap:wrap}
+a.copy{text-decoration:none;display:inline-block}
 .copy{font:500 .82rem var(--f-mono);border:1px solid color-mix(in srgb,var(--paper) 35%,transparent);background:transparent;color:var(--paper);border-radius:999px;padding:.35rem .8rem;cursor:pointer}
 .hours{display:grid;gap:.5rem;margin-top:1.4rem;font-family:var(--f-mono);font-size:.9rem}
 .hours div{display:flex;justify-content:space-between;border-bottom:1px dashed color-mix(in srgb,var(--paper) 22%,transparent);padding-bottom:.4rem}
@@ -425,6 +427,50 @@ footer .fl svg{width:18px;height:23px}
 .vwm small{font:500 .8rem var(--f-mono);letter-spacing:.35em;color:var(--purple);margin-left:.55rem}
 .vhint{font:500 .74rem var(--f-mono);color:var(--muted);text-align:center;margin-top:.9rem}
 @media (prefers-reduced-motion: reduce){.vstage .card,.vstage .qr,.vstage .qr svg,.pop,.vwm{transition:none!important;animation:none!important}.pop span{animation:none!important}}
+/* work page */
+.feature{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(20px,4vw,40px);align-items:center}
+@media (max-width:880px){.feature{grid-template-columns:1fr}}
+.yt{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;border-radius:var(--r);overflow:hidden;background:#000;cursor:pointer}
+.yt img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.yt:hover img{transform:scale(1.03)}
+.yt .play{position:absolute;inset:0;margin:auto;width:76px;height:76px;border-radius:50%;background:var(--yellow);color:var(--yellow-ink);display:grid;place-items:center;box-shadow:0 12px 30px -10px rgba(0,0,0,.6)}
+.yt .play svg{width:34px;height:34px;margin-left:4px}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.feature-txt{display:grid;gap:1rem;justify-items:start}
+.feature-txt h2{font-size:clamp(2rem,4vw,2.8rem)}
+.feature-txt > p:not(.eyebrow){color:var(--muted)}
+.tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.tags li{font:500 .78rem var(--f-mono);padding:.35rem .7rem;border-radius:999px;border:1.5px solid var(--line)}
+.ig-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(326px,100%),1fr));gap:18px;align-items:start}
+.ig-grid .instagram-media{margin:0!important;min-width:0!important;max-width:none!important;width:100%!important;border-radius:var(--r)!important}
+.ig-grid blockquote.instagram-media{background:var(--surface);border:1px solid var(--line);padding:24px;min-height:120px;display:grid;place-items:center}
+/* hero logo fx */
+.logo-panel{transform:perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .6s cubic-bezier(.2,.8,.2,1);will-change:transform;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.logo-panel.track{transition:transform .12s linear}
+.logo-panel::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(circle at var(--gx,50%) var(--gy,42%),rgba(254,194,0,.20),transparent 58%);opacity:.9}
+.logo-panel > .big,.logo-panel > .wm{position:relative}
+.logo-panel .big{overflow:visible}
+.lp{transform-box:fill-box;transform-origin:center}
+.lp-b{translate:calc(var(--px,0)*-26px + var(--sp,0)*-90px) calc(var(--py,0)*-26px + var(--sp,0)*-120px)}
+.lp-p{translate:calc(var(--px,0)*18px + var(--sp,0)*110px) calc(var(--py,0)*18px + var(--sp,0)*40px)}
+.lp-o{translate:calc(var(--px,0)*-4px + var(--sp,0)*10px) calc(var(--py,0)*-4px + var(--sp,0)*-40px);opacity:calc(1 - var(--sp,0)*2.2)}
+.lp-y{translate:calc(var(--px,0)*46px + var(--sp,0)*-70px) calc(var(--py,0)*46px + var(--sp,0)*150px)}
+.logo-panel .wm{translate:calc(var(--px,0)*10px) calc(var(--py,0)*10px)}
+.logo-panel .stamp{translate:calc(var(--px,0)*30px) calc(var(--py,0)*30px)}
+.logo-panel.fx .lp-b{animation:lpB .95s cubic-bezier(.2,1.2,.3,1) .05s both}
+.logo-panel.fx .lp-p{animation:lpP .95s cubic-bezier(.2,1.2,.3,1) .2s both}
+.logo-panel.fx .lp-y{animation:lpY 1.15s linear .45s both}
+.logo-panel.fx .lp-o{animation:lpO .45s ease 1.2s both}
+.logo-panel.fx .wm{animation:lpW .7s cubic-bezier(.34,1.56,.64,1) 1.25s both}
+.logo-panel.fx .stamp{animation:lpS .55s cubic-bezier(.34,1.56,.64,1) both}
+.logo-panel.fx .s1{animation-delay:1.45s}.logo-panel.fx .s2{animation-delay:1.58s}.logo-panel.fx .s3{animation-delay:1.71s}
+@keyframes lpB{0%{transform:translate(-220px,-300px) rotate(-40deg) scale(.6);opacity:0}40%{opacity:1}100%{transform:none;opacity:1}}
+@keyframes lpP{0%{transform:translate(360px,140px) rotate(30deg) scale(.6);opacity:0}40%{opacity:1}100%{transform:none;opacity:1}}
+@keyframes lpY{0%{transform:translateY(-820px);opacity:0;animation-timing-function:cubic-bezier(.55,0,1,.45)}12%{opacity:1}50%{transform:translateY(0) scale(1.08,.9);animation-timing-function:cubic-bezier(0,.55,.45,1)}66%{transform:translateY(-90px)}80%{transform:translateY(0) scale(1.04,.95)}90%{transform:translateY(-22px)}100%{transform:none;opacity:1}}
+@keyframes lpO{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}
+@keyframes lpW{from{opacity:0;transform:translateY(34px) scale(.92)}to{opacity:1;transform:none}}
+@keyframes lpS{from{opacity:0;scale:0}to{opacity:1;scale:1}}
+@media (prefers-reduced-motion: reduce){.logo-panel,.lp,.logo-panel .wm,.logo-panel .stamp{animation:none!important;transition:none!important;translate:none!important;transform:none!important}}
 </style>
 </head>
 <body>
@@ -433,7 +479,7 @@ footer .fl svg{width:18px;height:23px}
   <div class="wrap nav">
     <a class="brand" href="#home" aria-label="Big Web Studios home"><svg class="logo" viewBox="0 0 600 776" aria-hidden="true"><defs><clipPath id="lg-h"><path d="M0 0H288A200 200 0 0 1 288 400H0Z"/></clipPath></defs><path d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#9255A2"/><path d="M0 0H288A200 200 0 0 1 288 400H0Z" fill="#40BEEE"/><path clip-path="url(#lg-h)" d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#5789C8"/><circle cx="152" cy="624" r="152" fill="#FEC200"/></svg><span class="wm"><b>bigweb</b><small>STUDIOS</small></span></a>
     <nav class="links" aria-label="Main">
-      <a href="#artists" data-nav="artists">Artists</a><a href="#creators" data-nav="creators">Creators</a><a href="#brands" data-nav="brands">Brands</a><a href="#spaces" data-nav="spaces">Spaces</a><a href="#events" data-nav="events">Events</a><a href="#about" data-nav="about">About</a>
+      <a href="#artists" data-nav="artists">Artists</a><a href="#creators" data-nav="creators">Creators</a><a href="#brands" data-nav="brands">Brands</a><a href="#spaces" data-nav="spaces">Spaces</a><a href="#events" data-nav="events">Events</a><a href="#work" data-nav="work">Work</a><a href="#about" data-nav="about">About</a>
       <a class="btn" href="#book">Book Now</a>
     </nav>
   </div>
@@ -454,7 +500,7 @@ footer .fl svg{width:18px;height:23px}
     </div>
     <div class="logo-panel">
       <span class="stamp s1">Create</span><span class="stamp s2">Promote</span><span class="stamp s3">Spotlight</span>
-      <svg class="big" viewBox="0 0 600 776" aria-hidden="true"><defs><clipPath id="lg-hero"><path d="M0 0H288A200 200 0 0 1 288 400H0Z"/></clipPath></defs><path d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#9255A2"/><path d="M0 0H288A200 200 0 0 1 288 400H0Z" fill="#40BEEE"/><path clip-path="url(#lg-hero)" d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#5789C8"/><circle cx="152" cy="624" r="152" fill="#FEC200"/></svg>
+      <svg class="big" viewBox="0 0 600 776" overflow="visible" aria-hidden="true"><defs><clipPath id="lg-hero"><path d="M0 0H288A200 200 0 0 1 288 400H0Z"/></clipPath></defs><g class="lp lp-p"><path d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#9255A2"/></g><g class="lp lp-b"><path d="M0 0H288A200 200 0 0 1 288 400H0Z" fill="#40BEEE"/></g><g class="lp lp-o"><path clip-path="url(#lg-hero)" d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#5789C8"/></g><g class="lp lp-y"><circle cx="152" cy="624" r="152" fill="#FEC200"/></g></svg>
       <div class="wm"><b>bigweb</b><small>STUDIOS</small></div>
     </div>
   </div>
@@ -462,7 +508,7 @@ footer .fl svg{width:18px;height:23px}
 <section style="padding-top:0">
   <div class="wrap">
     <div class="doors">
-      <a class="door d-purple" href="#artists"><span class="k">For Artists · musicians &amp; bands</span><h3>Record. Release. Rise.</h3><ul><li>Music production and distribution</li><li>Music videos and promotion</li><li>Live shows and stage bookings</li></ul><span class="go">Climb the artist ladder →</span></a>
+      <a class="door d-purple" href="#artists"><span class="k">For Artists · musicians &amp; bands</span><h3>Record. Release. Rise.</h3><ul><li>Music production and distribution</li><li>Music videos and promotion</li><li>Live shows and stage bookings</li></ul><span class="go">Explore artist packages →</span></a>
       <a class="door d-blue" href="#creators"><span class="k">For Creators · open now</span><h3>Shoot. Share. Shine.</h3><ul><li>Podcast and content space by the hour</li><li>Camera person and editor packages</li><li>Fully managed content</li></ul><span class="go">Start creating →</span></a>
       <a class="door d-yellow" href="#brands"><span class="k">For Brands</span><h3>Spot. Sponsor. Stand out.</h3><ul><li>Features in artist and creator content</li><li>Product and brand shoots</li><li>Event partnerships</li></ul><span class="go">Put your brand on stage →</span></a>
     </div>
@@ -471,28 +517,16 @@ footer .fl svg{width:18px;height:23px}
 </section>
 <section style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">How it fits together</p><h2>A rising artist, a brand that believes in them, and one studio in between.</h2><p>Picture a guitar amp in the background of a rising artist's music video. The artist gets real backing, the brand earns credibility with a new wave of fans, and we make the content and get it seen.</p></div>
-    <div class="flow" aria-label="The artist and brand story" style="margin-top:0">
-      <div><span class="k">Artist</span><b>Create</b><span>Record and shoot the video with us</span></div>
-      <div><span class="k">Brand</span><b>Sponsor</b><span>Featured in the content, naturally</span></div>
-      <div><span class="k">Big Web</span><b>Promote</b><span>Instagram, socials and the full funnel</span></div>
-      <div><span class="k">Everyone</span><b>Spotlight</b><span>On stage at live shows and events</span></div>
-    </div>
-    <p style="margin-top:1.4rem"><a class="btn ghost" href="#brands">How brand features work</a></p>
-  </div>
-</section>
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">The Spaces</p><h2>Every ladder starts in the studio.</h2><p>The whole ground floor of our place in Dwarka is set up for making things. The podcast and content space is open now; the music studio is being built next.</p></div>
+    <div class="sec-head"><p class="eyebrow">The Spaces</p><h2>Everything starts in the studio.</h2><p>The whole ground floor of our place in Dwarka is set up for making things. The podcast and content space is open now; the music studio is being built next.</p></div>
     <div class="spaces mini">
       <a class="space" href="#spaces"><div class="art a1"><span class="dims">Two sets</span><span class="tag live">Open now</span></div><div class="body"><h3>Podcast &amp; content studio</h3><p style="color:var(--muted)">Two set walls with different backdrops. From ₹1,000/hr.</p></div></a>
       <a class="space" href="#spaces"><div class="art a3"><span class="dims">Control room + jam room</span><span class="tag">Coming soon</span></div><div class="body"><h3>Music studio</h3><p style="color:var(--muted)">Record, rehearse, mix and master under one roof.</p></div></a>
-      <a class="space" href="#events"><div class="art a2"><span class="dims">The top of every ladder</span><span class="tag live">Enquire</span></div><div class="body"><h3>Events &amp; stages</h3><p style="color:var(--muted)">Open mics, concerts and festivals.</p></div></a>
+      <a class="space" href="#events"><div class="art a2"><span class="dims">Live and on stage</span><span class="tag live">Enquire</span></div><div class="body"><h3>Events &amp; stages</h3><p style="color:var(--muted)">Open mics, concerts and festivals.</p></div></a>
     </div>
   </div>
 </section>
 <section style="padding-top:0">
-  <div class="wrap"><div class="cta-band"><h2>Ready to start climbing?</h2><div style="display:flex;gap:.8rem;flex-wrap:wrap"><a class="btn yellow" href="#book">Book a slot</a><a class="btn ghost" href="https://wa.me/919871920493" target="_blank" rel="noopener">WhatsApp us</a></div></div></div>
+  <div class="wrap"><div class="cta-band"><h2>Ready to make something?</h2><div style="display:flex;gap:.8rem;flex-wrap:wrap"><a class="btn yellow" href="#book">Book a slot</a><a class="btn ghost" href="https://wa.me/919871920493" target="_blank" rel="noopener">WhatsApp us</a></div></div></div>
 </section>
 </div>
 
@@ -500,7 +534,7 @@ footer .fl svg{width:18px;height:23px}
 <section class="page-head"><div class="wrap"><p class="eyebrow">For Artists · musicians and bands</p><h1>Record. Release. <span style="background:var(--purple);color:var(--purple-ink);padding:0 .1em;border-radius:.12em">Rise.</span></h1><p>Start from scratch and end on stage. Each step builds on the one before, so you only take on what you need right now.</p></div></section>
 <section style="padding-top:3rem">
   <div class="wrap">
-    <ol class="ladder" aria-label="The artist ladder">
+    <ol class="ladder" aria-label="Artist packages">
       <li class="rung" style="--c:var(--purple)"><span class="k">Step 1</span><h3>Record</h3><p>Music production in our studio. Record and practise in the jam room, then mix and master in the control room.</p><span class="st">Music studio · coming soon</span></li>
       <li class="rung" style="--c:var(--blue)"><span class="k">Step 2 · Record +</span><h3>Release</h3><p>Production plus distribution, so your track lands on Spotify, Apple Music, YouTube and the rest.</p><span class="st">Music studio · coming soon</span></li>
       <li class="rung" style="--c:var(--yellow)"><span class="k">Step 3 · Release +</span><h3>Grow</h3><p>Music video production, Instagram and social media, and the full promotion funnel around your release.</p><span class="st live">Videos &amp; promotion · open now</span></li>
@@ -513,7 +547,7 @@ footer .fl svg{width:18px;height:23px}
     <div class="enquire">
       <div>
         <h3>Tell us about your music.</h3>
-        <p>Send a link and tell us where you are on the ladder. We'll come back on WhatsApp with what we'd do next.</p>
+        <p>Send a link and tell us what you need next. We'll come back on WhatsApp with what we'd do next.</p>
       </div>
       <form id="arForm" novalidate>
         <div class="row two">
@@ -537,7 +571,7 @@ footer .fl svg{width:18px;height:23px}
 <section class="page-head"><div class="wrap"><p class="eyebrow">For Creators · podcasters, influencers, content creators</p><h1>Shoot. Share. <span style="background:var(--blue);color:var(--blue-ink);padding:0 .1em;border-radius:.12em">Shine.</span></h1><p>Start by renting the space and shooting on your own. Hand over more as you grow, until we run the whole thing for you.</p></div></section>
 <section style="padding-top:3rem">
   <div class="wrap">
-    <ol class="ladder" aria-label="The creator ladder">
+    <ol class="ladder" aria-label="Creator packages">
       <li class="rung" style="--c:var(--blue)"><span class="k">Step 1</span><h3>Rent the space</h3><p>Book the podcast and content studio by the hour and shoot on your own. Two set walls with different backdrops.</p><ul><li>Podcast ₹1,500/hr · up to 6</li><li>Content ₹1,000/hr · up to 4</li></ul><span class="st live">Open now</span><a class="btn" href="#book">Book a slot</a></li>
       <li class="rung" style="--c:var(--purple)"><span class="k">Step 2 · Space +</span><h3>Shoot &amp; edit</h3><p>Add a camera person and an editor. You talk, we shoot, and you get the edited content back.</p><ul><li>Camera operator +₹1,000/hr</li><li>Editing on quote</li></ul><span class="st live">Open now</span><a class="btn" href="#book">Book with crew</a></li>
       <li class="rung" style="--c:var(--yellow)"><span class="k">Step 3 · Shoot &amp; edit +</span><h3>Fully managed</h3><p>Shooting, editing, posting and content strategy, all handled by us. You just show up.</p><span class="st live">Open now</span><a class="btn ghost" href="#crForm">Enquire</a></li>
@@ -571,6 +605,13 @@ footer .fl svg{width:18px;height:23px}
       <p class="eyebrow">The headline act</p>
       <h2>Back a budding artist. Borrow their credibility.</h2>
       <p>Your guitar amp in the background of a rising artist's music video. Your headphones on a creator's podcast set. We match your brand with artists and creators we work with, build the content around it, and promote it to the people who care.</p>
+    </div>
+    <div class="sec-head" style="margin-top:3.5rem"><p class="eyebrow">How it fits together</p><h2>A rising artist, a brand that believes in them, and one studio in between.</h2></div>
+    <div class="flow" aria-label="The artist and brand story" style="margin-top:0">
+      <div><span class="k">Artist</span><b>Create</b><span>Record and shoot the video with us</span></div>
+      <div><span class="k">Brand</span><b>Sponsor</b><span>Featured in the content, naturally</span></div>
+      <div><span class="k">Big Web</span><b>Promote</b><span>Instagram, socials and the full funnel</span></div>
+      <div><span class="k">Everyone</span><b>Spotlight</b><span>On stage at live shows and events</span></div>
     </div>
     <div class="agency-grid" style="margin-top:2.5rem">
       <div class="svc"><h3>Artist &amp; creator sponsorships</h3><p>Get featured in music videos and creator content, matched to your audience and pitched as backing new talent.</p></div>
@@ -607,9 +648,9 @@ footer .fl svg{width:18px;height:23px}
         <div class="art a1"><span class="dims">~13'6" × 19'</span><span class="tag live">Open now</span></div>
         <div class="body">
           <h3>Podcast studio</h3>
-          <p style="color:var(--muted)">Two set walls with two different backdrops, designed for looks and vibe, not the usual studio grey.</p>
+          <p style="color:var(--muted)">A ready podcast set with two backdrops, a green screen and lighting built for camera.</p>
           <div class="price"><b>₹1,500</b><span>/ hour · up to 6 people</span></div>
-          <ul><li>Studio mic, stand and audio interface</li><li>Studio monitor for playback</li><li>Studio lighting rig</li><li>Bring your own cameras, or add an operator</li></ul>
+          <ul><li>2 podcast mics</li><li>Main light + 2 RGB fill lights</li><li>White and grey backdrops</li><li>Green screen</li><li>2 tripods</li><li>Add a camera operator</li></ul>
           <div class="foot"><button class="btn" type="button" data-pick="podcast">Book this</button></div>
         </div>
       </article>
@@ -619,7 +660,7 @@ footer .fl svg{width:18px;height:23px}
           <h3>Content shoot</h3>
           <p style="color:var(--muted)">Use the room and its backdrops for reels, product shoots and photo sessions.</p>
           <div class="price"><b>₹1,000</b><span>/ hour · up to 4 people</span></div>
-          <ul><li>Studio lighting rig</li><li>Two bold backdrops</li><li>Add a camera operator</li><li>Editing quoted per project</li></ul>
+          <ul><li>Main light + 2 RGB fill lights</li><li>White and grey backdrops</li><li>Green screen and 2 tripods</li><li>Add a camera operator</li><li>Editing quoted per project</li></ul>
           <div class="foot"><button class="btn" type="button" data-pick="content">Book this</button></div>
         </div>
       </article>
@@ -629,7 +670,7 @@ footer .fl svg{width:18px;height:23px}
           <h3>Music studio</h3>
           <p style="color:var(--muted)">A fully treated jam room for recording and band practice, with a separate control room for mixing and mastering.</p>
           <div class="price"><b>Soon</b><span>· pricing at launch</span></div>
-          <ul><li>Jam room by the hour for band practice</li><li>Two MIDI keyboards and guitars on site</li><li>Load-in door from parking</li><li>Recording with producer inputs</li></ul>
+          <ul><li>Jam room by the hour for band practice</li><li>Electric drum kit</li><li>2 guitar amps: Marshall and Blackstar</li><li>Markbass bass amp</li><li>3 Shure vocal mics + condenser mic</li><li>2 Alto PA speakers + 2 studio monitors</li><li>Apollo mixer</li></ul>
           <div class="foot"><a class="btn ghost" href="https://wa.me/919871920493?text=Please%20add%20me%20to%20the%20music%20studio%20waitlist" target="_blank" rel="noopener">Join the waitlist</a></div>
         </div>
       </article>
@@ -750,14 +791,16 @@ footer .fl svg{width:18px;height:23px}
 </div>
 
 <div data-view="events" hidden>
-<section class="page-head"><div class="wrap"><p class="eyebrow">Events</p><h1>The <span style="background:var(--yellow);color:var(--yellow-ink);padding:0 .1em;border-radius:.12em">stage</span> at the top of every ladder.</h1><p>Open mics, concerts and festivals. This is where artists step into the spotlight, creators meet their audience and brands become part of the moment.</p></div></section>
+<section class="page-head"><div class="wrap"><p class="eyebrow">Events</p><h1>Where the <span style="background:var(--yellow);color:var(--yellow-ink);padding:0 .1em;border-radius:.12em">spotlight</span> lands.</h1><p>Festivals, concerts, corporate and experiential events. This is where artists step into the spotlight, creators meet their audience and brands become part of the moment.</p></div></section>
 <section style="padding-top:3rem">
   <div class="wrap">
     <div class="agency-grid">
-      <div class="svc"><h3>Open mics</h3><p>Low-pressure nights for new artists to test songs and find their crowd.</p></div>
-      <div class="svc"><h3>Concerts &amp; gigs</h3><p>Shows for bands and solo musicians, from line-up to show day.</p></div>
       <div class="svc"><h3>Festivals</h3><p>Bigger stages through our festival partners, for artists ready to step up.</p></div>
-      <div class="svc"><h3>Campus &amp; brand events</h3><p>College fests, brand launches and private nights with live music at the centre.</p></div>
+      <div class="svc"><h3>Concerts &amp; gigs</h3><p>Shows for bands and solo musicians, from line-up to show day.</p></div>
+      <div class="svc"><h3>Campus &amp; brand events</h3><p>College fests, campus tours and brand launches with live music at the centre.</p></div>
+      <div class="svc"><h3>Open mics</h3><p>Low-pressure nights for new artists to test songs and find their crowd.</p></div>
+      <div class="svc"><h3>Corporate events</h3><p>Annual days, offsites, award nights and client evenings, with live acts, hosts and content handled.</p></div>
+      <div class="svc"><h3>Experiential events</h3><p>Pop-ups, brand activations and immersive experiences that people remember, film and share.</p></div>
     </div>
     <div class="side-card" style="margin-top:2.5rem">
       <div><p class="eyebrow">Upcoming</p><h3>First events announced soon.</h3><p>Follow <a href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">@bigwebstudios</a> to hear first about open mics, gigs and festival slots.</p></div>
@@ -772,7 +815,7 @@ footer .fl svg{width:18px;height:23px}
           <div class="field"><label for="evPhone">WhatsApp number</label><input id="evPhone" inputmode="tel" placeholder="+91 98xxx xxxxx"><span class="err" id="eevPhone"></span></div>
         </div>
         <div class="row">
-          <div class="field"><label for="evType">What do you need?</label><select id="evType"><option>Artist or band booking</option><option>Open mic</option><option>Concert or gig</option><option>Festival</option><option>College fest</option><option>Brand or private event</option><option>Something else</option></select></div>
+          <div class="field"><label for="evType">What do you need?</label><select id="evType"><option>Artist or band booking</option><option>Festival</option><option>Concert or gig</option><option>College fest</option><option>Open mic</option><option>Corporate event</option><option>Experiential event or brand activation</option><option>Brand or private event</option><option>Something else</option></select></div>
           <div class="field"><label for="evDate">Event date</label><input id="evDate" type="date"></div>
           <div class="field"><label for="evSize">Expected audience</label><select id="evSize"><option>Under 100</option><option>100 to 500</option><option>500 to 2,000</option><option>2,000+</option><option>Not sure yet</option></select></div>
         </div>
@@ -787,6 +830,36 @@ footer .fl svg{width:18px;height:23px}
         <div><a class="btn" href="#artists">Send your music</a></div>
       </div>
     </div>
+  </div>
+</section>
+</div>
+
+<div data-view="work" hidden>
+<section class="page-head"><div class="wrap"><p class="eyebrow">Work</p><h1>Made here. <span style="background:var(--blue);color:var(--blue-ink);padding:0 .1em;border-radius:.12em">Seen everywhere.</span></h1><p>Music videos, reels and content we've produced and edited for artists and creators.</p></div></section>
+<section style="padding-top:3rem">
+  <div class="wrap">
+    <div class="feature">
+      <button class="yt" type="button" id="ytBtn" data-id="zADmBGpJlTE" aria-label="Play Yaad School Ki, official music video">
+        <img src="https://i.ytimg.com/vi/zADmBGpJlTE/maxresdefault.jpg" alt="" width="1280" height="720">
+        <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+      </button>
+      <div class="feature-txt">
+        <p class="eyebrow">Featured · music video</p>
+        <h2>Yaad School Ki</h2>
+        <p>Official music video for Luffy D Sam, produced by Suraj Thapaliya. Big Web Studios handled the video production and editing, and the video opens with "Big Web Studios presents".</p>
+        <ul class="tags"><li>Video production</li><li>Editing</li><li>Music video</li></ul>
+        <a class="btn ghost" href="https://www.youtube.com/watch?v=zADmBGpJlTE" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+      </div>
+    </div>
+    <div class="sec-head" style="margin-top:4rem"><p class="eyebrow">Gallery</p><h2>From our Instagram.</h2><p>Reels and shoots from the studio, straight from <a href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">@bigwebstudios</a>.</p></div>
+    <div class="ig-grid" id="igGrid">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DILMl9lJRqi/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DILMl9lJRqi/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DGfiJHuy24_/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DGfiJHuy24_/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DFjpL_SSyE5/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DFjpL_SSyE5/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DFe9h3bNTwj/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DFe9h3bNTwj/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DFSiPZBP4Dg/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DFSiPZBP4Dg/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
+    </div>
+    <div class="cta-band" style="margin-top:3rem"><h2>Want something like this?</h2><div style="display:flex;gap:.8rem;flex-wrap:wrap"><a class="btn yellow" href="#artists">For artists</a><a class="btn ghost" href="#creators">For creators</a></div></div>
   </div>
 </section>
 </div>
@@ -832,8 +905,7 @@ footer .fl svg{width:18px;height:23px}
       </div>
     </div>
     <div class="clist">
-      <a class="citem ig-item" href="https://wa.me/919871920493" target="_blank" rel="noopener"><div><div class="k">WhatsApp</div><div class="v">+91 98719 20493</div></div><span class="copy" aria-hidden="true">Chat ↗</span></a>
-      <div class="citem"><div><div class="k">Phone</div><div class="v" id="cPhone">+91 98719 20493</div></div><button class="copy" type="button" data-copy="cPhone">Copy</button></div>
+      <div class="citem"><div><div class="k">WhatsApp / Phone</div><div class="v">+91 98719 20493</div></div><span class="cbtns"><a class="copy" href="https://wa.me/919871920493" target="_blank" rel="noopener">WhatsApp ↗</a><a class="copy" href="tel:+919871920493">Call</a></span></div>
       <div class="citem"><div><div class="k">Email</div><div class="v" id="cEmail">bigwebstudio.com@gmail.com</div></div><button class="copy" type="button" data-copy="cEmail">Copy</button></div>
       <div class="citem"><div><div class="k">Address</div><div class="v" id="cAddr">Plot 45, Qutub Vihar Phase 1, opp. Dwarka Sector 19, New Delhi 110071</div></div><button class="copy" type="button" data-copy="cAddr">Copy</button></div>
       <a class="citem ig-item" href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener"><span class="ig-wrap"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg><span><span class="k" style="display:block">Instagram</span><span class="v">@bigwebstudios</span></span></span><span class="copy" aria-hidden="true">Follow ↗</span></a>
@@ -1113,11 +1185,50 @@ footer .fl svg{width:18px;height:23px}
       const py=Math.max(-1,Math.min(1,((r.top+r.height/2)-vh/2)/(vh/2))); setV(0,py,7);
     });},{passive:true});
   })();
-  const VIEWS=["home","artists","creators","brands","spaces","events","about"];
+  (function work(){
+    const yt=$("ytBtn");
+    yt.addEventListener("click",()=>{
+      const f=document.createElement("iframe");
+      f.src="https://www.youtube-nocookie.com/embed/"+yt.dataset.id+"?autoplay=1&rel=0";
+      f.title="Yaad School Ki, official music video"; f.allow="autoplay; encrypted-media; picture-in-picture; fullscreen"; f.allowFullscreen=true;
+      yt.replaceChildren(f); yt.style.cursor="default";
+    },{once:true});
+    let igLoaded=false;
+    window.loadIG=function(){
+      if(igLoaded){ if(window.instgrm) window.instgrm.Embeds.process(); return; }
+      igLoaded=true; const sc=document.createElement("script"); sc.async=true; sc.src="https://www.instagram.com/embed.js";
+      sc.onload=()=>window.instgrm&&window.instgrm.Embeds.process(); document.body.appendChild(sc);
+    };
+  })();
+  (function heroFx(){
+    const lp=document.querySelector(".logo-panel"); if(!lp) return;
+    if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const hero=lp.closest("section");
+    const play=()=>{lp.classList.remove("fx"); void lp.offsetWidth; lp.classList.add("fx");};
+    let shown=false;
+    new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting&&!shown){shown=true; play();} else if(!e.isIntersecting&&e.boundingClientRect.top>0) shown=false; }),{threshold:.5}).observe(lp);
+    lp.addEventListener("click",play);
+    const set=(px,py)=>{lp.style.setProperty("--px",px.toFixed(3)); lp.style.setProperty("--py",py.toFixed(3)); lp.style.setProperty("--ry",(px*11)+"deg"); lp.style.setProperty("--rx",(-py*9)+"deg");};
+    hero.addEventListener("pointermove",e=>{
+      if(e.pointerType!=="mouse") return;
+      const r=lp.getBoundingClientRect(), c=v=>Math.max(-1,Math.min(1,v));
+      const px=c((e.clientX-(r.left+r.width/2))/(r.width*.75)), py=c((e.clientY-(r.top+r.height/2))/(r.height*.75));
+      lp.classList.add("track"); set(px,py);
+      lp.style.setProperty("--gx",(((e.clientX-r.left)/r.width)*100).toFixed(1)+"%"); lp.style.setProperty("--gy",(((e.clientY-r.top)/r.height)*100).toFixed(1)+"%");
+    });
+    hero.addEventListener("pointerleave",()=>{lp.classList.remove("track"); set(0,0);});
+    let raf=0;
+    window.addEventListener("scroll",()=>{ if(raf) return; raf=requestAnimationFrame(()=>{ raf=0;
+      if(hero.closest("[data-view]").hidden) return;
+      const r=lp.getBoundingClientRect(); const sp=Math.max(0,Math.min(1,(90-r.top)/(r.height*.85))); lp.style.setProperty("--sp",sp.toFixed(3));
+    });},{passive:true});
+  })();
+  const VIEWS=["home","artists","creators","brands","spaces","events","work","about"];
   function route(){
     let t=(location.hash||"#home").slice(1), target=null;
     if(!VIEWS.includes(t)){const el=t&&document.getElementById(t); const v=el&&el.closest("[data-view]"); if(v){target=el; t=v.dataset.view;} else t="home";}
     document.querySelectorAll("[data-view]").forEach(v=>{v.hidden=v.dataset.view!==t;});
+    if(t==="work"&&window.loadIG) window.loadIG();
     document.querySelectorAll("[data-nav]").forEach(a=>{a.dataset.nav===t?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current");});
     if(target) target.scrollIntoView(); else window.scrollTo(0,0);
   }
