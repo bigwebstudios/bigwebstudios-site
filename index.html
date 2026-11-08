@@ -452,16 +452,24 @@ footer .fl svg{width:18px;height:23px}
 .feature-txt > p:not(.eyebrow){color:var(--muted)}
 .tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 .tags li{font:500 .78rem var(--f-mono);padding:.35rem .7rem;border-radius:999px;border:1.5px solid var(--line)}
-.testi{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center;margin-top:4.5rem;padding:clamp(1.2rem,3vw,2rem);border-radius:var(--r);background:var(--purple);color:#fff}
+.testi{margin-top:4.5rem;padding:clamp(1.2rem,3vw,2.2rem);border-radius:var(--r);background:var(--purple);color:#fff}
 .testi .eyebrow{color:#FEC200}
-.testi.y{background:var(--yellow);color:#16131F;margin-top:3rem}.testi.y .eyebrow{color:#16131F;opacity:.75}.testi.y h2{color:#16131F}.testi.y a{color:#16131F;text-decoration:underline}
-@media (min-width:761px){.testi.rev{grid-template-columns:1fr minmax(0,340px)}.testi.rev .testi-vid{order:2}}
 .testi h2{color:#fff}
 .testi a{color:#FEC200}
-.testi-vid{margin:0;border-radius:calc(var(--r) - 4px);overflow:hidden;background:#000;aspect-ratio:9/16;box-shadow:0 24px 50px -24px rgba(0,0,0,.6)}
-.testi-vid video{width:100%;height:100%;object-fit:cover;display:block}
-.testi-txt p{font-size:1.05rem;line-height:1.6;max-width:46ch}
-.testi-by{margin-top:1.2rem;font-family:var(--f-mono);font-size:.85rem!important;opacity:.9}
+.testi.y{background:var(--yellow);color:#16131F;margin-top:1.6rem}.testi.y .eyebrow{color:#16131F;opacity:.75}.testi.y h2{color:#16131F}.testi.y a{color:#16131F;text-decoration:underline}
+.testi-txt p{font-size:1.05rem;line-height:1.6;max-width:62ch}
+.testi-by{margin-top:.8rem;font-family:var(--f-mono);font-size:.85rem!important;opacity:.9}
+.testi-media{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,2.5vw,1.8rem);margin-top:1.6rem;align-items:start}
+.testi-media.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (min-width:1000px){.testi:not(.y){display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);gap:clamp(1.5rem,3vw,2.5rem);align-items:center}.testi:not(.y) .testi-media{margin-top:0}}
+.tm{margin:0;display:grid;gap:.6rem;min-width:0}
+.tm figcaption{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+.tm-vid{border-radius:12px;overflow:hidden;background:#000;aspect-ratio:9/16;box-shadow:0 24px 50px -24px rgba(0,0,0,.6)}
+.tm-vid video{width:100%;height:100%;object-fit:cover;display:block}
+.tm .instagram-media{margin:0!important;min-width:0!important;max-width:none!important;width:100%!important;border-radius:12px!important}
+.tm blockquote.instagram-media{background:#fff;color:#16131F;padding:24px;min-height:120px;display:grid;place-items:center}
+@media (max-width:900px){.testi-media.three{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.testi-media,.testi-media.three{grid-template-columns:1fr}.tm{max-width:360px;width:100%;justify-self:center}}
 .clips{display:grid;grid-auto-flow:column;grid-auto-columns:200px;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin-top:1.4rem}
 .clip{margin:0;scroll-snap-align:start;position:relative;border-radius:var(--r);overflow:hidden;background:#000;aspect-ratio:9/16;cursor:pointer}
 .clip video{width:100%;height:100%;object-fit:cover;display:block}
@@ -483,8 +491,7 @@ footer .fl svg{width:18px;height:23px}
 .cb-next{right:16px;top:50%;transform:translateY(-50%)}
 @media (max-width:760px){.cb-prev,.cb-next{top:auto;bottom:18px;transform:none}}
 @media (min-width:1180px){.clips{grid-auto-flow:row;grid-template-columns:repeat(6,1fr);overflow:visible}}
-@media (max-width:760px){.testi{grid-template-columns:1fr}.testi-vid{max-width:300px;margin:0 auto}.clips{grid-auto-columns:46%}}
-.also{margin-top:1.6rem}.also .eyebrow{margin-bottom:.9rem}.also .ig-grid{max-width:860px}
+@media (max-width:760px){.clips{grid-auto-columns:46%}}
 .igc{margin:0;display:grid;gap:.7rem;min-width:0}.igc figcaption{display:grid;gap:.15rem;font-size:.86rem;line-height:1.45;color:var(--muted)}.igc figcaption b{color:var(--ink);font-size:.95rem}
 .ig-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(326px,100%),1fr));gap:18px;align-items:start}
 .ig-grid .instagram-media{margin:0!important;min-width:0!important;max-width:none!important;width:100%!important;border-radius:var(--r)!important}
@@ -973,38 +980,28 @@ footer .fl svg{width:18px;height:23px}
       </div>
 </div>
     <div class="testi">
-      <figure class="testi-vid">
-        <video id="testiVid" class="testi-v" src="media/testimonial-sumit.mp4" poster="media/testimonial-sumit.jpg" playsinline preload="none" controls aria-label="Testimonial from Sumit"></video>
-      </figure>
       <div class="testi-txt">
         <p class="eyebrow">In their words</p>
         <h2>Don't take our word for it.</h2>
-        <p>Sumit on working with Big Web Studios, in his own words. Press play, sound on.</p>
-        <p class="testi-by"><b>Sumit</b> · <a href="https://www.instagram.com/09sumit/" target="_blank" rel="noopener">@09sumit</a> · shot at Big Web Studios, Jan 2024</p>
+        <p>Sumit on working with Big Web Studios, in his own words, next to the reel he shot here. Press play, sound on.</p>
+        <p class="testi-by"><b>Sumit</b> · <a href="https://www.instagram.com/09sumit/" target="_blank" rel="noopener">@09sumit</a> · shot at Big Web Studios</p>
+      </div>
+      <div class="testi-media">
+        <figure class="tm"><figcaption>His testimonial</figcaption><div class="tm-vid"><video id="testiVid" class="testi-v" src="media/testimonial-sumit.mp4" poster="media/testimonial-sumit.jpg" playsinline preload="none" controls aria-label="Testimonial from Sumit"></video></div></figure>
+        <figure class="tm"><figcaption>What he shot here · House of Movement</figcaption><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C5imoAHhjgM/" data-instgrm-version="14"><a href="https://www.instagram.com/p/C5imoAHhjgM/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote></figure>
       </div>
     </div>
-    <div class="also">
-      <p class="eyebrow">What Sumit shot here · House of Movement</p>
-      <div class="ig-grid">
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C5imoAHhjgM/" data-instgrm-version="14"><a href="https://www.instagram.com/p/C5imoAHhjgM/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
-      </div>
-    </div>
-    <div class="testi y rev">
-      <figure class="testi-vid">
-        <video class="testi-v" src="media/testimonial-sheslayyyss.mp4" poster="media/testimonial-sheslayyyss.jpg" playsinline preload="none" controls aria-label="Creator reel shot at Big Web Studios"></video>
-      </figure>
+    <div class="testi y">
       <div class="testi-txt">
         <p class="eyebrow">Creators × brands</p>
         <h2>Shot here, for a brand.</h2>
-        <p>A creator shot her brand reel in our studio and told her followers where it was made. This is exactly what the space is for.</p>
-        <p class="testi-by"><b>@sheslayyyss</b> · <a href="https://www.instagram.com/sheslayyyss/" target="_blank" rel="noopener">Instagram</a> · reel for @zoukonline, Jul 2026</p>
+        <p>A creator shot her reel for @zoukonline in our studio and told her followers where it was made. Same brand, same room, a second shoot. This is exactly what the space is for.</p>
+        <p class="testi-by"><b>@sheslayyyss</b> · <a href="https://www.instagram.com/sheslayyyss/" target="_blank" rel="noopener">Instagram</a> · for @zoukonline</p>
       </div>
-    </div>
-    <div class="also">
-      <p class="eyebrow">Shot here for @zoukonline</p>
-      <div class="ig-grid">
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DafhG90JX12/" data-instgrm-version="14"><a href="https://www.instagram.com/p/DafhG90JX12/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Daf4VsiOnNH/" data-instgrm-version="14"><a href="https://www.instagram.com/p/Daf4VsiOnNH/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
+      <div class="testi-media three">
+        <figure class="tm"><figcaption>Her story</figcaption><div class="tm-vid"><video class="testi-v" src="media/testimonial-sheslayyyss.mp4" poster="media/testimonial-sheslayyyss.jpg" playsinline preload="none" controls aria-label="Creator reel shot at Big Web Studios"></video></div></figure>
+        <figure class="tm"><figcaption>Her Zouk reel</figcaption><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DafhG90JX12/" data-instgrm-version="14"><a href="https://www.instagram.com/p/DafhG90JX12/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote></figure>
+        <figure class="tm"><figcaption>Zouk Executive Laptop Bag · @theakiolife</figcaption><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Daf4VsiOnNH/" data-instgrm-version="14"><a href="https://www.instagram.com/p/Daf4VsiOnNH/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote></figure>
       </div>
     </div>
     <div class="sec-head" style="margin-top:4rem"><p class="eyebrow">Behind the scenes</p><h2>Between the takes.</h2><p>Set-ups, shoots and jam days at the studio, from the <a href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">@bigwebstudios</a> highlights.</p></div>
