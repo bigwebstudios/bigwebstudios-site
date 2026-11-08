@@ -143,6 +143,6 @@ module.exports = async (req, res) => {
     return res.status(200).json({ ok: true, ref });
   } catch (e) {
     console.error(e);
-    return res.status(500).json({ ok: false, error: "Could not send email" });
+    return res.status(500).json({ ok: false, error: "Could not send email", ...(process.env.VERCEL_ENV === "preview" ? { detail: String((e && e.message) || e).replace(/[A-Za-z0-9]{4}( ?[A-Za-z0-9]{4}){3}/g, "****").slice(0, 300) } : {}) });
   }
 };
