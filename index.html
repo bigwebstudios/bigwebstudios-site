@@ -586,6 +586,42 @@ footer .fl svg{width:18px;height:23px}
 .hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
 .sent{display:grid;gap:.7rem;padding:16px;border-radius:12px;background:var(--surface);color:var(--ink);border:2px solid var(--ok)}
 .sent b{color:var(--ok);font-size:1.05rem}
+
+/* ---- single-page story ---- */
+.scene,[id]{scroll-margin-top:96px}
+.scene + .scene{border-top:1px solid var(--line)}
+.reach{background:var(--ink);color:var(--paper)}
+.reach .eyebrow{color:var(--yellow)}
+.reach-in{display:grid;gap:1.6rem}
+.reach h2{color:var(--paper);max-width:18ch}
+.reach-sub{margin-top:.8rem;opacity:.75}
+.reach-btns{display:flex;flex-wrap:wrap;gap:.6rem}
+.reach .btn.ghost{border-color:var(--paper);color:var(--paper);background:transparent}
+.reach-more a{color:var(--yellow)}
+.fab{display:none}
+body.on-about .fab{display:none!important}
+@media (max-width:760px){
+  section{padding-block:2.4rem}
+  .page-head{padding-block:2rem 0}
+  .page-head h1{font-size:2.3rem}
+  .page-head p{font-size:1rem}
+  h2{font-size:1.75rem}
+  .hh h1{font-size:2.6rem}
+  .lede{font-size:1.02rem}
+  .logo-panel{padding:22px 20px;gap:10px}
+  .logo-panel svg.big{max-height:140px;width:auto}
+  .doors{gap:12px}
+  .door{min-height:0;padding:20px;gap:.6rem;border-radius:18px}
+  .door h3{font-size:1.5rem}
+  .door ul{margin:0}
+  .ladder{display:grid;grid-auto-flow:column;grid-template-columns:none!important;grid-auto-columns:80%;grid-auto-rows:auto!important;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:16px;gap:12px;padding-bottom:8px;margin-inline:-16px;padding-inline:16px;scrollbar-width:none}
+  .rung{scroll-snap-align:start;margin-top:0!important;padding:22px 16px 16px}
+  .agency-grid{gap:18px}
+  .enquire{margin-top:2rem;padding:18px}
+  .stage h1{font-size:2.5rem}
+  .fab{display:inline-flex;position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:30;padding:.85rem 1.2rem;border-radius:999px;background:var(--yellow);color:#16131F;font-weight:700;text-decoration:none;box-shadow:0 12px 30px -10px rgba(0,0,0,.55);transition:transform .25s,opacity .25s}
+  .fab.away{opacity:0;transform:translateY(20px);pointer-events:none}
+}
 </style>
 </head>
 <body>
@@ -594,14 +630,14 @@ footer .fl svg{width:18px;height:23px}
   <div class="wrap nav">
     <a class="brand" href="#home" aria-label="Big Web Studios home"><svg class="logo" viewBox="0 0 600 776" aria-hidden="true"><defs><clipPath id="lg-h"><path d="M0 0H288A200 200 0 0 1 288 400H0Z"/></clipPath></defs><path d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#9255A2"/><path d="M0 0H288A200 200 0 0 1 288 400H0Z" fill="#40BEEE"/><path clip-path="url(#lg-h)" d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#5789C8"/><circle cx="152" cy="624" r="152" fill="#FEC200"/></svg><span class="wm"><b>bigweb</b><small>STUDIOS</small></span></a>
     <nav class="links" aria-label="Main">
-      <a href="#artists" data-nav="artists">Artists</a><a href="#creators" data-nav="creators">Creators</a><a href="#brands" data-nav="brands">Brands</a><a href="#spaces" data-nav="spaces">Spaces</a><a href="#events" data-nav="events">Events</a><a href="#work" data-nav="work">Work</a><a href="#about" data-nav="about">About</a><a href="/blog/">Blog</a>
+      <a href="#artists" data-nav="artists">Artists</a><a href="#creators" data-nav="creators">Creators</a><a href="#brands" data-nav="brands">Brands</a><a href="#spaces" data-nav="spaces">Spaces</a><a href="#work" data-nav="work">Work</a><a href="#events" data-nav="events">Events</a><a href="#about" data-nav="about">About</a><a href="/blog/">Blog</a>
       <a class="btn" href="#book">Book Now</a>
     </nav>
   </div>
 </header>
 
 <main id="top">
-<div data-view="home">
+<div data-view="home" id="home" class="scene">
 <section class="home-hero">
   <div class="wrap hh">
     <div>
@@ -630,22 +666,9 @@ footer .fl svg{width:18px;height:23px}
     <div class="status" aria-label="What's open"><span><i></i>Podcast &amp; content space · open</span><span><i></i>Creator packages · open</span><span><i></i>Brand work · open</span><span><i class="soon"></i>Music studio &amp; jam room · coming soon</span></div>
   </div>
 </section>
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">The Spaces</p><h2>Everything starts in the studio.</h2><p>The whole ground floor of our place in Dwarka is set up for making things. The podcast and content space is open now; the music studio is being built next.</p></div>
-    <div class="spaces mini">
-      <a class="space" href="#spaces"><div class="art a1"><span class="dims">Two sets</span><span class="tag live">Open now</span></div><div class="body"><h3>Podcast &amp; content studio</h3><p style="color:var(--muted)">Two set walls with different backdrops. From ₹1,000/hr.</p></div></a>
-      <a class="space" href="#spaces"><div class="art a3"><span class="dims">Control room + jam room</span><span class="tag">Coming soon</span></div><div class="body"><h3>Music studio</h3><p style="color:var(--muted)">Record, rehearse, mix and master under one roof.</p></div></a>
-      <a class="space" href="#events"><div class="art a2"><span class="dims">Live and on stage</span><span class="tag live">Enquire</span></div><div class="body"><h3>Events &amp; stages</h3><p style="color:var(--muted)">Open mics, concerts and festivals.</p></div></a>
-    </div>
-  </div>
-</section>
-<section style="padding-top:0">
-  <div class="wrap"><div class="cta-band"><h2>Ready to make something?</h2><div style="display:flex;gap:.8rem;flex-wrap:wrap"><a class="btn yellow" href="#book">Book a slot</a><a class="btn ghost" href="https://wa.me/919871920493" target="_blank" rel="noopener">WhatsApp us</a></div></div></div>
-</section>
 </div>
 
-<div data-view="artists" hidden>
+<div data-view="artists" id="artists" class="scene">
 <section class="page-head"><div class="wrap"><p class="eyebrow">For Artists · musicians and bands</p><h1>Record. Release. <span style="background:var(--purple);color:var(--purple-ink);padding:0 .1em;border-radius:.12em">Rise.</span></h1><p>Start from scratch and end on stage. Each step builds on the one before, so you only take on what you need right now.</p></div></section>
 <section style="padding-top:3rem">
   <div class="wrap">
@@ -683,7 +706,7 @@ footer .fl svg{width:18px;height:23px}
 </section>
 </div>
 
-<div data-view="creators" hidden>
+<div data-view="creators" id="creators" class="scene">
 <section class="page-head"><div class="wrap"><p class="eyebrow">For Creators · podcasters, influencers, content creators</p><h1>Shoot. Share. <span style="background:var(--blue);color:var(--blue-ink);padding:0 .1em;border-radius:.12em">Shine.</span></h1><p>Start by renting the space and shooting on your own. Hand over more as you grow, until we run the whole thing for you.</p></div></section>
 <section style="padding-top:3rem">
   <div class="wrap">
@@ -714,7 +737,7 @@ footer .fl svg{width:18px;height:23px}
 </section>
 </div>
 
-<div data-view="brands" hidden>
+<div data-view="brands" id="brands" class="scene">
 <section class="page-head"><div class="wrap"><p class="eyebrow">For Brands</p><h1>Spot. Sponsor. <span style="background:var(--yellow);color:var(--yellow-ink);padding:0 .1em;border-radius:.12em">Stand out.</span></h1><p>Reach people through the artists and creators they already follow, in content that feels earned, not bought.</p></div></section>
 <section style="padding-top:3rem">
   <div class="wrap">
@@ -757,7 +780,7 @@ footer .fl svg{width:18px;height:23px}
 </section>
 </div>
 
-<div data-view="spaces" hidden>
+<div data-view="spaces" id="spaces" class="scene">
 <section class="page-head"><div class="wrap"><p class="eyebrow">The Spaces</p><h1>Book the room.</h1><p>Book by the hour and work on your own, or add a sound engineer or camera operator.</p></div></section>
 <section id="space-list" style="padding-top:3rem">
   <div class="wrap">
@@ -911,63 +934,7 @@ footer .fl svg{width:18px;height:23px}
 </section>
 </div>
 
-<div data-view="events" hidden>
-<section class="stage" id="stage">
-  <div class="beams" aria-hidden="true"><i class="beam b1"></i><i class="beam b2"></i><i class="beam b3"></i></div>
-  <div class="haze" aria-hidden="true"></div>
-  <div class="wrap stage-in">
-    <p class="eyebrow">Events</p>
-    <h1>Where the <span class="hl">spotlight</span> lands.</h1>
-    <p>Festivals, concerts, corporate and experiential events. This is where artists step into the spotlight, creators meet their audience and brands become part of the moment.</p>
-    <div class="ctas"><a class="btn yellow" href="#evForm">Plan an event</a><a class="btn ghost" href="#artists">Play a show</a></div>
-  </div>
-  <div class="eq" aria-hidden="true"></div>
-</section>
-<div class="ticker" aria-hidden="true"><div class="tk"><span>Festivals ✦ Concerts ✦ Open mics ✦ Corporate ✦ Experiential ✦ Campus ✦ </span><span>Festivals ✦ Concerts ✦ Open mics ✦ Corporate ✦ Experiential ✦ Campus ✦ </span></div></div>
-<section style="padding-top:4rem">
-  <div class="wrap">
-    <div class="tiles">
-      <div class="tile t-yellow"><span class="no">01</span><h3>Festivals</h3><p>Bigger stages through our festival partners, for artists ready to step up.</p></div>
-      <div class="tile t-purple"><span class="no">02</span><h3>Concerts &amp; gigs</h3><p>Shows for bands and solo musicians, from line-up to show day.</p></div>
-      <div class="tile t-blue"><span class="no">03</span><h3>Campus &amp; brand events</h3><p>College fests, campus tours and brand launches with live music at the centre.</p></div>
-      <div class="tile t-ink"><span class="no">04</span><h3>Open mics</h3><p>Low-pressure nights for new artists to test songs and find their crowd.</p></div>
-      <div class="tile t-purple"><span class="no">05</span><h3>Corporate events</h3><p>Annual days, offsites, award nights and client evenings, with live acts, hosts and content handled.</p></div>
-      <div class="tile t-yellow"><span class="no">06</span><h3>Experiential events</h3><p>Pop-ups, brand activations and immersive experiences that people remember, film and share.</p></div>
-    </div>
-    <div class="side-card" style="margin-top:2.5rem">
-      <div><p class="eyebrow"><span class="live-dot"></span>Announcing soon</p><h3>First events announced soon.</h3><p>Follow <a href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">@bigwebstudios</a> to hear first about open mics, gigs and festival slots.</p></div>
-      <a class="btn ghost" href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">Follow on Instagram</a>
-    </div>
-    <div class="ev-forms">
-      <form class="panel y" id="evForm" novalidate><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <h3>Book an artist or plan an event</h3>
-        <p>Tell us what you have in mind. We'll come back with ideas, artists and a quote.</p>
-        <div class="row two">
-          <div class="field"><label for="evName">Your name or organisation</label><input id="evName" placeholder="Name, college or brand"><span class="err" id="eevName"></span></div>
-          <div class="field"><label for="evPhone">WhatsApp number</label><input id="evPhone" inputmode="tel" placeholder="+91 98xxx xxxxx"><span class="err" id="eevPhone"></span></div>
-        </div>
-        <div class="field"><label for="evEmail">Email</label><input id="evEmail" type="email" autocomplete="email" placeholder="you@email.com"><span class="err" id="eevEmail"></span></div>
-        <div class="row">
-          <div class="field"><label for="evType">What do you need?</label><select id="evType"><option>Artist or band booking</option><option>Festival</option><option>Concert or gig</option><option>College fest</option><option>Open mic</option><option>Corporate event</option><option>Experiential event or brand activation</option><option>Brand or private event</option><option>Something else</option></select></div>
-          <div class="field"><label for="evDate">Event date</label><input id="evDate" type="date"></div>
-          <div class="field"><label for="evSize">Expected audience</label><select id="evSize"><option>Under 100</option><option>100 to 500</option><option>500 to 2,000</option><option>2,000+</option><option>Not sure yet</option></select></div>
-        </div>
-        <div class="field"><label for="evCity">City and venue (if known)</label><input id="evCity" placeholder="New Delhi"></div>
-        <div class="field"><label for="evMsg">Tell us more</label><textarea id="evMsg" placeholder="Genre, artists you like, budget range, anything else"></textarea><span class="err" id="eevMsg"></span></div>
-        <div><button class="btn" type="submit">Prepare my enquiry</button></div>
-        <div class="out" id="evOut" hidden></div>
-      </form>
-      <div class="panel o">
-        <h3>Want to play?</h3>
-        <p style="color:var(--muted)">Musicians and bands: send us your music and we'll keep you in mind for open mics, gigs and festival slots.</p>
-        <div><a class="btn" href="#artists">Send your music</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-</div>
-
-<div data-view="work" hidden>
+<div data-view="work" id="work" class="scene">
 <section class="page-head"><div class="wrap"><p class="eyebrow">Work</p><h1>Made here. <span style="background:var(--blue);color:var(--blue-ink);padding:0 .1em;border-radius:.12em">Seen everywhere.</span></h1><p>Music videos, reels and content we've produced and edited for artists and creators.</p></div></section>
 <section style="padding-top:3rem">
   <div class="wrap">
@@ -1051,12 +1018,86 @@ footer .fl svg{width:18px;height:23px}
       <a class="igt" href="https://www.instagram.com/p/DW_kJsokzb5/" target="_blank" rel="noopener" aria-label="Watch AARAA debut track on Instagram"><img src="media/ig-DW_kJsokzb5.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>AARAA debut track</b><small>@aaraa.music × @vijesh.poolakkil</small><em>Watch on Instagram ↗</em></span></a>
       <a class="igt" data-video="media/ig-DFSiPZBP4Dg.mp4" href="https://www.instagram.com/reel/DFSiPZBP4Dg/" target="_blank" rel="noopener" aria-label="Play Jeevamshamayi (cover)"><img src="media/ig-DFSiPZBP4Dg.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Jeevamshamayi (cover)</b><small>@akkimanoharan · at the studio</small><em>▶ Play here</em></span></a>
     </div>
-    <div class="cta-band" style="margin-top:3rem"><h2>Want something like this?</h2><div style="display:flex;gap:.8rem;flex-wrap:wrap"><a class="btn yellow" href="#artists">For artists</a><a class="btn ghost" href="#creators">For creators</a></div></div>
   </div>
 </section>
 </div>
 
-<div data-view="about" hidden>
+<div data-view="events" id="events" class="scene">
+<section class="stage" id="stage">
+  <div class="beams" aria-hidden="true"><i class="beam b1"></i><i class="beam b2"></i><i class="beam b3"></i></div>
+  <div class="haze" aria-hidden="true"></div>
+  <div class="wrap stage-in">
+    <p class="eyebrow">Events</p>
+    <h1>Where the <span class="hl">spotlight</span> lands.</h1>
+    <p>Festivals, concerts, corporate and experiential events. This is where artists step into the spotlight, creators meet their audience and brands become part of the moment.</p>
+    <div class="ctas"><a class="btn yellow" href="#evForm">Plan an event</a><a class="btn ghost" href="#artists">Play a show</a></div>
+  </div>
+  <div class="eq" aria-hidden="true"></div>
+</section>
+<div class="ticker" aria-hidden="true"><div class="tk"><span>Festivals ✦ Concerts ✦ Open mics ✦ Corporate ✦ Experiential ✦ Campus ✦ </span><span>Festivals ✦ Concerts ✦ Open mics ✦ Corporate ✦ Experiential ✦ Campus ✦ </span></div></div>
+<section style="padding-top:4rem">
+  <div class="wrap">
+    <div class="tiles">
+      <div class="tile t-yellow"><span class="no">01</span><h3>Festivals</h3><p>Bigger stages through our festival partners, for artists ready to step up.</p></div>
+      <div class="tile t-purple"><span class="no">02</span><h3>Concerts &amp; gigs</h3><p>Shows for bands and solo musicians, from line-up to show day.</p></div>
+      <div class="tile t-blue"><span class="no">03</span><h3>Campus &amp; brand events</h3><p>College fests, campus tours and brand launches with live music at the centre.</p></div>
+      <div class="tile t-ink"><span class="no">04</span><h3>Open mics</h3><p>Low-pressure nights for new artists to test songs and find their crowd.</p></div>
+      <div class="tile t-purple"><span class="no">05</span><h3>Corporate events</h3><p>Annual days, offsites, award nights and client evenings, with live acts, hosts and content handled.</p></div>
+      <div class="tile t-yellow"><span class="no">06</span><h3>Experiential events</h3><p>Pop-ups, brand activations and immersive experiences that people remember, film and share.</p></div>
+    </div>
+    <div class="side-card" style="margin-top:2.5rem">
+      <div><p class="eyebrow"><span class="live-dot"></span>Announcing soon</p><h3>First events announced soon.</h3><p>Follow <a href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">@bigwebstudios</a> to hear first about open mics, gigs and festival slots.</p></div>
+      <a class="btn ghost" href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">Follow on Instagram</a>
+    </div>
+    <div class="ev-forms">
+      <form class="panel y" id="evForm" novalidate><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <h3>Book an artist or plan an event</h3>
+        <p>Tell us what you have in mind. We'll come back with ideas, artists and a quote.</p>
+        <div class="row two">
+          <div class="field"><label for="evName">Your name or organisation</label><input id="evName" placeholder="Name, college or brand"><span class="err" id="eevName"></span></div>
+          <div class="field"><label for="evPhone">WhatsApp number</label><input id="evPhone" inputmode="tel" placeholder="+91 98xxx xxxxx"><span class="err" id="eevPhone"></span></div>
+        </div>
+        <div class="field"><label for="evEmail">Email</label><input id="evEmail" type="email" autocomplete="email" placeholder="you@email.com"><span class="err" id="eevEmail"></span></div>
+        <div class="row">
+          <div class="field"><label for="evType">What do you need?</label><select id="evType"><option>Artist or band booking</option><option>Festival</option><option>Concert or gig</option><option>College fest</option><option>Open mic</option><option>Corporate event</option><option>Experiential event or brand activation</option><option>Brand or private event</option><option>Something else</option></select></div>
+          <div class="field"><label for="evDate">Event date</label><input id="evDate" type="date"></div>
+          <div class="field"><label for="evSize">Expected audience</label><select id="evSize"><option>Under 100</option><option>100 to 500</option><option>500 to 2,000</option><option>2,000+</option><option>Not sure yet</option></select></div>
+        </div>
+        <div class="field"><label for="evCity">City and venue (if known)</label><input id="evCity" placeholder="New Delhi"></div>
+        <div class="field"><label for="evMsg">Tell us more</label><textarea id="evMsg" placeholder="Genre, artists you like, budget range, anything else"></textarea><span class="err" id="eevMsg"></span></div>
+        <div><button class="btn" type="submit">Prepare my enquiry</button></div>
+        <div class="out" id="evOut" hidden></div>
+      </form>
+      <div class="panel o">
+        <h3>Want to play?</h3>
+        <p style="color:var(--muted)">Musicians and bands: send us your music and we'll keep you in mind for open mics, gigs and festival slots.</p>
+        <div><a class="btn" href="#artists">Send your music</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="scene" id="reach">
+<section class="reach">
+  <div class="wrap reach-in">
+    <div>
+      <p class="eyebrow">Get in touch</p>
+      <h2>Come see the room, or tell us what you're making.</h2>
+      <p class="reach-sub">Studio open daily, 10:00–22:00 · Plot 45, Qutub Vihar Phase 1, opp. Dwarka Sector 19, New Delhi</p>
+    </div>
+    <div class="reach-btns">
+      <a class="btn yellow" href="#book">Book the studio</a>
+      <a class="btn ghost" href="https://wa.me/919871920493" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn ghost" href="tel:+919871920493">Call</a>
+      <a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=28.5781847,77.0358273" target="_blank" rel="noopener">Directions</a>
+      <a class="btn ghost" href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <p class="reach-more"><a href="#about">Our story →</a> · <a href="/blog/">Guides and blog →</a></p>
+  </div>
+</section>
+</div>
+<div data-view="about" id="about" hidden>
 <section class="page-head"><div class="wrap"><p class="eyebrow">About</p><h1>Started as a hustle. Now it has a home.</h1></div></section>
 <section id="story" style="padding-top:3rem">
   <div class="wrap story">
@@ -1106,6 +1147,7 @@ footer .fl svg{width:18px;height:23px}
 </section>
 </div>
 </main>
+<a class="fab" id="fab" href="#book">Book the studio</a>
 <footer><div class="wrap"><span class="fl"><svg class="" viewBox="0 0 600 776" aria-hidden="true"><defs><clipPath id="lg-f"><path d="M0 0H288A200 200 0 0 1 288 400H0Z"/></clipPath></defs><path d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#9255A2"/><path d="M0 0H288A200 200 0 0 1 288 400H0Z" fill="#40BEEE"/><path clip-path="url(#lg-f)" d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#5789C8"/><circle cx="152" cy="624" r="152" fill="#FEC200"/></svg><b style="font-family:var(--f-display)">bigweb</b> STUDIOS · From the studio to the spotlight</span><span style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap"><a class="ig-foot" href="https://wa.me/919871920493" target="_blank" rel="noopener">WhatsApp +91 98719 20493</a><a class="ig-foot" href="mailto:bigwebstudio.com@gmail.com">bigwebstudio.com@gmail.com</a><a class="ig-foot" href="/blog/">Blog</a><a class="ig-foot" href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener" aria-label="Big Web Studios on Instagram"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg>@bigwebstudios</a></span></div></footer>
 
 <script>
@@ -1455,18 +1497,35 @@ footer .fl svg{width:18px;height:23px}
     st.addEventListener("pointermove",e=>{ if(e.pointerType!=="mouse") return; const r=st.getBoundingClientRect(); st.style.setProperty("--px",(((e.clientX-r.left)/r.width-.5)*2).toFixed(3)); });
     st.addEventListener("pointerleave",()=>st.style.setProperty("--px","0"));
   })();
-  const VIEWS=["home","artists","creators","brands","spaces","events","work","about"];
+  // One scrolling story (home → events) plus a separate About page.
+  const STORY=["home","artists","creators","brands","spaces","work","events"];
+  const about=document.getElementById("about");
+  const storyEls=[...document.querySelectorAll(".scene")];
+  let first=true;
+  function setNav(t){document.querySelectorAll("[data-nav]").forEach(a=>{a.dataset.nav===t?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current");});}
   function route(){
-    let t=(location.hash||"#home").slice(1), target=null;
-    if(!VIEWS.includes(t)){const el=t&&document.getElementById(t); const v=el&&el.closest("[data-view]"); if(v){target=el; t=v.dataset.view;} else t="home";}
-    document.querySelectorAll("[data-view]").forEach(v=>{v.hidden=v.dataset.view!==t;});
-    if(t==="work"&&window.loadIG) window.loadIG();
-    document.querySelectorAll("[data-nav]").forEach(a=>{a.dataset.nav===t?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current");});
-    if(target) target.scrollIntoView(); else window.scrollTo(0,0);
+    const h=(location.hash||"").slice(1);
+    const el=h&&document.getElementById(h);
+    const inAbout=h==="about"||(el&&about.contains(el));
+    storyEls.forEach(v=>{v.hidden=inAbout;});
+    about.hidden=!inAbout;
+    document.body.classList.toggle("on-about",inAbout);
+    if(inAbout){ setNav("about"); if(el&&el!==about) el.scrollIntoView(); else window.scrollTo(0,0); }
+    else if(el){ el.scrollIntoView({behavior:first?"auto":"smooth"}); }
+    else if(!first) window.scrollTo({top:0,behavior:"smooth"});
+    if(window.loadIG) window.loadIG();
+    first=false;
   }
+  // highlight the section you're reading
+  const spy=new IntersectionObserver(es=>{ if(document.body.classList.contains("on-about")) return;
+    es.forEach(e=>{ if(e.isIntersecting) setNav(e.target.id); }); },{rootMargin:"-45% 0px -50% 0px"});
+  STORY.forEach(id=>{const v=document.getElementById(id); if(v) spy.observe(v);});
   window.addEventListener("hashchange",route);
   document.addEventListener("click",e=>{const a=e.target.closest('a[href^="#"]'); if(a&&a.getAttribute("href")===location.hash){e.preventDefault(); route();}});
   route();
+  // floating Book button: hide while the booking form is on screen
+  const fab=document.getElementById("fab"), bk=document.getElementById("book");
+  if(fab&&bk) new IntersectionObserver(es=>es.forEach(e=>fab.classList.toggle("away",e.isIntersecting)),{threshold:.15}).observe(bk);
 
 })();
 
