@@ -597,6 +597,18 @@ footer .fl svg{width:18px;height:23px}
 .enq-open .chev{display:inline-block;transition:transform .2s}
 .open > .enq-open .chev,.enquire:not(.closed) .enq-open .chev{transform:rotate(180deg)}
 @media (min-width:861px){.enquire.closed{display:flex;align-items:center;justify-content:space-between;gap:2rem}.enquire.closed .enq-open{margin-top:0;flex:none}}
+
+/* chapters + hand-offs */
+.page-head h2.ch{font-size:clamp(2.6rem,7vw,5rem);font-weight:800;letter-spacing:-0.03em;line-height:1;margin:.6rem 0 0}
+.stage h2.ch{font-size:clamp(3rem,9vw,7rem);font-weight:800;letter-spacing:-0.035em;line-height:.95;max-width:12ch;text-shadow:0 6px 40px rgba(0,0,0,.6);margin:.6rem 0 0}
+.chap .chn{display:inline-grid;place-items:center;min-width:2.1em;height:2.1em;margin-right:.55em;border-radius:999px;background:var(--ink);color:var(--paper);font-weight:600;letter-spacing:0}
+.stage .chap .chn{background:var(--yellow);color:#16131F}
+.next-wrap{padding-bottom:clamp(2.5rem,6vw,4rem)}
+.next{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.4rem;border-radius:var(--r);border:1px dashed var(--line);color:var(--ink);text-decoration:none;font-family:var(--f-display);font-weight:600;font-size:clamp(1.05rem,2.2vw,1.35rem);transition:background .2s,border-color .2s}
+.next i{font-style:normal;display:grid;place-items:center;width:2.2rem;height:2.2rem;flex:none;border-radius:50%;background:var(--yellow);color:#16131F;transition:transform .2s}
+.next:hover{background:var(--surface);border-color:var(--purple)}
+.next:hover i{transform:translateY(3px)}
+@media (max-width:760px){.page-head h2.ch{font-size:2.3rem}.stage h2.ch{font-size:2.5rem}}
 /* ---- single-page story ---- */
 .scene,[id]{scroll-margin-top:96px}
 .scene + .scene{border-top:1px solid var(--line)}
@@ -669,17 +681,16 @@ body.on-about .fab{display:none!important}
 <section style="padding-top:0">
   <div class="wrap">
     <div class="doors">
-      <a class="door d-purple" href="#artists"><span class="k">For Artists · musicians &amp; bands</span><h3>Record. Release. Rise.</h3><ul><li>Music production and distribution</li><li>Music videos and promotion</li><li>Live shows and stage bookings</li></ul><span class="go">Explore artist packages →</span></a>
-      <a class="door d-blue" href="#creators"><span class="k">For Creators · open now</span><h3>Shoot. Share. Shine.</h3><ul><li>Podcast and content space by the hour</li><li>Camera person and editor packages</li><li>Fully managed content</li></ul><span class="go">Start creating →</span></a>
-      <a class="door d-yellow" href="#brands"><span class="k">For Brands</span><h3>Spot. Sponsor. Stand out.</h3><ul><li>Features in artist and creator content</li><li>Product and brand shoots</li><li>Event partnerships</li></ul><span class="go">Put your brand on stage →</span></a>
+      <a class="door d-purple" href="#artists"><span class="k">02 · For Artists · musicians &amp; bands</span><h3>Record. Release. Rise.</h3><ul><li>Music production and distribution</li><li>Music videos and promotion</li><li>Live shows and stage bookings</li></ul><span class="go">Explore artist packages →</span></a>
+      <a class="door d-blue" href="#creators"><span class="k">03 · For Creators · open now</span><h3>Shoot. Share. Shine.</h3><ul><li>Podcast and content space by the hour</li><li>Camera person and editor packages</li><li>Fully managed content</li></ul><span class="go">Start creating →</span></a>
+      <a class="door d-yellow" href="#brands"><span class="k">04 · For Brands</span><h3>Spot. Sponsor. Stand out.</h3><ul><li>Features in artist and creator content</li><li>Product and brand shoots</li><li>Event partnerships</li></ul><span class="go">Put your brand on stage →</span></a>
     </div>
-    <div class="status" aria-label="What's open"><span><i></i>Podcast &amp; content space · open</span><span><i></i>Creator packages · open</span><span><i></i>Brand work · open</span><span><i class="soon"></i>Music studio &amp; jam room · coming soon</span></div>
   </div>
 </section>
 </div>
 
 <div data-view="artists" id="artists" class="scene">
-<section class="page-head"><div class="wrap"><p class="eyebrow">For Artists · musicians and bands</p><h1>Record. Release. <span style="background:var(--purple);color:var(--purple-ink);padding:0 .1em;border-radius:.12em">Rise.</span></h1><p>Start from scratch and end on stage. Each step builds on the one before, so you only take on what you need right now.</p></div></section>
+<section class="page-head"><div class="wrap"><p class="eyebrow chap"><span class="chn">02</span> Make it · for artists and bands</p><h2 class="ch">Record. Release. <span style="background:var(--purple);color:var(--purple-ink);padding:0 .1em;border-radius:.12em">Rise.</span></h2><p>Start from scratch and end on stage. Each step builds on the one before, so you only take on what you need right now.</p></div></section>
 <section style="padding-top:3rem">
   <div class="wrap">
     <ol class="ladder" aria-label="Artist packages">
@@ -688,10 +699,6 @@ body.on-about .fab{display:none!important}
       <li class="rung" style="--c:var(--yellow)"><span class="k">Step 3 · Release +</span><h3>Grow</h3><p>Music video production, Instagram and social media, and the full promotion funnel around your release.</p><span class="st live">Videos &amp; promotion · open now</span></li>
       <li class="rung" style="--c:var(--ink)"><span class="k">Step 4 · Grow +</span><h3>Perform</h3><p>Live shows, stage bookings and events, through our festival and venue partners.</p><span class="st live">Enquiries open</span></li>
     </ol>
-    <div class="side-card">
-      <div><p class="eyebrow">For bands</p><h3>Jam room by the hour</h3><p>A treated jam room for band practice, booked by the hour. Being built now. Get on the list and we'll tell you first.</p></div>
-      <span class="st">Coming soon</span>
-    </div>
     <div class="enquire">
       <div>
         <h3>Tell us about your music.</h3>
@@ -714,14 +721,15 @@ body.on-about .fab{display:none!important}
     </div>
   </div>
 </section>
+<div class="wrap next-wrap"><a class="next" href="#creators"><span>Not a musician? Creators use the same room.</span><i aria-hidden="true">↓</i></a></div>
 </div>
 
 <div data-view="creators" id="creators" class="scene">
-<section class="page-head"><div class="wrap"><p class="eyebrow">For Creators · podcasters, influencers, content creators</p><h1>Shoot. Share. <span style="background:var(--blue);color:var(--blue-ink);padding:0 .1em;border-radius:.12em">Shine.</span></h1><p>Start by renting the space and shooting on your own. Hand over more as you grow, until we run the whole thing for you.</p></div></section>
+<section class="page-head"><div class="wrap"><p class="eyebrow chap"><span class="chn">03</span> Share it · for creators and podcasters</p><h2 class="ch">Shoot. Share. <span style="background:var(--blue);color:var(--blue-ink);padding:0 .1em;border-radius:.12em">Shine.</span></h2><p>Start by renting the space and shooting on your own. Hand over more as you grow, until we run the whole thing for you.</p></div></section>
 <section style="padding-top:3rem">
   <div class="wrap">
     <ol class="ladder" aria-label="Creator packages">
-      <li class="rung" style="--c:var(--blue)"><span class="k">Step 1</span><h3>Rent the space</h3><p>Book the podcast and content studio by the hour and shoot on your own. Two set walls with different backdrops.</p><ul><li>Podcast ₹2,000/hr · up to 6 people</li><li>Content ₹1,000/hr · up to 4 people</li><li>10% off for 4+ hours</li></ul><span class="st live">Open now</span><a class="btn" href="#book">Book a slot</a></li>
+      <li class="rung" style="--c:var(--blue)"><span class="k">Step 1</span><h3>Rent the space</h3><p>Book the podcast and content studio by the hour and shoot on your own. Two set walls with different backdrops.</p><ul><li>From ₹1,000/hr · <a href="#spaces">see Spaces ↓</a></li></ul><span class="st live">Open now</span><a class="btn" href="#book">Book a slot</a></li>
       <li class="rung" style="--c:var(--purple)"><span class="k">Step 2 · Space +</span><h3>Shoot &amp; edit</h3><p>Add a camera person and an editor. You talk, we shoot, and you get the edited content back.</p><ul><li>Camera operator +₹1,000/hr</li><li>Editing on quote</li></ul><span class="st live">Open now</span><a class="btn" href="#book">Book with crew</a></li>
       <li class="rung" style="--c:var(--yellow)"><span class="k">Step 3 · Shoot &amp; edit +</span><h3>Fully managed</h3><p>Shooting, editing, posting and content strategy, all handled by us. You just show up.</p><span class="st live">Open now</span><a class="btn ghost" href="#crForm">Enquire</a></li>
       <li class="rung" style="--c:var(--ink)"><span class="k">Step 4 · As you grow</span><h3>Go big</h3><p>PR, events and brand deals. We bridge you to the brands and stages that fit your audience.</p><span class="st live">Enquiries open</span><a class="btn ghost" href="#crForm">Enquire</a></li>
@@ -745,10 +753,11 @@ body.on-about .fab{display:none!important}
     </div>
   </div>
 </section>
+<div class="wrap next-wrap"><a class="next" href="#brands"><span>Artists and creators need backers. That's where brands come in.</span><i aria-hidden="true">↓</i></a></div>
 </div>
 
 <div data-view="brands" id="brands" class="scene">
-<section class="page-head"><div class="wrap"><p class="eyebrow">For Brands</p><h1>Spot. Sponsor. <span style="background:var(--yellow);color:var(--yellow-ink);padding:0 .1em;border-radius:.12em">Stand out.</span></h1><p>Reach people through the artists and creators they already follow, in content that feels earned, not bought.</p></div></section>
+<section class="page-head"><div class="wrap"><p class="eyebrow chap"><span class="chn">04</span> Back it · for brands</p><h2 class="ch">Spot. Sponsor. <span style="background:var(--yellow);color:var(--yellow-ink);padding:0 .1em;border-radius:.12em">Stand out.</span></h2><p>Reach people through the artists and creators they already follow, in content that feels earned, not bought.</p></div></section>
 <section style="padding-top:3rem">
   <div class="wrap">
     <div class="hero-story">
@@ -767,7 +776,7 @@ body.on-about .fab{display:none!important}
       <div class="svc"><h3>Artist &amp; creator sponsorships</h3><p>Get featured in music videos and creator content, matched to your audience and pitched as backing new talent.</p></div>
       <div class="svc"><h3>Product &amp; brand shoots</h3><p>Product photography and brand photo shoots in our studio, with bold backdrops built for camera.</p></div>
       <div class="svc"><h3>Brand videos &amp; content</h3><p>Brand films, reels and social content, planned, shot and edited by one team.</p></div>
-      <div class="svc"><h3>Event partnerships</h3><p>Sponsor open mics, concerts and festivals, and be part of the moment artists step into the spotlight.</p></div>
+      <div class="svc"><h3>Event partnerships</h3><p>Sponsor open mics, concerts and festivals. <a href="#events">See Events ↓</a></p></div>
     </div>
     <div class="enquire" style="background:var(--yellow);color:var(--yellow-ink)">
       <div>
@@ -788,10 +797,11 @@ body.on-about .fab{display:none!important}
     </div>
   </div>
 </section>
+<div class="wrap next-wrap"><a class="next" href="#spaces"><span>All of it starts in one room.</span><i aria-hidden="true">↓</i></a></div>
 </div>
 
 <div data-view="spaces" id="spaces" class="scene">
-<section class="page-head"><div class="wrap"><p class="eyebrow">The Spaces</p><h1>Book the room.</h1><p>Book by the hour and work on your own, or add a sound engineer or camera operator.</p></div></section>
+<section class="page-head"><div class="wrap"><p class="eyebrow chap"><span class="chn">05</span> Where it's made · the spaces</p><h2 class="ch">Book the room.</h2><p>Book by the hour and work on your own, or add a sound engineer or camera operator.</p></div></section>
 <section id="space-list" style="padding-top:3rem">
   <div class="wrap">
     <div class="spaces">
@@ -942,10 +952,11 @@ body.on-about .fab{display:none!important}
     </div>
   </div>
 </section>
+<div class="wrap next-wrap"><a class="next" href="#work"><span>See what's been made here.</span><i aria-hidden="true">↓</i></a></div>
 </div>
 
 <div data-view="work" id="work" class="scene">
-<section class="page-head"><div class="wrap"><p class="eyebrow">Work</p><h1>Made here. <span style="background:var(--blue);color:var(--blue-ink);padding:0 .1em;border-radius:.12em">Seen everywhere.</span></h1><p>Music videos, reels and content we've produced and edited for artists and creators.</p></div></section>
+<section class="page-head"><div class="wrap"><p class="eyebrow chap"><span class="chn">06</span> The proof · our work</p><h2 class="ch">Made here. <span style="background:var(--blue);color:var(--blue-ink);padding:0 .1em;border-radius:.12em">Seen everywhere.</span></h2><p>Music videos, reels and content we've produced and edited for artists and creators.</p></div></section>
 <section style="padding-top:3rem">
   <div class="wrap">
     <div class="feature">
@@ -1030,6 +1041,7 @@ body.on-about .fab{display:none!important}
     </div>
   </div>
 </section>
+<div class="wrap next-wrap"><a class="next" href="#events"><span>And where it all ends up.</span><i aria-hidden="true">↓</i></a></div>
 </div>
 
 <div data-view="events" id="events" class="scene">
@@ -1037,8 +1049,8 @@ body.on-about .fab{display:none!important}
   <div class="beams" aria-hidden="true"><i class="beam b1"></i><i class="beam b2"></i><i class="beam b3"></i></div>
   <div class="haze" aria-hidden="true"></div>
   <div class="wrap stage-in">
-    <p class="eyebrow">Events</p>
-    <h1>Where the <span class="hl">spotlight</span> lands.</h1>
+    <p class="eyebrow chap"><span class="chn">07</span> The spotlight · events</p>
+    <h2 class="ch">Where the <span class="hl">spotlight</span> lands.</h2>
     <p>Festivals, concerts, corporate and experiential events. This is where artists step into the spotlight, creators meet their audience and brands become part of the moment.</p>
     <div class="ctas"><a class="btn yellow" href="#evForm">Plan an event</a><a class="btn ghost" href="#artists">Play a show</a></div>
   </div>
@@ -1509,7 +1521,7 @@ body.on-about .fab{display:none!important}
   })();
 
   // Enquiry forms start collapsed; a button (or any link to the form) opens them.
-  const LABELS={arForm:"Tell us about your music",crForm:"Get a plan and quote",brForm:"Find my artist",evForm:"Plan my event"};
+  const LABELS={arForm:"Send your music",crForm:"Get a plan and quote",brForm:"Find my artist",evForm:"Plan my event"};
   const cards=[];
   document.querySelectorAll(".enquire").forEach(c=>{const f=c.querySelector("form"); if(f) cards.push({card:c,form:f,host:c.firstElementChild});});
   const ev=document.getElementById("evForm"); if(ev) cards.push({card:ev,form:ev,host:null});
