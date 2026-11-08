@@ -454,6 +454,8 @@ footer .fl svg{width:18px;height:23px}
 .tags li{font:500 .78rem var(--f-mono);padding:.35rem .7rem;border-radius:999px;border:1.5px solid var(--line)}
 .testi{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center;margin-top:4.5rem;padding:clamp(1.2rem,3vw,2rem);border-radius:var(--r);background:var(--purple);color:#fff}
 .testi .eyebrow{color:#FEC200}
+.testi.y{background:var(--yellow);color:#16131F;margin-top:1.4rem}.testi.y .eyebrow{color:#16131F;opacity:.75}.testi.y h2{color:#16131F}.testi.y a{color:#16131F;text-decoration:underline}
+@media (min-width:761px){.testi.rev{grid-template-columns:1fr minmax(0,340px)}.testi.rev .testi-vid{order:2}}
 .testi h2{color:#fff}
 .testi a{color:#FEC200}
 .testi-vid{margin:0;border-radius:calc(var(--r) - 4px);overflow:hidden;background:#000;aspect-ratio:9/16;box-shadow:0 24px 50px -24px rgba(0,0,0,.6)}
@@ -955,13 +957,24 @@ footer .fl svg{width:18px;height:23px}
 </div>
     <div class="testi">
       <figure class="testi-vid">
-        <video id="testiVid" src="media/testimonial-sumit.mp4" poster="media/testimonial-sumit.jpg" playsinline preload="none" controls aria-label="Testimonial from Sumit"></video>
+        <video id="testiVid" class="testi-v" src="media/testimonial-sumit.mp4" poster="media/testimonial-sumit.jpg" playsinline preload="none" controls aria-label="Testimonial from Sumit"></video>
       </figure>
       <div class="testi-txt">
         <p class="eyebrow">In their words</p>
         <h2>Don't take our word for it.</h2>
         <p>Sumit on working with Big Web Studios, in his own words. Press play, sound on.</p>
         <p class="testi-by"><b>Sumit</b> · <a href="https://www.instagram.com/09sumit/" target="_blank" rel="noopener">@09sumit</a> · shot at Big Web Studios, Jan 2024</p>
+      </div>
+    </div>
+    <div class="testi y rev">
+      <figure class="testi-vid">
+        <video class="testi-v" src="media/testimonial-sheslayyyss.mp4" poster="media/testimonial-sheslayyyss.jpg" playsinline preload="none" controls aria-label="Creator reel shot at Big Web Studios"></video>
+      </figure>
+      <div class="testi-txt">
+        <p class="eyebrow">Creators × brands</p>
+        <h2>Shot here, for a brand.</h2>
+        <p>A creator shot her brand reel in our studio and told her followers where it was made. This is exactly what the space is for.</p>
+        <p class="testi-by"><b>@sheslayyyss</b> · <a href="https://www.instagram.com/sheslayyyss/" target="_blank" rel="noopener">Instagram</a> · reel for @zoukonline, Jul 2026</p>
       </div>
     </div>
     <div class="sec-head" style="margin-top:4rem"><p class="eyebrow">Behind the scenes</p><h2>Between the takes.</h2><p>Set-ups, shoots and jam days at the studio, from the <a href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">@bigwebstudios</a> highlights.</p></div>
@@ -1417,8 +1430,8 @@ footer .fl svg{width:18px;height:23px}
       v.muted=!on; if(!v.muted){v.parentElement.classList.add('sound'); v.currentTime=0; v.play().catch(()=>{});}
     });
   });
-  const t=document.getElementById('testiVid');
-  if(t) t.addEventListener('play',()=>clips.forEach(o=>{o.muted=true;o.parentElement.classList.remove('sound')}));
+  const tv=[...document.querySelectorAll('.testi-v')];
+  tv.forEach(t=>t.addEventListener('play',()=>{clips.forEach(o=>{o.muted=true;o.parentElement.classList.remove('sound')});tv.forEach(o=>{if(o!==t)o.pause()});}));
 })();
 </script>
 
