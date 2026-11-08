@@ -497,7 +497,18 @@ footer .fl svg{width:18px;height:23px}
 .clipbox::backdrop{background:rgba(10,8,16,.92)}
 .clipbox[open]{display:grid;place-items:center}
 .clipbox-in{position:relative;display:grid;gap:.7rem;justify-items:center;width:min(92vw,440px)}
-.clipbox video{width:100%;max-height:78dvh;aspect-ratio:9/16;object-fit:contain;background:#000;border-radius:14px}
+.cb-stage{position:relative;width:100%;border-radius:14px;overflow:hidden;background:#000;cursor:pointer}
+.clipbox video{width:100%;max-height:78dvh;aspect-ratio:9/16;object-fit:contain;background:#000;display:block}
+.cb-big{position:absolute;inset:0;margin:auto;width:70px;height:70px;border-radius:50%;background:var(--yellow);color:#16131F;display:grid;place-items:center;opacity:0;transform:scale(.8);transition:opacity .2s,transform .2s;pointer-events:none}
+.cb-big svg{width:30px;height:30px;margin-left:4px}
+.cb-stage.paused .cb-big{opacity:1;transform:none}
+.cb-bar{position:absolute;left:0;right:0;bottom:0;height:22px;display:flex;align-items:flex-end;cursor:pointer;touch-action:none}
+.cb-bar::before{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.25)}
+.cb-bar i{position:relative;display:block;height:4px;width:0;background:var(--yellow)}
+.tvt{display:block;width:100%;padding:0;border:0;position:relative;cursor:pointer;color:#fff;font:inherit;text-align:left}
+.tvt video{width:100%;height:100%;object-fit:cover;display:block}
+.tvt.playing .igt-play{opacity:0;transform:scale(.6)}
+.tvt.playing .igt-cap{opacity:.0;transition:opacity .3s}
 .clipbox p{margin:0;font-weight:600;text-align:center}
 .cb-ig{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border-radius:99px;background:var(--yellow);color:#16131F!important;font-weight:700;font-size:.85rem;text-decoration:none}
 .cb-ig[hidden]{display:none}
@@ -1005,7 +1016,7 @@ body.on-about .fab{display:none!important}
         <p class="testi-by"><b>Sumit</b> · <a href="https://www.instagram.com/09sumit/" target="_blank" rel="noopener">@09sumit</a></p>
       </div>
       <div class="testi-media">
-        <figure class="tm"><figcaption>His testimonial</figcaption><div class="tm-vid"><video id="testiVid" class="testi-v" src="media/testimonial-sumit.mp4" poster="media/testimonial-sumit.jpg" playsinline preload="none" controls aria-label="Testimonial from Sumit"></video></div></figure>
+        <figure class="tm"><figcaption>His testimonial</figcaption><button type="button" class="tm-vid tvt" aria-label="Play: Testimonial from Sumit"><video class="testi-v" src="media/testimonial-sumit.mp4" poster="media/testimonial-sumit.jpg" playsinline preload="none" muted loop aria-hidden="true"></video><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>His testimonial</b><small>Sumit · @09sumit</small><em>▶ Play</em></span></button></figure>
         <figure class="tm"><figcaption>What he shot here</figcaption><a class="igt" data-video="media/ig-C5imoAHhjgM.mp4" href="https://www.instagram.com/p/C5imoAHhjgM/" target="_blank" rel="noopener" aria-label="Play House of Movement"><img src="media/ig-C5imoAHhjgM.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>House of Movement</b><small>@houseofmovementt × @09sumit</small><em>▶ Play here</em></span></a></figure>
       </div>
     </div>
@@ -1017,7 +1028,7 @@ body.on-about .fab{display:none!important}
         <p class="testi-by"><b>@sheslayyyss</b> · <a href="https://www.instagram.com/sheslayyyss/" target="_blank" rel="noopener">Instagram</a> · for @zoukonline</p>
       </div>
       <div class="testi-media three">
-        <figure class="tm"><figcaption>Her story</figcaption><div class="tm-vid"><video class="testi-v" src="media/testimonial-sheslayyyss.mp4" poster="media/testimonial-sheslayyyss.jpg" playsinline preload="none" controls aria-label="Creator reel shot at Big Web Studios"></video></div></figure>
+        <figure class="tm"><figcaption>Her story</figcaption><button type="button" class="tm-vid tvt" aria-label="Play: Creator reel shot at Big Web Studios"><video class="testi-v" src="media/testimonial-sheslayyyss.mp4" poster="media/testimonial-sheslayyyss.jpg" playsinline preload="none" muted loop aria-hidden="true"></video><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Her story</b><small>@sheslayyyss · for @zoukonline</small><em>▶ Play</em></span></button></figure>
         <figure class="tm"><figcaption>Her Zouk reel</figcaption><a class="igt" data-video="media/ig-DafhG90JX12.mp4" href="https://www.instagram.com/p/DafhG90JX12/" target="_blank" rel="noopener" aria-label="Play Zouk reel"><img src="media/ig-DafhG90JX12.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Zouk reel</b><small>@sheslayyyss for @zoukonline</small><em>▶ Play here</em></span></a></figure>
         <figure class="tm"><figcaption>Same brand, same room</figcaption><a class="igt" data-video="media/ig-Daf4VsiOnNH.mp4" href="https://www.instagram.com/p/Daf4VsiOnNH/" target="_blank" rel="noopener" aria-label="Play Zouk Executive Laptop Bag"><img src="media/ig-Daf4VsiOnNH.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Zouk Executive Laptop Bag</b><small>@theakiolife for @zoukonline</small><em>▶ Play here</em></span></a></figure>
       </div>
@@ -1036,7 +1047,11 @@ body.on-about .fab{display:none!important}
       <button class="cb-btn cb-prev" type="button" data-cb="prev" aria-label="Previous clip">‹</button>
       <button class="cb-btn cb-next" type="button" data-cb="next" aria-label="Next clip">›</button>
       <div class="clipbox-in">
-        <video id="cbVid" controls playsinline></video>
+        <div class="cb-stage" id="cbStage">
+          <video id="cbVid" playsinline></video>
+          <span class="cb-big" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          <div class="cb-bar" id="cbBar" role="slider" aria-label="Seek" tabindex="0"><i id="cbFill"></i></div>
+        </div>
         <p id="cbCap"></p>
         <a class="cb-ig" id="cbIg" href="#" target="_blank" rel="noopener" hidden>Watch on Instagram ↗</a>
         <span class="cb-count" id="cbCount"></span>
@@ -1612,6 +1627,11 @@ body.on-about .fab{display:none!important}
       });
       a.addEventListener('mouseleave',()=>{ a.classList.remove('playing'); if(v){ v.pause(); v.muted=true; } });
     });
+    document.querySelectorAll('.tvt').forEach(b=>{
+      const v=b.querySelector('video');
+      b.addEventListener('mouseenter',()=>{ if(open) return; b.classList.add('playing'); hoverPlay(v); });
+      b.addEventListener('mouseleave',()=>{ b.classList.remove('playing'); v.pause(); v.muted=true; });
+    });
   } else {
     // phone: silent previews while on screen
     const io=new IntersectionObserver((es)=>es.forEach(e=>{
@@ -1643,13 +1663,29 @@ body.on-about .fab{display:none!important}
   });
   // Instagram tiles that have a local copy play here; each group (card or gallery) is its own playlist
   document.querySelectorAll('.testi-media, #igGrid').forEach(g=>{
+    const tvts=[...g.querySelectorAll('.tvt')];
+    const tvItems=tvts.map(b=>{const v=b.querySelector('video');return {src:v.getAttribute('src'),poster:v.getAttribute('poster'),cap:b.querySelector('b').textContent+' · '+b.querySelector('small').textContent,ig:''};});
+    tvts.forEach((b,i)=>b.addEventListener('click',e=>{ e.preventDefault(); e.stopPropagation(); const v=b.querySelector('video'); v.pause(); b.classList.remove('playing'); setTimeout(()=>openList(allItems,i),0); }));
     const tiles=[...g.querySelectorAll('.igt[data-video]')];
     const items=tiles.map(tileItem);
+    const allItems=tvItems.concat(items);
     tiles.forEach((a,i)=>a.addEventListener('click',e=>{
       if(e.metaKey||e.ctrlKey||e.shiftKey||e.button===1) return;
-      e.preventDefault(); e.stopPropagation(); setTimeout(()=>openList(items,i),0);
+      e.preventDefault(); e.stopPropagation(); setTimeout(()=>openList(allItems,tvItems.length+i),0);
     }));
   });
+  // simple controls: tap the video to pause/play, thin bar to seek
+  const stage=document.getElementById('cbStage'), bar=document.getElementById('cbBar'), fill=document.getElementById('cbFill');
+  const sync=()=>stage.classList.toggle('paused',bv.paused);
+  bv.addEventListener('play',sync); bv.addEventListener('pause',sync);
+  bv.addEventListener('timeupdate',()=>{ fill.style.width=(bv.duration?bv.currentTime/bv.duration*100:0)+'%'; });
+  stage.addEventListener('click',e=>{ if(e.target.closest('#cbBar')) return; bv.paused?bv.play().catch(()=>{}):bv.pause(); });
+  const seek=e=>{ const r=bar.getBoundingClientRect(); const x=Math.min(Math.max((e.clientX-r.left)/r.width,0),1); if(bv.duration) bv.currentTime=x*bv.duration; };
+  let drag=false;
+  bar.addEventListener('pointerdown',e=>{ drag=true; try{bar.setPointerCapture(e.pointerId);}catch(_){} seek(e); e.stopPropagation(); });
+  bar.addEventListener('pointermove',e=>{ if(drag) seek(e); });
+  bar.addEventListener('pointerup',()=>{ drag=false; });
+  bar.addEventListener('keydown',e=>{ if(e.key==='ArrowRight') bv.currentTime+=5; if(e.key==='ArrowLeft') bv.currentTime-=5; });
   box.addEventListener('click',e=>{
     const a=e.target.closest('[data-cb]');
     if(a){ const k=a.dataset.cb; if(k==='close') close(); else show(cur+(k==='next'?1:-1)); return; }
@@ -1659,7 +1695,7 @@ body.on-about .fab{display:none!important}
   box.addEventListener('pointerdown',e=>{downOnBox=(e.target===box);});
   igl.addEventListener('click',()=>bv.pause());
   box.addEventListener('close',()=>{ if(open) close(); });
-  box.addEventListener('keydown',e=>{ if(list.length<2) return; if(e.key==='ArrowRight') show(cur+1); if(e.key==='ArrowLeft') show(cur-1); });
+  box.addEventListener('keydown',e=>{ if(e.key===' '&&!e.target.closest('a,button')){ e.preventDefault(); bv.paused?bv.play():bv.pause(); return; } if(list.length<2) return; if(e.key==='ArrowRight') show(cur+1); if(e.key==='ArrowLeft') show(cur-1); });
   let sx=null;
   box.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
   box.addEventListener('touchend',e=>{ if(sx==null||list.length<2) return; const dx=e.changedTouches[0].clientX-sx; sx=null; if(Math.abs(dx)>50) show(cur+(dx<0?1:-1)); });
