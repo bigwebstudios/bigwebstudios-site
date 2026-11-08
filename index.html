@@ -587,6 +587,16 @@ footer .fl svg{width:18px;height:23px}
 .sent{display:grid;gap:.7rem;padding:16px;border-radius:12px;background:var(--surface);color:var(--ink);border:2px solid var(--ok)}
 .sent b{color:var(--ok);font-size:1.05rem}
 
+
+/* collapsed enquiry forms: title + button, form opens on tap */
+.enq-open{margin-top:1rem}
+.enquire.closed{grid-template-columns:1fr;padding-block:clamp(18px,3vw,26px)}
+.enquire.closed form{display:none}
+.enquire.closed .enq-open{margin-top:.9rem}
+#evForm.closed > :not(h3):not(.ev-intro):not(.enq-open){display:none!important}
+.enq-open .chev{display:inline-block;transition:transform .2s}
+.open > .enq-open .chev,.enquire:not(.closed) .enq-open .chev{transform:rotate(180deg)}
+@media (min-width:861px){.enquire.closed{display:flex;align-items:center;justify-content:space-between;gap:2rem}.enquire.closed .enq-open{margin-top:0;flex:none}}
 /* ---- single-page story ---- */
 .scene,[id]{scroll-margin-top:96px}
 .scene + .scene{border-top:1px solid var(--line)}
@@ -1052,7 +1062,7 @@ body.on-about .fab{display:none!important}
     <div class="ev-forms">
       <form class="panel y" id="evForm" novalidate><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <h3>Book an artist or plan an event</h3>
-        <p>Tell us what you have in mind. We'll come back with ideas, artists and a quote.</p>
+        <p class="ev-intro">Tell us what you have in mind. We'll come back with ideas, artists and a quote.</p>
         <div class="row two">
           <div class="field"><label for="evName">Your name or organisation</label><input id="evName" placeholder="Name, college or brand"><span class="err" id="eevName"></span></div>
           <div class="field"><label for="evPhone">WhatsApp number</label><input id="evPhone" inputmode="tel" placeholder="+91 98xxx xxxxx"><span class="err" id="eevPhone"></span></div>
@@ -1497,6 +1507,24 @@ body.on-about .fab{display:none!important}
     st.addEventListener("pointermove",e=>{ if(e.pointerType!=="mouse") return; const r=st.getBoundingClientRect(); st.style.setProperty("--px",(((e.clientX-r.left)/r.width-.5)*2).toFixed(3)); });
     st.addEventListener("pointerleave",()=>st.style.setProperty("--px","0"));
   })();
+
+  // Enquiry forms start collapsed; a button (or any link to the form) opens them.
+  const LABELS={arForm:"Tell us about your music",crForm:"Get a plan and quote",brForm:"Find my artist",evForm:"Plan my event"};
+  const cards=[];
+  document.querySelectorAll(".enquire").forEach(c=>{const f=c.querySelector("form"); if(f) cards.push({card:c,form:f,host:c.firstElementChild});});
+  const ev=document.getElementById("evForm"); if(ev) cards.push({card:ev,form:ev,host:null});
+  function openCard(o,focus){ o.card.classList.remove("closed"); o.card.classList.add("open"); o.btn.setAttribute("aria-expanded","true"); o.btn.querySelector(".lbl").textContent="Close the form";
+    if(focus){ const f=o.form.querySelector("input:not(.hp),select,textarea"); if(f) setTimeout(()=>f.focus({preventScroll:true}),250); } }
+  function closeCard(o){ o.card.classList.add("closed"); o.card.classList.remove("open"); o.btn.setAttribute("aria-expanded","false"); o.btn.querySelector(".lbl").textContent=LABELS[o.form.id]||"Start my enquiry"; }
+  cards.forEach(o=>{
+    const b=document.createElement("button"); b.type="button"; b.className="btn enq-open"; b.setAttribute("aria-controls",o.form.id); b.setAttribute("aria-expanded","false");
+    b.innerHTML='<span class="lbl"></span> <span class="chev" aria-hidden="true">↓</span>';
+    o.btn=b;
+    if(o.host) o.host.appendChild(b); else o.form.insertBefore(b,o.form.querySelector(".ev-intro").nextSibling);
+    closeCard(o);
+    b.addEventListener("click",()=>{ o.card.classList.contains("closed")?openCard(o,true):closeCard(o); });
+  });
+  window.__openForm=function(el){ const o=cards.find(c=>c.card.contains(el)||c.form===el); if(o&&o.card.classList.contains("closed")) openCard(o,false); };
   // One scrolling story (home → events) plus a separate About page.
   const STORY=["home","artists","creators","brands","spaces","work","events"];
   const about=document.getElementById("about");
@@ -1506,6 +1534,7 @@ body.on-about .fab{display:none!important}
   function route(){
     const h=(location.hash||"").slice(1);
     const el=h&&document.getElementById(h);
+    if(el&&window.__openForm) window.__openForm(el);
     const inAbout=h==="about"||(el&&about.contains(el));
     storyEls.forEach(v=>{v.hidden=inAbout;});
     about.hidden=!inAbout;
