@@ -452,6 +452,21 @@ footer .fl svg{width:18px;height:23px}
 .feature-txt > p:not(.eyebrow){color:var(--muted)}
 .tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 .tags li{font:500 .78rem var(--f-mono);padding:.35rem .7rem;border-radius:999px;border:1.5px solid var(--line)}
+.testi{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center;margin-top:4.5rem;padding:clamp(1.2rem,3vw,2rem);border-radius:var(--r);background:var(--purple);color:#fff}
+.testi .eyebrow{color:#FEC200}
+.testi h2{color:#fff}
+.testi a{color:#FEC200}
+.testi-vid{margin:0;border-radius:calc(var(--r) - 4px);overflow:hidden;background:#000;aspect-ratio:9/16;box-shadow:0 24px 50px -24px rgba(0,0,0,.6)}
+.testi-vid video{width:100%;height:100%;object-fit:cover;display:block}
+.testi-txt p{font-size:1.05rem;line-height:1.6;max-width:46ch}
+.testi-by{margin-top:1.2rem;font-family:var(--f-mono);font-size:.85rem!important;opacity:.9}
+.clips{display:grid;grid-auto-flow:column;grid-auto-columns:200px;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin-top:1.4rem}
+.clip{margin:0;scroll-snap-align:start;position:relative;border-radius:var(--r);overflow:hidden;background:#000;aspect-ratio:9/16;cursor:pointer}
+.clip video{width:100%;height:100%;object-fit:cover;display:block}
+.clip figcaption{position:absolute;left:0;right:0;bottom:0;padding:2.2rem .8rem .7rem;font-size:.82rem;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75))}
+.clip.sound::after{content:"🔊";position:absolute;top:.6rem;right:.6rem;font-size:.9rem}
+@media (min-width:1180px){.clips{grid-auto-flow:row;grid-template-columns:repeat(6,1fr);overflow:visible}}
+@media (max-width:760px){.testi{grid-template-columns:1fr}.testi-vid{max-width:300px;margin:0 auto}.clips{grid-auto-columns:46%}}
 .ig-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(326px,100%),1fr));gap:18px;align-items:start}
 .ig-grid .instagram-media{margin:0!important;min-width:0!important;max-width:none!important;width:100%!important;border-radius:var(--r)!important}
 .ig-grid blockquote.instagram-media{background:var(--surface);border:1px solid var(--line);padding:24px;min-height:120px;display:grid;place-items:center}
@@ -938,6 +953,26 @@ footer .fl svg{width:18px;height:23px}
         <a class="btn ghost" href="https://www.youtube.com/watch?v=OSxY08nQVpc" target="_blank" rel="noopener">Watch on YouTube ↗</a>
       </div>
 </div>
+    <div class="testi">
+      <figure class="testi-vid">
+        <video id="testiVid" src="media/testimonial-sumit.mp4" poster="media/testimonial-sumit.jpg" playsinline preload="none" controls aria-label="Testimonial from Sumit"></video>
+      </figure>
+      <div class="testi-txt">
+        <p class="eyebrow">In their words</p>
+        <h2>Don't take our word for it.</h2>
+        <p>Sumit on working with Big Web Studios, in his own words. Press play, sound on.</p>
+        <p class="testi-by"><b>Sumit</b> · <a href="https://www.instagram.com/09sumit/" target="_blank" rel="noopener">@09sumit</a> · shot at Big Web Studios, Jan 2024</p>
+      </div>
+    </div>
+    <div class="sec-head" style="margin-top:4rem"><p class="eyebrow">Behind the scenes</p><h2>Between the takes.</h2><p>Set-ups, shoots and jam days at the studio, from the <a href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">@bigwebstudios</a> highlights.</p></div>
+    <div class="clips" id="btsClips">
+      <figure class="clip"><video src="media/bts-shoot.mp4" poster="media/bts-shoot.jpg" muted loop playsinline preload="none" aria-label="On set: a brand shoot"></video><figcaption>On set: a brand shoot</figcaption></figure>
+      <figure class="clip"><video src="media/bts-setup.mp4" poster="media/bts-setup.jpg" muted loop playsinline preload="none" aria-label="Setting up the room"></video><figcaption>Setting up the room</figcaption></figure>
+      <figure class="clip"><video src="media/bts-jam.mp4" poster="media/bts-jam.jpg" muted loop playsinline preload="none" aria-label="A jam session in the studio"></video><figcaption>A jam session in the studio</figcaption></figure>
+      <figure class="clip"><video src="media/bts-jamday.mp4" poster="media/bts-jamday.jpg" muted loop playsinline preload="none" aria-label="Jamday at Big Web Studios"></video><figcaption>Jamday at Big Web Studios</figcaption></figure>
+      <figure class="clip"><video src="media/bts-portrait.mp4" poster="media/bts-portrait.jpg" muted loop playsinline preload="none" aria-label="Portrait shoot"></video><figcaption>Portrait shoot</figcaption></figure>
+      <figure class="clip"><video src="media/bts-practice.mp4" poster="media/bts-practice.jpg" muted loop playsinline preload="none" aria-label="Between practice sessions"></video><figcaption>Between practice sessions</figcaption></figure>
+    </div>
     <div class="sec-head" style="margin-top:4rem"><p class="eyebrow">Gallery</p><h2>From our Instagram.</h2><p>Reels and shoots from the studio, straight from <a href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">@bigwebstudios</a>.</p></div>
     <div class="ig-grid" id="igGrid">
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DILMl9lJRqi/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DILMl9lJRqi/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
@@ -1364,10 +1399,28 @@ footer .fl svg{width:18px;height:23px}
   route();
 
 })();
-</script>
 
-</body>
-</html>
+// Behind-the-scenes clips: play muted while on screen; tap for sound.
+(function bts(){
+  const clips=[...document.querySelectorAll('#btsClips video')];
+  if(!clips.length) return;
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{
+    const v=e.target;
+    if(e.isIntersecting && !reduce){ if(v.preload==='none') v.preload='auto'; v.play().catch(()=>{}); }
+    else v.pause();
+  }),{threshold:.5});
+  clips.forEach(v=>{
+    io.observe(v);
+    v.parentElement.addEventListener('click',()=>{
+      const on=v.muted; clips.forEach(o=>{o.muted=true;o.parentElement.classList.remove('sound')});
+      v.muted=!on; if(!v.muted){v.parentElement.classList.add('sound'); v.currentTime=0; v.play().catch(()=>{});}
+    });
+  });
+  const t=document.getElementById('testiVid');
+  if(t) t.addEventListener('play',()=>clips.forEach(o=>{o.muted=true;o.parentElement.classList.remove('sound')}));
+})();
+</script>
 
 </body>
 </html>
