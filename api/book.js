@@ -113,7 +113,6 @@ module.exports = async (req, res) => {
     "END:VEVENT",
   ]).flat();
   const ics = ["BEGIN:VCALENDAR", "PRODID:-//Big Web Studios//Booking//EN", "VERSION:2.0", "CALSCALE:GREGORIAN", "METHOD:REQUEST", ...events, "END:VCALENDAR"].map(fold).join("\r\n") + "\r\n";
-  const attachments = [{ filename: "invite.ics", content: Buffer.from(ics).toString("base64"), content_type: "text/calendar; method=REQUEST; charset=UTF-8" }];
 
   const rulesHtml = `<h2 style="font-size:16px;margin:22px 0 8px">Studio rules and policy</h2><ol style="margin:0;padding-left:20px;font-size:14px;line-height:1.55;color:#16131F">${RULES.map((r) => `<li style="margin-bottom:6px">${esc(r)}</li>`).join("")}</ol>`;
   const findHtml = `<h2 style="font-size:16px;margin:22px 0 8px">Finding us</h2><p style="font-size:14px;line-height:1.55;margin:0">${esc(ADDRESS)}<br><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS)}" style="color:#1680B0">Open in Google Maps</a> · WhatsApp ${PHONE} if you can't find the entrance.</p>`;
@@ -130,7 +129,7 @@ module.exports = async (req, res) => {
           `<p style="font-size:14px;line-height:1.55;margin-top:20px">Need to change something? Reply to this email or WhatsApp ${PHONE}.</p>`
       ),
       text: `Hi ${name}, your Big Web Studios session is booked.\n\n` + details.filter(([, v]) => v).map(([k, v]) => `${k}: ${v}`).join("\n") + "\n\nStudio rules:\n" + RULES.map((r, i) => `${i + 1}. ${r}`).join("\n") + `\n\n${ADDRESS}\nWhatsApp ${PHONE}`,
-      attachments,
+      ics,
     });
     await send({
       to: OWNER,
@@ -138,7 +137,8 @@ module.exports = async (req, res) => {
       subject: `New booking ${ref}: ${sp.name}, ${dateLabel}, ${hoursLabel}`,
       html: layout(`New booking: ${esc(name)}`, rows(details) + `<p style="font-size:14px">The calendar invite is attached. Reply to this email to reach ${esc(name)}.</p>`),
       text: details.filter(([, v]) => v).map(([k, v]) => `${k}: ${v}`).join("\n"),
-      attachments,
+      ics,
+      fromName: "Big Web Studios website",
     });
     return res.status(200).json({ ok: true, ref });
   } catch (e) {

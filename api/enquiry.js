@@ -30,6 +30,7 @@ module.exports = async (req, res) => {
     await send({
       to: OWNER,
       replyTo: email,
+      fromName: "Big Web Studios website",
       subject: `New ${label.toLowerCase()}: ${name}`,
       html: layout(`New ${label.toLowerCase()}`, rows(details) + `<p style="font-size:14px">Reply to this email to answer ${esc(name)} directly, or <a href="${wa}" style="color:#1680B0">message them on WhatsApp</a>.</p>`),
       text: details.map(([k, v]) => `${k}: ${v}`).join("\n"),

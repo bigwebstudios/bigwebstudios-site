@@ -1,8 +1,11 @@
 // Shared helpers for the enquiry and booking endpoints.
-// Needs the RESEND_API_KEY environment variable in Vercel.
+// Emails are sent through the Big Web Studios Gmail (same way as akiolife.com).
+// Needs two environment variables in Vercel (Settings -> Environment Variables):
+//   GMAIL_USER          bigwebstudio.com@gmail.com
+//   GMAIL_APP_PASSWORD  a 16-letter Gmail app password, never committed
+const nodemailer = require("nodemailer");
 
 const OWNER = process.env.OWNER_EMAIL || "bigwebstudio.com@gmail.com";
-const FROM = process.env.FROM_EMAIL || "Big Web Studios <bookings@bigwebstudios.com>";
 const SITE = "https://www.bigwebstudios.com";
 const PHONE = "+91 98719 20493";
 const ADDRESS = "Plot 45, Qutub Vihar Phase 1, opp. Dwarka Sector 19, New Delhi 110071";
@@ -11,16 +14,18 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 const isEmail = (s) => typeof s === "string" && s.length <= 200 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
 const clean = (s, max = 2000) => String(s ?? "").replace(/\r/g, "").trim().slice(0, max);
 
-async function send({ to, subject, html, text, replyTo, attachments }) {
-  const key = process.env.RESEND_API_KEY;
-  if (!key) throw new Error("RESEND_API_KEY is not set");
-  const r = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: { Authorization: "Bearer " + key, "Content-Type": "application/json" },
-    body: JSON.stringify({ from: FROM, to: Array.isArray(to) ? to : [to], subject, html, text, reply_to: replyTo, attachments }),
+let transport;
+// ics: optional calendar invite text; sent as a real invite so Gmail shows Yes / No / Maybe.
+async function send({ to, subject, html, text, replyTo, ics, fromName = "Big Web Studios" }) {
+  const user = process.env.GMAIL_USER || OWNER;
+  const pass = (process.env.GMAIL_APP_PASSWORD || "").replace(/\s/g, "");
+  if (!pass) throw new Error("GMAIL_APP_PASSWORD is not set");
+  transport ||= nodemailer.createTransport({ service: "gmail", auth: { user, pass } });
+  return transport.sendMail({
+    from: { name: fromName, address: user },
+    to, subject, html, text, replyTo,
+    ...(ics ? { icalEvent: { method: "REQUEST", filename: "invite.ics", content: ics } } : {}),
   });
-  if (!r.ok) throw new Error("Resend " + r.status + ": " + (await r.text()).slice(0, 300));
-  return r.json();
 }
 
 // Simple branded wrapper for every email.

@@ -1,0 +1,9 @@
+{
+  "name": "bigwebstudios-site",
+  "private": true,
+  "description": "Big Web Studios website. Static index.html plus email functions in /api.",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "nodemailer": "^10.3.1"
+  }
+}
