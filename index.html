@@ -494,9 +494,12 @@ footer .fl svg{width:18px;height:23px}
 .clipbox-in{position:relative;display:grid;gap:.7rem;justify-items:center;width:min(92vw,440px)}
 .clipbox video{width:100%;max-height:78dvh;aspect-ratio:9/16;object-fit:contain;background:#000;border-radius:14px}
 .clipbox p{margin:0;font-weight:600;text-align:center}
+.cb-ig{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border-radius:99px;background:var(--yellow);color:#16131F!important;font-weight:700;font-size:.85rem;text-decoration:none}
+.cb-ig[hidden]{display:none}
 .clipbox .cb-count{font-family:var(--f-mono);font-size:.78rem;opacity:.7}
 .cb-btn{position:fixed;z-index:2;width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;font-size:1.5rem;line-height:1;cursor:pointer;display:grid;place-items:center}
 .cb-btn:hover{background:var(--yellow);color:#16131F}
+.cb-btn[hidden]{display:none}
 .cb-close{top:16px;right:16px}
 .cb-prev{left:16px;top:50%;transform:translateY(-50%)}
 .cb-next{right:16px;top:50%;transform:translateY(-50%)}
@@ -998,7 +1001,7 @@ footer .fl svg{width:18px;height:23px}
       </div>
       <div class="testi-media">
         <figure class="tm"><figcaption>His testimonial</figcaption><div class="tm-vid"><video id="testiVid" class="testi-v" src="media/testimonial-sumit.mp4" poster="media/testimonial-sumit.jpg" playsinline preload="none" controls aria-label="Testimonial from Sumit"></video></div></figure>
-        <figure class="tm"><figcaption>What he shot here</figcaption><a class="igt" href="https://www.instagram.com/p/C5imoAHhjgM/" target="_blank" rel="noopener" aria-label="Watch House of Movement on Instagram"><img src="media/ig-C5imoAHhjgM.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>House of Movement</b><small>@houseofmovementt × @09sumit</small><em>Watch on Instagram ↗</em></span></a></figure>
+        <figure class="tm"><figcaption>What he shot here</figcaption><a class="igt" data-video="media/ig-C5imoAHhjgM.mp4" href="https://www.instagram.com/p/C5imoAHhjgM/" target="_blank" rel="noopener" aria-label="Play House of Movement"><img src="media/ig-C5imoAHhjgM.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>House of Movement</b><small>@houseofmovementt × @09sumit</small><em>▶ Play here</em></span></a></figure>
       </div>
     </div>
     <div class="testi y">
@@ -1010,8 +1013,8 @@ footer .fl svg{width:18px;height:23px}
       </div>
       <div class="testi-media three">
         <figure class="tm"><figcaption>Her story</figcaption><div class="tm-vid"><video class="testi-v" src="media/testimonial-sheslayyyss.mp4" poster="media/testimonial-sheslayyyss.jpg" playsinline preload="none" controls aria-label="Creator reel shot at Big Web Studios"></video></div></figure>
-        <figure class="tm"><figcaption>Her Zouk reel</figcaption><a class="igt" href="https://www.instagram.com/p/DafhG90JX12/" target="_blank" rel="noopener" aria-label="Watch Zouk reel on Instagram"><img src="media/ig-DafhG90JX12.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Zouk reel</b><small>@sheslayyyss for @zoukonline</small><em>Watch on Instagram ↗</em></span></a></figure>
-        <figure class="tm"><figcaption>Same brand, same room</figcaption><a class="igt" href="https://www.instagram.com/p/Daf4VsiOnNH/" target="_blank" rel="noopener" aria-label="Watch Zouk Executive Laptop Bag on Instagram"><img src="media/ig-Daf4VsiOnNH.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Zouk Executive Laptop Bag</b><small>@theakiolife for @zoukonline</small><em>Watch on Instagram ↗</em></span></a></figure>
+        <figure class="tm"><figcaption>Her Zouk reel</figcaption><a class="igt" data-video="media/ig-DafhG90JX12.mp4" href="https://www.instagram.com/p/DafhG90JX12/" target="_blank" rel="noopener" aria-label="Play Zouk reel"><img src="media/ig-DafhG90JX12.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Zouk reel</b><small>@sheslayyyss for @zoukonline</small><em>▶ Play here</em></span></a></figure>
+        <figure class="tm"><figcaption>Same brand, same room</figcaption><a class="igt" data-video="media/ig-Daf4VsiOnNH.mp4" href="https://www.instagram.com/p/Daf4VsiOnNH/" target="_blank" rel="noopener" aria-label="Play Zouk Executive Laptop Bag"><img src="media/ig-Daf4VsiOnNH.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Zouk Executive Laptop Bag</b><small>@theakiolife for @zoukonline</small><em>▶ Play here</em></span></a></figure>
       </div>
     </div>
     <div class="sec-head" style="margin-top:4rem"><p class="eyebrow">Behind the scenes</p><h2>Between the takes.</h2><p>Set-ups, shoots and jam days at the studio, from the <a href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">@bigwebstudios</a> highlights.</p></div>
@@ -1023,24 +1026,25 @@ footer .fl svg{width:18px;height:23px}
       <figure class="clip" tabindex="0" role="button" aria-label="Watch: Portrait shoot"><video src="media/bts-portrait.mp4" poster="media/bts-portrait.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="watch"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Watch</span><figcaption>Portrait shoot</figcaption></figure>
       <figure class="clip" tabindex="0" role="button" aria-label="Watch: Between practice sessions"><video src="media/bts-practice.mp4" poster="media/bts-practice.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="watch"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Watch</span><figcaption>Between practice sessions</figcaption></figure>
     </div>
-    <dialog class="clipbox" id="clipBox" aria-label="Behind the scenes clip">
+    <dialog class="clipbox" id="clipBox" aria-label="Video player">
       <button class="cb-btn cb-close" type="button" data-cb="close" aria-label="Close">✕</button>
       <button class="cb-btn cb-prev" type="button" data-cb="prev" aria-label="Previous clip">‹</button>
       <button class="cb-btn cb-next" type="button" data-cb="next" aria-label="Next clip">›</button>
       <div class="clipbox-in">
         <video id="cbVid" controls playsinline></video>
         <p id="cbCap"></p>
+        <a class="cb-ig" id="cbIg" href="#" target="_blank" rel="noopener" hidden>Watch on Instagram ↗</a>
         <span class="cb-count" id="cbCount"></span>
       </div>
     </dialog>
     <div class="sec-head" style="margin-top:4rem"><p class="eyebrow">Gallery</p><h2>Shot at Big Web Studios.</h2><p>Reels, covers and brand shoots made in our studio. Tap any one to watch it on Instagram.</p></div>
     <div class="igtiles" id="igGrid">
-      <a class="igt" href="https://www.instagram.com/reel/DILMl9lJRqi/" target="_blank" rel="noopener" aria-label="Watch Maand × Jhol (cover) on Instagram"><img src="media/ig-DILMl9lJRqi.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Maand × Jhol (cover)</b><small>@iamaadithyan · recorded by @akkimanoharan & @vijesh.poolakkil</small><em>Watch on Instagram ↗</em></span></a>
-      <a class="igt" href="https://www.instagram.com/reel/DFjpL_SSyE5/" target="_blank" rel="noopener" aria-label="Watch Ye Fitoor Mera (cover) on Instagram"><img src="media/ig-DFjpL_SSyE5.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Ye Fitoor Mera (cover)</b><small>@iamaadithyan · shot by @akkimanoharan</small><em>Watch on Instagram ↗</em></span></a>
-      <a class="igt" href="https://www.instagram.com/reel/DGfiJHuy24_/" target="_blank" rel="noopener" aria-label="Watch Telugu cover on Instagram"><img src="media/ig-DGfiJHuy24_.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Telugu cover</b><small>@aaraa.music · recorded here</small><em>Watch on Instagram ↗</em></span></a>
-      <a class="igt" href="https://www.instagram.com/reel/DFe9h3bNTwj/" target="_blank" rel="noopener" aria-label="Watch Jeevamshamayi on Instagram"><img src="media/ig-DFe9h3bNTwj.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Jeevamshamayi</b><small>@aaraa.music · recorded here</small><em>Watch on Instagram ↗</em></span></a>
+      <a class="igt" data-video="media/ig-DILMl9lJRqi.mp4" href="https://www.instagram.com/reel/DILMl9lJRqi/" target="_blank" rel="noopener" aria-label="Play Maand × Jhol (cover)"><img src="media/ig-DILMl9lJRqi.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Maand × Jhol (cover)</b><small>@iamaadithyan · recorded by @akkimanoharan & @vijesh.poolakkil</small><em>▶ Play here</em></span></a>
+      <a class="igt" data-video="media/ig-DFjpL_SSyE5.mp4" href="https://www.instagram.com/reel/DFjpL_SSyE5/" target="_blank" rel="noopener" aria-label="Play Ye Fitoor Mera (cover)"><img src="media/ig-DFjpL_SSyE5.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Ye Fitoor Mera (cover)</b><small>@iamaadithyan · shot by @akkimanoharan</small><em>▶ Play here</em></span></a>
+      <a class="igt" data-video="media/ig-DGfiJHuy24_.mp4" href="https://www.instagram.com/reel/DGfiJHuy24_/" target="_blank" rel="noopener" aria-label="Play Telugu cover"><img src="media/ig-DGfiJHuy24_.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Telugu cover</b><small>@aaraa.music · recorded here</small><em>▶ Play here</em></span></a>
+      <a class="igt" data-video="media/ig-DFe9h3bNTwj.mp4" href="https://www.instagram.com/reel/DFe9h3bNTwj/" target="_blank" rel="noopener" aria-label="Play Jeevamshamayi"><img src="media/ig-DFe9h3bNTwj.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Jeevamshamayi</b><small>@aaraa.music · recorded here</small><em>▶ Play here</em></span></a>
       <a class="igt" href="https://www.instagram.com/p/DW_kJsokzb5/" target="_blank" rel="noopener" aria-label="Watch AARAA debut track on Instagram"><img src="media/ig-DW_kJsokzb5.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>AARAA debut track</b><small>@aaraa.music × @vijesh.poolakkil</small><em>Watch on Instagram ↗</em></span></a>
-      <a class="igt" href="https://www.instagram.com/reel/DFSiPZBP4Dg/" target="_blank" rel="noopener" aria-label="Watch Jeevamshamayi (cover) on Instagram"><img src="media/ig-DFSiPZBP4Dg.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Jeevamshamayi (cover)</b><small>@akkimanoharan · at the studio</small><em>Watch on Instagram ↗</em></span></a>
+      <a class="igt" data-video="media/ig-DFSiPZBP4Dg.mp4" href="https://www.instagram.com/reel/DFSiPZBP4Dg/" target="_blank" rel="noopener" aria-label="Play Jeevamshamayi (cover)"><img src="media/ig-DFSiPZBP4Dg.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Jeevamshamayi (cover)</b><small>@akkimanoharan · at the studio</small><em>▶ Play here</em></span></a>
     </div>
     <div class="cta-band" style="margin-top:3rem"><h2>Want something like this?</h2><div style="display:flex;gap:.8rem;flex-wrap:wrap"><a class="btn yellow" href="#artists">For artists</a><a class="btn ghost" href="#creators">For creators</a></div></div>
   </div>
@@ -1461,50 +1465,66 @@ footer .fl svg{width:18px;height:23px}
 
 })();
 
-// Behind-the-scenes clips: silent previews while on screen; tap to open a player with sound.
-(function bts(){
-  const figs=[...document.querySelectorAll('#btsClips .clip')];
-  if(!figs.length) return;
-  const clips=figs.map(f=>f.querySelector('video'));
-  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+// Clip player: behind-the-scenes clips and Instagram tiles open a full-screen player with sound.
+(function player(){
   const box=document.getElementById('clipBox'), bv=document.getElementById('cbVid');
-  const cap=document.getElementById('cbCap'), cnt=document.getElementById('cbCount');
-  let cur=0, open=false;
+  if(!box) return;
+  const cap=document.getElementById('cbCap'), cnt=document.getElementById('cbCount'), igl=document.getElementById('cbIg');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const tv=[...document.querySelectorAll('.testi-v')];
+  // silent previews for behind-the-scenes tiles
+  const figs=[...document.querySelectorAll('#btsClips .clip')];
+  const prev=figs.map(f=>f.querySelector('video'));
+  let open=false, list=[], cur=0;
   const io=new IntersectionObserver((es)=>es.forEach(e=>{
     const v=e.target;
     if(e.isIntersecting && !reduce && !open){ if(v.preload==='none') v.preload='auto'; v.play().catch(()=>{}); }
     else v.pause();
   }),{threshold:.5});
-  clips.forEach(v=>io.observe(v));
-  const tv=[...document.querySelectorAll('.testi-v')];
+  prev.forEach(v=>io.observe(v));
+  const btsItems=figs.map(f=>{const v=f.querySelector('video');return {src:v.getAttribute('src'),poster:v.getAttribute('poster'),cap:f.querySelector('figcaption').textContent,ig:''};});
+  function tileItem(a){return {src:a.dataset.video,poster:a.querySelector('img').getAttribute('src'),cap:a.querySelector('b').textContent+' · '+a.querySelector('small').textContent,ig:a.href};}
   function show(i){
-    cur=(i+figs.length)%figs.length;
-    bv.src=clips[cur].getAttribute('src'); bv.poster=clips[cur].getAttribute('poster');
-    cap.textContent=figs[cur].querySelector('figcaption').textContent;
-    cnt.textContent=(cur+1)+' / '+figs.length;
+    cur=(i+list.length)%list.length; const it=list[cur];
+    bv.src=it.src; bv.poster=it.poster||'';
+    cap.textContent=it.cap; cnt.textContent=list.length>1?(cur+1)+' / '+list.length:'';
+    if(it.ig){igl.href=it.ig;igl.hidden=false;}else igl.hidden=true;
+    box.querySelectorAll('.cb-prev,.cb-next').forEach(b=>b.hidden=list.length<2);
     bv.muted=false; bv.play().catch(()=>{});
   }
-  function openAt(i){
-    open=true; clips.forEach(v=>v.pause()); tv.forEach(t=>t.pause());
+  function openList(items,i){
+    list=items; open=true; prev.forEach(v=>v.pause()); tv.forEach(t=>t.pause());
     if(box.showModal) box.showModal(); else box.setAttribute('open','');
     show(i);
   }
   function close(){ bv.pause(); bv.removeAttribute('src'); bv.load(); open=false; if(box.open) box.close(); }
   figs.forEach((f,i)=>{
-    f.addEventListener('click',()=>openAt(i));
-    f.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openAt(i); } });
+    f.addEventListener('click',()=>openList(btsItems,i));
+    f.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openList(btsItems,i); } });
+  });
+  // Instagram tiles that have a local copy play here; each group (card or gallery) is its own playlist
+  document.querySelectorAll('.testi-media, #igGrid').forEach(g=>{
+    const tiles=[...g.querySelectorAll('.igt[data-video]')];
+    const items=tiles.map(tileItem);
+    tiles.forEach((a,i)=>a.addEventListener('click',e=>{
+      if(e.metaKey||e.ctrlKey||e.shiftKey||e.button===1) return;
+      e.preventDefault(); e.stopPropagation(); setTimeout(()=>openList(items,i),0);
+    }));
   });
   box.addEventListener('click',e=>{
     const a=e.target.closest('[data-cb]');
     if(a){ const k=a.dataset.cb; if(k==='close') close(); else show(cur+(k==='next'?1:-1)); return; }
-    if(e.target===box) close();
+    if(e.target===box && downOnBox) close();
   });
+  let downOnBox=false;
+  box.addEventListener('pointerdown',e=>{downOnBox=(e.target===box);});
+  igl.addEventListener('click',()=>bv.pause());
   box.addEventListener('close',()=>{ if(open) close(); });
-  box.addEventListener('keydown',e=>{ if(e.key==='ArrowRight') show(cur+1); if(e.key==='ArrowLeft') show(cur-1); });
+  box.addEventListener('keydown',e=>{ if(list.length<2) return; if(e.key==='ArrowRight') show(cur+1); if(e.key==='ArrowLeft') show(cur-1); });
   let sx=null;
   box.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
-  box.addEventListener('touchend',e=>{ if(sx==null) return; const dx=e.changedTouches[0].clientX-sx; sx=null; if(Math.abs(dx)>50) show(cur+(dx<0?1:-1)); });
-  bv.addEventListener('ended',()=>show(cur+1));
+  box.addEventListener('touchend',e=>{ if(sx==null||list.length<2) return; const dx=e.changedTouches[0].clientX-sx; sx=null; if(Math.abs(dx)>50) show(cur+(dx<0?1:-1)); });
+  bv.addEventListener('ended',()=>{ if(list.length>1) show(cur+1); });
   tv.forEach(t=>t.addEventListener('play',()=>tv.forEach(o=>{if(o!==t)o.pause()})));
 })();
 </script>
