@@ -614,13 +614,6 @@ footer .fl svg{width:18px;height:23px}
 .stage h2.ch{font-size:clamp(3rem,9vw,7rem);font-weight:800;letter-spacing:-0.035em;line-height:.95;max-width:12ch;text-shadow:0 6px 40px rgba(0,0,0,.6);margin:.6rem 0 0}
 .chap .chn{display:inline-grid;place-items:center;min-width:2.1em;height:2.1em;margin-right:.55em;border-radius:999px;background:var(--ink);color:var(--paper);font-weight:600;letter-spacing:0}
 .stage .chap .chn{background:var(--yellow);color:#16131F}
-.next-wrap{padding-bottom:clamp(2.5rem,6vw,4rem)}
-.next{display:grid;justify-items:center;gap:.25rem;text-align:center;color:var(--muted);text-decoration:none;padding:.4rem 0}
-.next small{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--purple)}
-.next span{font-size:1rem;color:var(--muted);transition:color .2s}
-.next i{font-style:normal;display:inline-block;margin-left:.2rem;color:var(--yellow);transition:transform .2s}
-.next:hover span{color:var(--ink)}
-.next:hover i{transform:translateY(3px)}
 @media (max-width:760px){.page-head h2.ch{font-size:2.3rem}.stage h2.ch{font-size:2.5rem}}
 /* ---- single-page story ---- */
 .booker > *,.booker form,.steps,.step{min-width:0}
@@ -642,6 +635,7 @@ footer .fl svg{width:18px;height:23px}
 .reach .btn.ghost{border-color:var(--paper);color:var(--paper);background:transparent}
 .reach-more a{color:var(--yellow)}
 .fab{display:none}
+.book-open{display:none;margin-top:1.2rem}
 body.on-about .fab{display:none!important}
 @media (max-width:760px){
   section{padding-block:2.4rem}
@@ -668,6 +662,9 @@ body.on-about .fab{display:none!important}
   .fab{display:inline-flex;position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:30;padding:.85rem 1.2rem;border-radius:999px;background:var(--yellow);color:#16131F;font-weight:700;text-decoration:none;box-shadow:0 12px 30px -10px rgba(0,0,0,.55);transition:transform .25s,opacity .25s}
   .space .art{height:84px;padding:12px}
   .chap{font-size:.7rem}
+  #book.bk-closed .booker{display:none}
+  #book.bk-closed .book-open{display:inline-flex}
+  #book.bk-closed{padding-block:2.4rem}
   .fab.away{opacity:0;transform:translateY(20px);pointer-events:none}
 }
 </style>
@@ -747,7 +744,6 @@ body.on-about .fab{display:none!important}
     </div>
   </div>
 </section>
-<div class="wrap next-wrap"><a class="next" href="#creators"><small>Next · Creators</small><span>Not a musician? Creators use the same room. <i aria-hidden="true">↓</i></span></a></div>
 </div>
 
 <div data-view="creators" id="creators" class="scene">
@@ -779,7 +775,6 @@ body.on-about .fab{display:none!important}
     </div>
   </div>
 </section>
-<div class="wrap next-wrap"><a class="next" href="#brands"><small>Next · Brands</small><span>Artists and creators need backers. That's where brands come in. <i aria-hidden="true">↓</i></span></a></div>
 </div>
 
 <div data-view="brands" id="brands" class="scene">
@@ -823,7 +818,6 @@ body.on-about .fab{display:none!important}
     </div>
   </div>
 </section>
-<div class="wrap next-wrap"><a class="next" href="#spaces"><small>Next · Spaces</small><span>All of it starts in one room. <i aria-hidden="true">↓</i></span></a></div>
 </div>
 
 <div data-view="spaces" id="spaces" class="scene">
@@ -873,6 +867,7 @@ body.on-about .fab{display:none!important}
       <p class="eyebrow">Book a session</p>
       <h2>Pick a day, pick your hours.</h2>
       <p>Choose the space and the slots you need. You'll get an email with your booking, the studio rules and a calendar invite straight away. Pay at the studio or by UPI.</p>
+      <button type="button" class="btn yellow book-open" id="bookOpen" aria-controls="bookForm" aria-expanded="false">Book a session ↓</button>
     </div>
     <div class="booker">
       <form class="steps" id="bookForm" novalidate><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -978,7 +973,6 @@ body.on-about .fab{display:none!important}
     </div>
   </div>
 </section>
-<div class="wrap next-wrap"><a class="next" href="#work"><small>Next · Work</small><span>See what's been made here. <i aria-hidden="true">↓</i></span></a></div>
 </div>
 
 <div data-view="work" id="work" class="scene">
@@ -1071,7 +1065,6 @@ body.on-about .fab{display:none!important}
     </div>
   </div>
 </section>
-<div class="wrap next-wrap"><a class="next" href="#events"><small>Next · Events</small><span>And where it all ends up. <i aria-hidden="true">↓</i></span></a></div>
 </div>
 
 <div data-view="events" id="events" class="scene">
@@ -1364,6 +1357,7 @@ body.on-about .fab{display:none!important}
   $("pMinus").addEventListener("click",()=>{if(state.people>1){state.people--;render();}});
   $("pPlus").addEventListener("click",()=>{if(state.people<SPACES[state.space].max){state.people++;render();}});
   document.querySelectorAll("[data-pick]").forEach(b=>b.addEventListener("click",()=>{
+    if(window.__openBook) window.__openBook();
     state.space=b.dataset.pick; if(state.people>SPACES[state.space].max) state.people=SPACES[state.space].max;
     buildSpaces(); render(); $("book").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
   }));
@@ -1567,6 +1561,12 @@ body.on-about .fab{display:none!important}
     b.addEventListener("click",()=>{ o.card.classList.contains("closed")?openCard(o,true):closeCard(o); });
   });
   window.__openForm=function(el){ const o=cards.find(c=>c.card.contains(el)||c.form===el); if(o&&o.card.classList.contains("closed")) openCard(o,false); };
+
+  // Phones: the booking tool stays folded until someone asks to book.
+  const bookSec=document.getElementById("book"), bookBtn=document.getElementById("bookOpen");
+  if(bookSec&&matchMedia("(max-width:760px)").matches) bookSec.classList.add("bk-closed");
+  window.__openBook=function(){ if(!bookSec||!bookSec.classList.contains("bk-closed")) return; bookSec.classList.remove("bk-closed"); if(bookBtn) bookBtn.setAttribute("aria-expanded","true"); };
+  if(bookBtn) bookBtn.addEventListener("click",()=>{ window.__openBook(); bookSec.querySelector(".booker").scrollIntoView({behavior:"smooth",block:"start"}); });
   // One scrolling story (home → events) plus a separate About page.
   const STORY=["home","artists","creators","brands","spaces","work","events"];
   const about=document.getElementById("about");
@@ -1577,6 +1577,7 @@ body.on-about .fab{display:none!important}
     const h=(location.hash||"").slice(1);
     const el=h&&document.getElementById(h);
     if(el&&window.__openForm) window.__openForm(el);
+    if(el&&bookSec&&(el===bookSec||bookSec.contains(el))) window.__openBook();
     const inAbout=h==="about"||(el&&about.contains(el));
     storyEls.forEach(v=>{v.hidden=inAbout;});
     about.hidden=!inAbout;
