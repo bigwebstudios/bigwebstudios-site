@@ -604,12 +604,16 @@ footer .fl svg{width:18px;height:23px}
 .chap .chn{display:inline-grid;place-items:center;min-width:2.1em;height:2.1em;margin-right:.55em;border-radius:999px;background:var(--ink);color:var(--paper);font-weight:600;letter-spacing:0}
 .stage .chap .chn{background:var(--yellow);color:#16131F}
 .next-wrap{padding-bottom:clamp(2.5rem,6vw,4rem)}
-.next{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.4rem;border-radius:var(--r);border:1px dashed var(--line);color:var(--ink);text-decoration:none;font-family:var(--f-display);font-weight:600;font-size:clamp(1.05rem,2.2vw,1.35rem);transition:background .2s,border-color .2s}
-.next i{font-style:normal;display:grid;place-items:center;width:2.2rem;height:2.2rem;flex:none;border-radius:50%;background:var(--yellow);color:#16131F;transition:transform .2s}
-.next:hover{background:var(--surface);border-color:var(--purple)}
+.next{display:grid;justify-items:center;gap:.25rem;text-align:center;color:var(--muted);text-decoration:none;padding:.4rem 0}
+.next small{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--purple)}
+.next span{font-size:1rem;color:var(--muted);transition:color .2s}
+.next i{font-style:normal;display:inline-block;margin-left:.2rem;color:var(--yellow);transition:transform .2s}
+.next:hover span{color:var(--ink)}
 .next:hover i{transform:translateY(3px)}
 @media (max-width:760px){.page-head h2.ch{font-size:2.3rem}.stage h2.ch{font-size:2.5rem}}
 /* ---- single-page story ---- */
+.booker > *,.booker form,.steps,.step{min-width:0}
+
 .scene,[id]{scroll-margin-top:96px}
 .scene + .scene{border-top:1px solid var(--line)}
 .reach{background:var(--ink);color:var(--paper)}
@@ -642,6 +646,8 @@ body.on-about .fab{display:none!important}
   .enquire{margin-top:2rem;padding:18px}
   .stage h1{font-size:2.5rem}
   .fab{display:inline-flex;position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:30;padding:.85rem 1.2rem;border-radius:999px;background:var(--yellow);color:#16131F;font-weight:700;text-decoration:none;box-shadow:0 12px 30px -10px rgba(0,0,0,.55);transition:transform .25s,opacity .25s}
+  .space .art{height:84px;padding:12px}
+  .chap{font-size:.7rem}
   .fab.away{opacity:0;transform:translateY(20px);pointer-events:none}
 }
 </style>
@@ -721,7 +727,7 @@ body.on-about .fab{display:none!important}
     </div>
   </div>
 </section>
-<div class="wrap next-wrap"><a class="next" href="#creators"><span>Not a musician? Creators use the same room.</span><i aria-hidden="true">↓</i></a></div>
+<div class="wrap next-wrap"><a class="next" href="#creators"><small>Next · Creators</small><span>Not a musician? Creators use the same room. <i aria-hidden="true">↓</i></span></a></div>
 </div>
 
 <div data-view="creators" id="creators" class="scene">
@@ -753,7 +759,7 @@ body.on-about .fab{display:none!important}
     </div>
   </div>
 </section>
-<div class="wrap next-wrap"><a class="next" href="#brands"><span>Artists and creators need backers. That's where brands come in.</span><i aria-hidden="true">↓</i></a></div>
+<div class="wrap next-wrap"><a class="next" href="#brands"><small>Next · Brands</small><span>Artists and creators need backers. That's where brands come in. <i aria-hidden="true">↓</i></span></a></div>
 </div>
 
 <div data-view="brands" id="brands" class="scene">
@@ -797,7 +803,7 @@ body.on-about .fab{display:none!important}
     </div>
   </div>
 </section>
-<div class="wrap next-wrap"><a class="next" href="#spaces"><span>All of it starts in one room.</span><i aria-hidden="true">↓</i></a></div>
+<div class="wrap next-wrap"><a class="next" href="#spaces"><small>Next · Spaces</small><span>All of it starts in one room. <i aria-hidden="true">↓</i></span></a></div>
 </div>
 
 <div data-view="spaces" id="spaces" class="scene">
@@ -846,7 +852,7 @@ body.on-about .fab{display:none!important}
     <div class="sec-head">
       <p class="eyebrow">Book a session</p>
       <h2>Pick a day, pick your hours.</h2>
-      <p>Choose the space and the slots you need. We'll confirm on WhatsApp within a few hours. Pay at the studio or by UPI once confirmed.</p>
+      <p>Choose the space and the slots you need. You'll get an email with your booking, the studio rules and a calendar invite straight away. Pay at the studio or by UPI.</p>
     </div>
     <div class="booker">
       <form class="steps" id="bookForm" novalidate><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -952,7 +958,7 @@ body.on-about .fab{display:none!important}
     </div>
   </div>
 </section>
-<div class="wrap next-wrap"><a class="next" href="#work"><span>See what's been made here.</span><i aria-hidden="true">↓</i></a></div>
+<div class="wrap next-wrap"><a class="next" href="#work"><small>Next · Work</small><span>See what's been made here. <i aria-hidden="true">↓</i></span></a></div>
 </div>
 
 <div data-view="work" id="work" class="scene">
@@ -1041,7 +1047,7 @@ body.on-about .fab{display:none!important}
     </div>
   </div>
 </section>
-<div class="wrap next-wrap"><a class="next" href="#events"><span>And where it all ends up.</span><i aria-hidden="true">↓</i></a></div>
+<div class="wrap next-wrap"><a class="next" href="#events"><small>Next · Events</small><span>And where it all ends up. <i aria-hidden="true">↓</i></span></a></div>
 </div>
 
 <div data-view="events" id="events" class="scene">
@@ -1566,7 +1572,7 @@ body.on-about .fab{display:none!important}
   route();
   // floating Book button: hide while the booking form is on screen
   const fab=document.getElementById("fab"), bk=document.getElementById("book");
-  if(fab&&bk) new IntersectionObserver(es=>es.forEach(e=>fab.classList.toggle("away",e.isIntersecting)),{threshold:.15}).observe(bk);
+  if(fab&&bk) new IntersectionObserver(es=>es.forEach(e=>fab.classList.toggle("away",e.isIntersecting)),{threshold:0,rootMargin:"0px 0px -25% 0px"}).observe(bk);
 
 })();
 
