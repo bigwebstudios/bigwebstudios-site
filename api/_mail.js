@@ -9,6 +9,8 @@ const OWNER = process.env.OWNER_EMAIL || "bigwebstudio.com@gmail.com";
 const SITE = "https://www.bigwebstudios.com";
 const PHONE = "+91 98719 20493";
 const ADDRESS = "Plot 45, Qutub Vihar Phase 1, opp. Dwarka Sector 19, New Delhi 110071";
+// Exact pin for the studio (directions link in emails).
+const MAPS = "https://www.google.com/maps/dir/?api=1&destination=28.5781847,77.0358273";
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const isEmail = (s) => typeof s === "string" && s.length <= 200 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
@@ -56,4 +58,4 @@ function readBody(req) {
   try { return JSON.parse(req.body || "{}"); } catch { return {}; }
 }
 
-module.exports = { OWNER, SITE, PHONE, ADDRESS, esc, isEmail, clean, send, layout, rows, readBody };
+module.exports = { OWNER, SITE, PHONE, ADDRESS, MAPS, esc, isEmail, clean, send, layout, rows, readBody };

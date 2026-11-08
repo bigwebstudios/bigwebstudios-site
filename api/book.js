@@ -1,7 +1,7 @@
 // POST /api/book
 // Emails a booking confirmation with a calendar invite to the customer,
 // and the same booking + invite to Big Web Studios so the slot is blocked on both calendars.
-const { OWNER, PHONE, ADDRESS, esc, isEmail, clean, send, layout, rows, readBody } = require("./_mail");
+const { OWNER, PHONE, ADDRESS, MAPS, esc, isEmail, clean, send, layout, rows, readBody } = require("./_mail");
 
 // Keep in sync with SPACES / ADDONS in index.html.
 const SPACES = {
@@ -115,7 +115,7 @@ module.exports = async (req, res) => {
   const ics = ["BEGIN:VCALENDAR", "PRODID:-//Big Web Studios//Booking//EN", "VERSION:2.0", "CALSCALE:GREGORIAN", "METHOD:REQUEST", ...events, "END:VCALENDAR"].map(fold).join("\r\n") + "\r\n";
 
   const rulesHtml = `<h2 style="font-size:16px;margin:22px 0 8px">Studio rules and policy</h2><ol style="margin:0;padding-left:20px;font-size:14px;line-height:1.55;color:#16131F">${RULES.map((r) => `<li style="margin-bottom:6px">${esc(r)}</li>`).join("")}</ol>`;
-  const findHtml = `<h2 style="font-size:16px;margin:22px 0 8px">Finding us</h2><p style="font-size:14px;line-height:1.55;margin:0">${esc(ADDRESS)}<br><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS)}" style="color:#1680B0">Open in Google Maps</a> · WhatsApp ${PHONE} if you can't find the entrance.</p>`;
+  const findHtml = `<h2 style="font-size:16px;margin:22px 0 8px">Finding us</h2><p style="font-size:14px;line-height:1.55;margin:0">${esc(ADDRESS)}<br><a href="${MAPS}" style="color:#1680B0">Get directions in Google Maps</a> · WhatsApp ${PHONE} if you can't find the entrance.</p>`;
 
   try {
     await send({
