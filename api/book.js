@@ -5,15 +5,15 @@ const { OWNER, PHONE, ADDRESS, MAPS, esc, isEmail, clean, send, layout, rows, re
 
 // Keep in sync with SPACES / ADDONS in index.html.
 const SPACES = {
-  podcast: { name: "Podcast studio", rate: 2000, max: 6 },
-  content: { name: "Content shoot", rate: 1000, max: 4 },
+  podcast: { name: "Podcast studio", rate: 1800, max: 6 },
+  content: { name: "Content shoot", rate: 999, max: 4 },
 };
 const ADDONS = {
   eng: { name: "Sound engineer", rate: 800 },
   cam: { name: "Camera operator", rate: 1000 },
   edit: { name: "Editing", rate: 0 },
 };
-const OPEN = 10, CLOSE = 22, DEAL_HRS = 4, DEAL_PCT = 10;
+const OPEN = 10, CLOSE = 22, DEAL_HRS = 3, DEAL_PCT = 10;
 
 // DRAFT studio rules: Akio to confirm.
 const RULES = [
@@ -87,7 +87,7 @@ module.exports = async (req, res) => {
 
   const details = [
     ["Booking ref", ref], ["Space", sp.name], ["Date", dateLabel], ["Time", hoursLabel], ["People", String(people)],
-    ["Add-ons", addonLabel], ["Studio", inr(base)], ["4+ hour discount", disc ? "−" + inr(disc) : ""],
+    ["Add-ons", addonLabel], ["Studio", inr(base)], ["3+ hour discount", disc ? "−" + inr(disc) : ""],
     ["Add-ons cost", add ? inr(add) : ""], ["Estimate", inr(total) + (quote ? " + editing quote" : "")],
     ["Name", name], ["Email", email], ["WhatsApp", phone], ["Note", note],
   ];
