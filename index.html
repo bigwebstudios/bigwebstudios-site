@@ -456,20 +456,31 @@ footer .fl svg{width:18px;height:23px}
 .testi .eyebrow{color:#FEC200}
 .testi h2{color:#fff}
 .testi a{color:#FEC200}
-.testi.y{background:var(--yellow);color:#16131F;margin-top:1.6rem}.testi.y .eyebrow{color:#16131F;opacity:.75}.testi.y h2{color:#16131F}.testi.y a{color:#16131F;text-decoration:underline}
-.testi-txt p{font-size:1.05rem;line-height:1.6;max-width:62ch}
+.testi.y{background:var(--yellow);color:#16131F;margin-top:1.6rem}.testi.y .eyebrow{color:#16131F;opacity:.75}.testi.y h2{color:#16131F}.testi.y .testi-txt a{color:#16131F;text-decoration:underline}
+.testi-txt p{font-size:1.05rem;line-height:1.6;max-width:60ch}
 .testi-by{margin-top:.8rem;font-family:var(--f-mono);font-size:.85rem!important;opacity:.9}
-.testi-media{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,2.5vw,1.8rem);margin-top:1.6rem;align-items:start}
+.testi-media{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(.9rem,2vw,1.6rem);margin-top:1.6rem}
 .testi-media.three{grid-template-columns:repeat(3,minmax(0,1fr))}
-@media (min-width:1000px){.testi:not(.y){display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);gap:clamp(1.5rem,3vw,2.5rem);align-items:center}.testi:not(.y) .testi-media{margin-top:0}}
-.tm{margin:0;display:grid;gap:.6rem;min-width:0}
-.tm figcaption{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
-.tm-vid{border-radius:12px;overflow:hidden;background:#000;aspect-ratio:9/16;box-shadow:0 24px 50px -24px rgba(0,0,0,.6)}
+@media (min-width:1000px){.testi:not(.y){display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.5fr);gap:clamp(1.5rem,3vw,2.5rem);align-items:center}.testi:not(.y) .testi-media{margin-top:0}}
+.tm{margin:0;display:grid;gap:.55rem;min-width:0;align-content:start}
+.tm figcaption{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+.tm-vid{border-radius:14px;overflow:hidden;background:#000;aspect-ratio:9/16;box-shadow:0 24px 50px -24px rgba(0,0,0,.6)}
 .tm-vid video{width:100%;height:100%;object-fit:cover;display:block}
-.tm .instagram-media{margin:0!important;min-width:0!important;max-width:none!important;width:100%!important;border-radius:12px!important}
-.tm blockquote.instagram-media{background:#fff;color:#16131F;padding:24px;min-height:120px;display:grid;place-items:center}
+.igt{position:relative;display:block;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:#000;color:#fff!important;text-decoration:none!important;box-shadow:0 24px 50px -24px rgba(0,0,0,.6)}
+.igt img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.igt:hover img{transform:scale(1.04)}
+.igt-play{position:absolute;inset:0;margin:auto;width:58px;height:58px;border-radius:50%;background:var(--yellow);color:#16131F;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(0,0,0,.6);transition:transform .25s}
+.igt:hover .igt-play{transform:scale(1.1)}
+.igt-play svg{width:26px;height:26px;margin-left:3px}
+.igt-cap{position:absolute;left:0;right:0;bottom:0;display:grid;gap:.15rem;padding:3rem .9rem .85rem;background:linear-gradient(transparent,rgba(0,0,0,.85))}
+.igt-cap b{font-size:.98rem;line-height:1.25}
+.igt-cap small{font-size:.76rem;opacity:.85;line-height:1.35}
+.igt-cap em{font-style:normal;font-size:.72rem;font-weight:700;color:#FEC200;margin-top:.25rem}
+.igtiles{display:grid;grid-auto-flow:column;grid-auto-columns:220px;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin-top:1.4rem}
+.igtiles .igt{scroll-snap-align:start}
+@media (min-width:1180px){.igtiles{grid-auto-flow:row;grid-template-columns:repeat(6,1fr);overflow:visible}}
 @media (max-width:900px){.testi-media.three{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:640px){.testi-media,.testi-media.three{grid-template-columns:1fr}.tm{max-width:360px;width:100%;justify-self:center}}
+@media (max-width:640px){.testi-media,.testi-media.three{grid-template-columns:repeat(2,minmax(0,1fr))}.igtiles{grid-auto-columns:46%}.igt-play{width:46px;height:46px}.igt-cap{padding:2.2rem .6rem .6rem}.igt-cap b{font-size:.85rem}}
 .clips{display:grid;grid-auto-flow:column;grid-auto-columns:200px;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin-top:1.4rem}
 .clip{margin:0;scroll-snap-align:start;position:relative;border-radius:var(--r);overflow:hidden;background:#000;aspect-ratio:9/16;cursor:pointer}
 .clip video{width:100%;height:100%;object-fit:cover;display:block}
@@ -492,7 +503,6 @@ footer .fl svg{width:18px;height:23px}
 @media (max-width:760px){.cb-prev,.cb-next{top:auto;bottom:18px;transform:none}}
 @media (min-width:1180px){.clips{grid-auto-flow:row;grid-template-columns:repeat(6,1fr);overflow:visible}}
 @media (max-width:760px){.clips{grid-auto-columns:46%}}
-.igc{margin:0;display:grid;gap:.7rem;min-width:0}.igc figcaption{display:grid;gap:.15rem;font-size:.86rem;line-height:1.45;color:var(--muted)}.igc figcaption b{color:var(--ink);font-size:.95rem}
 .ig-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(326px,100%),1fr));gap:18px;align-items:start}
 .ig-grid .instagram-media{margin:0!important;min-width:0!important;max-width:none!important;width:100%!important;border-radius:var(--r)!important}
 .ig-grid blockquote.instagram-media{background:var(--surface);border:1px solid var(--line);padding:24px;min-height:120px;display:grid;place-items:center}
@@ -983,25 +993,25 @@ footer .fl svg{width:18px;height:23px}
       <div class="testi-txt">
         <p class="eyebrow">In their words</p>
         <h2>Don't take our word for it.</h2>
-        <p>Sumit on working with Big Web Studios, in his own words, next to the reel he shot here. Press play, sound on.</p>
-        <p class="testi-by"><b>Sumit</b> · <a href="https://www.instagram.com/09sumit/" target="_blank" rel="noopener">@09sumit</a> · shot at Big Web Studios</p>
+        <p>Sumit on working with Big Web Studios, next to the reel he shot here. Press play, sound on.</p>
+        <p class="testi-by"><b>Sumit</b> · <a href="https://www.instagram.com/09sumit/" target="_blank" rel="noopener">@09sumit</a></p>
       </div>
       <div class="testi-media">
         <figure class="tm"><figcaption>His testimonial</figcaption><div class="tm-vid"><video id="testiVid" class="testi-v" src="media/testimonial-sumit.mp4" poster="media/testimonial-sumit.jpg" playsinline preload="none" controls aria-label="Testimonial from Sumit"></video></div></figure>
-        <figure class="tm"><figcaption>What he shot here · House of Movement</figcaption><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C5imoAHhjgM/" data-instgrm-version="14"><a href="https://www.instagram.com/p/C5imoAHhjgM/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote></figure>
+        <figure class="tm"><figcaption>What he shot here</figcaption><a class="igt" href="https://www.instagram.com/p/C5imoAHhjgM/" target="_blank" rel="noopener" aria-label="Watch House of Movement on Instagram"><img src="media/ig-C5imoAHhjgM.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>House of Movement</b><small>@houseofmovementt × @09sumit</small><em>Watch on Instagram ↗</em></span></a></figure>
       </div>
     </div>
     <div class="testi y">
       <div class="testi-txt">
         <p class="eyebrow">Creators × brands</p>
         <h2>Shot here, for a brand.</h2>
-        <p>A creator shot her reel for @zoukonline in our studio and told her followers where it was made. Same brand, same room, a second shoot. This is exactly what the space is for.</p>
+        <p>A creator shot her reel for @zoukonline in our studio and told her followers where it was made. This is exactly what the space is for.</p>
         <p class="testi-by"><b>@sheslayyyss</b> · <a href="https://www.instagram.com/sheslayyyss/" target="_blank" rel="noopener">Instagram</a> · for @zoukonline</p>
       </div>
       <div class="testi-media three">
         <figure class="tm"><figcaption>Her story</figcaption><div class="tm-vid"><video class="testi-v" src="media/testimonial-sheslayyyss.mp4" poster="media/testimonial-sheslayyyss.jpg" playsinline preload="none" controls aria-label="Creator reel shot at Big Web Studios"></video></div></figure>
-        <figure class="tm"><figcaption>Her Zouk reel</figcaption><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DafhG90JX12/" data-instgrm-version="14"><a href="https://www.instagram.com/p/DafhG90JX12/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote></figure>
-        <figure class="tm"><figcaption>Zouk Executive Laptop Bag · @theakiolife</figcaption><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Daf4VsiOnNH/" data-instgrm-version="14"><a href="https://www.instagram.com/p/Daf4VsiOnNH/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote></figure>
+        <figure class="tm"><figcaption>Her Zouk reel</figcaption><a class="igt" href="https://www.instagram.com/p/DafhG90JX12/" target="_blank" rel="noopener" aria-label="Watch Zouk reel on Instagram"><img src="media/ig-DafhG90JX12.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Zouk reel</b><small>@sheslayyyss for @zoukonline</small><em>Watch on Instagram ↗</em></span></a></figure>
+        <figure class="tm"><figcaption>Same brand, same room</figcaption><a class="igt" href="https://www.instagram.com/p/Daf4VsiOnNH/" target="_blank" rel="noopener" aria-label="Watch Zouk Executive Laptop Bag on Instagram"><img src="media/ig-Daf4VsiOnNH.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Zouk Executive Laptop Bag</b><small>@theakiolife for @zoukonline</small><em>Watch on Instagram ↗</em></span></a></figure>
       </div>
     </div>
     <div class="sec-head" style="margin-top:4rem"><p class="eyebrow">Behind the scenes</p><h2>Between the takes.</h2><p>Set-ups, shoots and jam days at the studio, from the <a href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">@bigwebstudios</a> highlights.</p></div>
@@ -1023,32 +1033,14 @@ footer .fl svg{width:18px;height:23px}
         <span class="cb-count" id="cbCount"></span>
       </div>
     </dialog>
-    <div class="sec-head" style="margin-top:4rem"><p class="eyebrow">Gallery</p><h2>From our Instagram.</h2><p>Reels and shoots from the studio, straight from <a href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">@bigwebstudios</a>.</p></div>
-    <div class="ig-grid" id="igGrid">
-      <figure class="igc">
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DILMl9lJRqi/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DILMl9lJRqi/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
-        <figcaption><b>Maand × Jhol (cover)</b><span><a href="https://www.instagram.com/iamaadithyan/" target="_blank" rel="noopener">@iamaadithyan</a> · recorded here by <a href="https://www.instagram.com/akkimanoharan/" target="_blank" rel="noopener">@akkimanoharan</a> and <a href="https://www.instagram.com/vijesh.poolakkil/" target="_blank" rel="noopener">@vijesh.poolakkil</a></span></figcaption>
-      </figure>
-      <figure class="igc">
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DFjpL_SSyE5/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DFjpL_SSyE5/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
-        <figcaption><b>Ye Fitoor Mera (cover)</b><span><a href="https://www.instagram.com/iamaadithyan/" target="_blank" rel="noopener">@iamaadithyan</a> · video shot here by <a href="https://www.instagram.com/akkimanoharan/" target="_blank" rel="noopener">@akkimanoharan</a></span></figcaption>
-      </figure>
-      <figure class="igc">
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DGfiJHuy24_/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DGfiJHuy24_/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
-        <figcaption><b>Telugu cover</b><span><a href="https://www.instagram.com/aaraa.music/" target="_blank" rel="noopener">@aaraa.music</a> · recorded at Big Web Studios</span></figcaption>
-      </figure>
-      <figure class="igc">
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DFe9h3bNTwj/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DFe9h3bNTwj/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
-        <figcaption><b>Jeevamshamayi</b><span><a href="https://www.instagram.com/aaraa.music/" target="_blank" rel="noopener">@aaraa.music</a> · recorded at Big Web Studios</span></figcaption>
-      </figure>
-      <figure class="igc">
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DW_kJsokzb5/" data-instgrm-version="14"><a href="https://www.instagram.com/p/DW_kJsokzb5/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
-        <figcaption><b>AARAA: debut track announcement</b><span><a href="https://www.instagram.com/aaraa.music/" target="_blank" rel="noopener">@aaraa.music</a> and <a href="https://www.instagram.com/vijesh.poolakkil/" target="_blank" rel="noopener">@vijesh.poolakkil</a> · at Big Web Studios</span></figcaption>
-      </figure>
-      <figure class="igc">
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DFSiPZBP4Dg/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DFSiPZBP4Dg/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
-        <figcaption><b>Jeevamshamayi (cover)</b><span><a href="https://www.instagram.com/akkimanoharan/" target="_blank" rel="noopener">@akkimanoharan</a> · at Big Web Studios</span></figcaption>
-      </figure>
+    <div class="sec-head" style="margin-top:4rem"><p class="eyebrow">Gallery</p><h2>Shot at Big Web Studios.</h2><p>Reels, covers and brand shoots made in our studio. Tap any one to watch it on Instagram.</p></div>
+    <div class="igtiles" id="igGrid">
+      <a class="igt" href="https://www.instagram.com/reel/DILMl9lJRqi/" target="_blank" rel="noopener" aria-label="Watch Maand × Jhol (cover) on Instagram"><img src="media/ig-DILMl9lJRqi.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Maand × Jhol (cover)</b><small>@iamaadithyan · recorded by @akkimanoharan & @vijesh.poolakkil</small><em>Watch on Instagram ↗</em></span></a>
+      <a class="igt" href="https://www.instagram.com/reel/DFjpL_SSyE5/" target="_blank" rel="noopener" aria-label="Watch Ye Fitoor Mera (cover) on Instagram"><img src="media/ig-DFjpL_SSyE5.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Ye Fitoor Mera (cover)</b><small>@iamaadithyan · shot by @akkimanoharan</small><em>Watch on Instagram ↗</em></span></a>
+      <a class="igt" href="https://www.instagram.com/reel/DGfiJHuy24_/" target="_blank" rel="noopener" aria-label="Watch Telugu cover on Instagram"><img src="media/ig-DGfiJHuy24_.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Telugu cover</b><small>@aaraa.music · recorded here</small><em>Watch on Instagram ↗</em></span></a>
+      <a class="igt" href="https://www.instagram.com/reel/DFe9h3bNTwj/" target="_blank" rel="noopener" aria-label="Watch Jeevamshamayi on Instagram"><img src="media/ig-DFe9h3bNTwj.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Jeevamshamayi</b><small>@aaraa.music · recorded here</small><em>Watch on Instagram ↗</em></span></a>
+      <a class="igt" href="https://www.instagram.com/p/DW_kJsokzb5/" target="_blank" rel="noopener" aria-label="Watch AARAA debut track on Instagram"><img src="media/ig-DW_kJsokzb5.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>AARAA debut track</b><small>@aaraa.music × @vijesh.poolakkil</small><em>Watch on Instagram ↗</em></span></a>
+      <a class="igt" href="https://www.instagram.com/reel/DFSiPZBP4Dg/" target="_blank" rel="noopener" aria-label="Watch Jeevamshamayi (cover) on Instagram"><img src="media/ig-DFSiPZBP4Dg.jpg" alt="" loading="lazy" width="405" height="720"><span class="igt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="igt-cap"><b>Jeevamshamayi (cover)</b><small>@akkimanoharan · at the studio</small><em>Watch on Instagram ↗</em></span></a>
     </div>
     <div class="cta-band" style="margin-top:3rem"><h2>Want something like this?</h2><div style="display:flex;gap:.8rem;flex-wrap:wrap"><a class="btn yellow" href="#artists">For artists</a><a class="btn ghost" href="#creators">For creators</a></div></div>
   </div>
