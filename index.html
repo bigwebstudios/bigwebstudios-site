@@ -616,6 +616,12 @@ footer .fl svg{width:18px;height:23px}
 
 .scene,[id]{scroll-margin-top:96px}
 .scene + .scene{border-top:1px solid var(--line)}
+#artists{border-top:8px solid var(--purple)!important}#creators{border-top:8px solid var(--blue)!important}#brands{border-top:8px solid var(--yellow)!important}
+#spaces,#work{border-top:8px solid transparent!important;border-image:linear-gradient(90deg,var(--blue) 0 33%,var(--purple) 33% 66%,var(--yellow) 66%) 1!important}
+.aud{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .8rem;margin:0}
+.aud b{display:inline-flex;align-items:center;padding:.5rem 1rem;border-radius:999px;background:var(--ac);color:var(--at);font:700 clamp(.95rem,2vw,1.1rem)/1.2 var(--f-body);box-shadow:0 8px 22px -12px var(--ac)}
+.aud span{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.stage .aud span{color:rgba(245,244,248,.7)}
 .reach{background:var(--ink);color:var(--paper)}
 .reach .eyebrow{color:var(--yellow)}
 .reach-in{display:grid;gap:1.6rem}
@@ -671,7 +677,7 @@ body.on-about .fab{display:none!important}
     <div>
       <p class="eyebrow">Artists · Creators · Brands · New Delhi</p>
       <h1 style="margin-top:1rem"><span class="s">From the studio</span> to the <span class="t">spotlight.</span></h1>
-      <p class="lede">One place for musicians, creators and brands to go from zero to the end: create it, produce it, promote it and get it on stage.</p>
+      <p class="lede">A podcast and content studio in Dwarka, New Delhi that you can book by the hour, and a team that helps musicians, creators and brands make their work, promote it and take it on stage.</p>
       <div class="ctas">
         <a class="btn yellow" href="#book">Book the studio</a>
         <a class="btn ghost" href="https://wa.me/919871920493" target="_blank" rel="noopener">WhatsApp us</a>
@@ -696,14 +702,14 @@ body.on-about .fab{display:none!important}
 </div>
 
 <div data-view="artists" id="artists" class="scene">
-<section class="page-head"><div class="wrap"><p class="eyebrow chap"><span class="chn">02</span> Make it · for artists and bands</p><h2 class="ch">Record. Release. <span style="background:var(--purple);color:var(--purple-ink);padding:0 .1em;border-radius:.12em">Rise.</span></h2><p>Start from scratch and end on stage. Each step builds on the one before, so you only take on what you need right now.</p></div></section>
+<section class="page-head"><div class="wrap"><p class="aud" style="--ac:var(--purple);--at:#fff"><b>For musicians &amp; bands</b><span>02 · Make it</span></p><h2 class="ch">Record. Release. <span style="background:var(--purple);color:var(--purple-ink);padding:0 .1em;border-radius:.12em">Rise.</span></h2><p>Start from scratch and end on stage. Each step builds on the one before, so you only take on what you need right now.</p></div></section>
 <section style="padding-top:3rem">
   <div class="wrap">
     <ol class="ladder" aria-label="Artist packages">
       <li class="rung" style="--c:var(--purple)"><span class="k">Step 1</span><h3>Record</h3><p>Music production in our studio. Record and practise in the jam room, then mix and master in the control room.</p><span class="st">Music studio · coming soon</span></li>
-      <li class="rung" style="--c:var(--blue)"><span class="k">Step 2 · Record +</span><h3>Release</h3><p>Production plus distribution, so your track lands on Spotify, Apple Music, YouTube and the rest.</p><span class="st">Music studio · coming soon</span></li>
-      <li class="rung" style="--c:var(--yellow)"><span class="k">Step 3 · Release +</span><h3>Grow</h3><p>Music video production, Instagram and social media, and the full promotion funnel around your release.</p><span class="st live">Videos &amp; promotion · open now</span></li>
-      <li class="rung" style="--c:var(--ink)"><span class="k">Step 4 · Grow +</span><h3>Perform</h3><p>Live shows, stage bookings and events, through our festival and venue partners.</p><span class="st live">Enquiries open</span></li>
+      <li class="rung" style="--c:var(--blue)"><span class="k">Step 2</span><h3>Release</h3><p>Production plus distribution, so your track lands on Spotify, Apple Music, YouTube and the rest.</p><span class="st">Music studio · coming soon</span></li>
+      <li class="rung" style="--c:var(--yellow)"><span class="k">Step 3</span><h3>Grow</h3><p>Music videos, plus promotion on Instagram and social media so people actually hear your release.</p><span class="st live">Videos &amp; promotion · open now</span></li>
+      <li class="rung" style="--c:var(--ink)"><span class="k">Step 4</span><h3>Perform</h3><p>Live shows, stage bookings and events, through our festival and venue partners.</p><span class="st live">Enquiries open</span></li>
     </ol>
     <div class="enquire">
       <div>
@@ -731,14 +737,14 @@ body.on-about .fab{display:none!important}
 </div>
 
 <div data-view="creators" id="creators" class="scene">
-<section class="page-head"><div class="wrap"><p class="eyebrow chap"><span class="chn">03</span> Share it · for creators and podcasters</p><h2 class="ch">Shoot. Share. <span style="background:var(--blue);color:var(--blue-ink);padding:0 .1em;border-radius:.12em">Shine.</span></h2><p>Start by renting the space and shooting on your own. Hand over more as you grow, until we run the whole thing for you.</p></div></section>
+<section class="page-head"><div class="wrap"><p class="aud" style="--ac:var(--blue);--at:#0B2533"><b>For creators &amp; podcasters</b><span>03 · Share it</span></p><h2 class="ch">Shoot. Share. <span style="background:var(--blue);color:var(--blue-ink);padding:0 .1em;border-radius:.12em">Shine.</span></h2><p>Start by renting the space and shooting on your own. Hand over more as you grow, until we run the whole thing for you.</p></div></section>
 <section style="padding-top:3rem">
   <div class="wrap">
     <ol class="ladder" aria-label="Creator packages">
       <li class="rung" style="--c:var(--blue)"><span class="k">Step 1</span><h3>Rent the space</h3><p>Book the podcast and content studio by the hour and shoot on your own. Two set walls with different backdrops.</p><ul><li>From ₹1,000/hr · <a href="#spaces">see Spaces ↓</a></li></ul><span class="st live">Open now</span><a class="btn" href="#book">Book a slot</a></li>
-      <li class="rung" style="--c:var(--purple)"><span class="k">Step 2 · Space +</span><h3>Shoot &amp; edit</h3><p>Add a camera person and an editor. You talk, we shoot, and you get the edited content back.</p><ul><li>Camera operator +₹1,000/hr</li><li>Editing on quote</li></ul><span class="st live">Open now</span><a class="btn" href="#book">Book with crew</a></li>
-      <li class="rung" style="--c:var(--yellow)"><span class="k">Step 3 · Shoot &amp; edit +</span><h3>Fully managed</h3><p>Shooting, editing, posting and content strategy, all handled by us. You just show up.</p><span class="st live">Open now</span><a class="btn ghost" href="#crForm">Enquire</a></li>
-      <li class="rung" style="--c:var(--ink)"><span class="k">Step 4 · As you grow</span><h3>Go big</h3><p>PR, events and brand deals. We bridge you to the brands and stages that fit your audience.</p><span class="st live">Enquiries open</span><a class="btn ghost" href="#crForm">Enquire</a></li>
+      <li class="rung" style="--c:var(--purple)"><span class="k">Step 2</span><h3>Shoot &amp; edit</h3><p>Add a camera person and an editor. You talk, we shoot, and you get the edited content back.</p><ul><li>Camera operator +₹1,000/hr</li><li>Editing on quote</li></ul><span class="st live">Open now</span><a class="btn" href="#book">Book with crew</a></li>
+      <li class="rung" style="--c:var(--yellow)"><span class="k">Step 3</span><h3>Fully managed</h3><p>Shooting, editing, posting and content strategy, all handled by us. You just show up.</p><span class="st live">Open now</span><a class="btn ghost" href="#crForm">Enquire</a></li>
+      <li class="rung" style="--c:var(--ink)"><span class="k">Step 4</span><h3>Go big</h3><p>PR, events and brand deals. We bridge you to the brands and stages that fit your audience.</p><span class="st live">Enquiries open</span><a class="btn ghost" href="#crForm">Enquire</a></li>
     </ol>
     <div class="enquire" style="background:var(--blue);color:var(--blue-ink)">
       <div>
@@ -763,11 +769,11 @@ body.on-about .fab{display:none!important}
 </div>
 
 <div data-view="brands" id="brands" class="scene">
-<section class="page-head"><div class="wrap"><p class="eyebrow chap"><span class="chn">04</span> Back it · for brands</p><h2 class="ch">Spot. Sponsor. <span style="background:var(--yellow);color:var(--yellow-ink);padding:0 .1em;border-radius:.12em">Stand out.</span></h2><p>Reach people through the artists and creators they already follow, in content that feels earned, not bought.</p></div></section>
+<section class="page-head"><div class="wrap"><p class="aud" style="--ac:var(--yellow);--at:#16131F"><b>For brands &amp; businesses</b><span>04 · Back it</span></p><h2 class="ch">Spot. Sponsor. <span style="background:var(--yellow);color:var(--yellow-ink);padding:0 .1em;border-radius:.12em">Stand out.</span></h2><p>Reach people through the artists and creators they already follow, in content that feels earned, not bought.</p></div></section>
 <section style="padding-top:3rem">
   <div class="wrap">
     <div class="hero-story">
-      <p class="eyebrow">The headline act</p>
+      <p class="eyebrow">How sponsorship works</p>
       <h2>Back a budding artist. Borrow their credibility.</h2>
       <p>Your guitar amp in the background of a rising artist's music video. Your headphones on a creator's podcast set. We match your brand with artists and creators we work with, build the content around it, and promote it to the people who care.</p>
     </div>
@@ -775,7 +781,7 @@ body.on-about .fab{display:none!important}
     <div class="flow" aria-label="The artist and brand story" style="margin-top:0">
       <div><span class="k">Artist</span><b>Create</b><span>Record and shoot the video with us</span></div>
       <div><span class="k">Brand</span><b>Sponsor</b><span>Featured in the content, naturally</span></div>
-      <div><span class="k">Big Web</span><b>Promote</b><span>Instagram, socials and the full funnel</span></div>
+      <div><span class="k">Big Web</span><b>Promote</b><span>Promoted on Instagram and social media</span></div>
       <div><span class="k">Everyone</span><b>Spotlight</b><span>On stage at live shows and events</span></div>
     </div>
     <div class="agency-grid" style="margin-top:2.5rem">
@@ -807,7 +813,7 @@ body.on-about .fab{display:none!important}
 </div>
 
 <div data-view="spaces" id="spaces" class="scene">
-<section class="page-head"><div class="wrap"><p class="eyebrow chap"><span class="chn">05</span> Where it's made · the spaces</p><h2 class="ch">Book the room.</h2><p>Book by the hour and work on your own, or add a sound engineer or camera operator.</p></div></section>
+<section class="page-head"><div class="wrap"><p class="aud" style="--ac:var(--ink);--at:var(--paper)"><b>For anyone who wants to book the studio</b><span>05 · Where it's made</span></p><h2 class="ch">Book the room.</h2><p>Book by the hour and work on your own, or add a sound engineer or camera operator.</p></div></section>
 <section id="space-list" style="padding-top:3rem">
   <div class="wrap">
     <div class="spaces">
@@ -818,7 +824,7 @@ body.on-about .fab{display:none!important}
           <p style="color:var(--muted)">A ready podcast set with two backdrops, a green screen and lighting built for camera.</p>
           <div class="price"><b>₹2,000</b><span>/ hour · up to 6 people</span></div>
           <p class="deal">10% off the studio rate when you book 4+ hours</p>
-          <ul><li>2 podcast mics</li><li>Main light + 2 RGB fill lights</li><li>White and grey backdrops</li><li>Green screen</li><li>2 tripods</li><li>Add a camera operator</li></ul>
+          <ul><li>2 podcast mics</li><li>Main light + 2 colour lights</li><li>White and grey backdrops</li><li>Green screen</li><li>2 tripods</li><li>Add a camera operator</li></ul>
           <div class="foot"><button class="btn" type="button" data-pick="podcast">Book this</button></div>
         </div>
       </article>
@@ -829,7 +835,7 @@ body.on-about .fab{display:none!important}
           <p style="color:var(--muted)">Use the room and its backdrops for reels, product shoots and photo sessions.</p>
           <div class="price"><b>₹1,000</b><span>/ hour · up to 4 people</span></div>
           <p class="deal">10% off the studio rate when you book 4+ hours</p>
-          <ul><li>Main light + 2 RGB fill lights</li><li>White and grey backdrops</li><li>Green screen and 2 tripods</li><li>Add a camera operator</li><li>Editing quoted per project</li></ul>
+          <ul><li>Main light + 2 colour lights</li><li>White and grey backdrops</li><li>Green screen and 2 tripods</li><li>Add a camera operator</li><li>Editing quoted per project</li></ul>
           <div class="foot"><button class="btn" type="button" data-pick="content">Book this</button></div>
         </div>
       </article>
@@ -891,8 +897,8 @@ body.on-about .fab{display:none!important}
         <div id="confirmBox" hidden></div>
       </form>
 
-      <aside class="sheet" aria-label="Session sheet">
-        <div class="sheet-head"><b>Session sheet</b><span id="ref">BWS-—</span></div>
+      <aside class="sheet" aria-label="Your booking">
+        <div class="sheet-head"><b>Your booking</b><span id="ref">BWS-—</span></div>
         <dl>
           <div class="li"><dt>Space</dt><dd id="sSpace">—</dd></div>
           <div class="li"><dt>Date</dt><dd id="sDate">—</dd></div>
@@ -962,7 +968,7 @@ body.on-about .fab{display:none!important}
 </div>
 
 <div data-view="work" id="work" class="scene">
-<section class="page-head"><div class="wrap"><p class="eyebrow chap"><span class="chn">06</span> The proof · our work</p><h2 class="ch">Made here. <span style="background:var(--blue);color:var(--blue-ink);padding:0 .1em;border-radius:.12em">Seen everywhere.</span></h2><p>Music videos, reels and content we've produced and edited for artists and creators.</p></div></section>
+<section class="page-head"><div class="wrap"><p class="aud" style="--ac:var(--ink);--at:var(--paper)"><b>See what's been made here</b><span>06 · The proof</span></p><h2 class="ch">Made here. <span style="background:var(--blue);color:var(--blue-ink);padding:0 .1em;border-radius:.12em">Seen everywhere.</span></h2><p>Music videos, reels and content we've produced and edited for artists and creators.</p></div></section>
 <section style="padding-top:3rem">
   <div class="wrap">
     <div class="feature">
@@ -1055,14 +1061,14 @@ body.on-about .fab{display:none!important}
   <div class="beams" aria-hidden="true"><i class="beam b1"></i><i class="beam b2"></i><i class="beam b3"></i></div>
   <div class="haze" aria-hidden="true"></div>
   <div class="wrap stage-in">
-    <p class="eyebrow chap"><span class="chn">07</span> The spotlight · events</p>
+    <p class="aud" style="--ac:var(--yellow);--at:#16131F"><b>For event organisers, colleges &amp; brands</b><span>07 · The spotlight</span></p>
     <h2 class="ch">Where the <span class="hl">spotlight</span> lands.</h2>
-    <p>Festivals, concerts, corporate and experiential events. This is where artists step into the spotlight, creators meet their audience and brands become part of the moment.</p>
+    <p>Festivals, concerts, corporate events and brand experiences. This is where artists step into the spotlight, creators meet their audience and brands become part of the moment.</p>
     <div class="ctas"><a class="btn yellow" href="#evForm">Plan an event</a><a class="btn ghost" href="#artists">Play a show</a></div>
   </div>
   <div class="eq" aria-hidden="true"></div>
 </section>
-<div class="ticker" aria-hidden="true"><div class="tk"><span>Festivals ✦ Concerts ✦ Open mics ✦ Corporate ✦ Experiential ✦ Campus ✦ </span><span>Festivals ✦ Concerts ✦ Open mics ✦ Corporate ✦ Experiential ✦ Campus ✦ </span></div></div>
+<div class="ticker" aria-hidden="true"><div class="tk"><span>Festivals ✦ Concerts ✦ Open mics ✦ Corporate ✦ Brand experiences ✦ Campus ✦ </span><span>Festivals ✦ Concerts ✦ Open mics ✦ Corporate ✦ Brand experiences ✦ Campus ✦ </span></div></div>
 <section style="padding-top:4rem">
   <div class="wrap">
     <div class="tiles">
@@ -1071,7 +1077,7 @@ body.on-about .fab{display:none!important}
       <div class="tile t-blue"><span class="no">03</span><h3>Campus &amp; brand events</h3><p>College fests, campus tours and brand launches with live music at the centre.</p></div>
       <div class="tile t-ink"><span class="no">04</span><h3>Open mics</h3><p>Low-pressure nights for new artists to test songs and find their crowd.</p></div>
       <div class="tile t-purple"><span class="no">05</span><h3>Corporate events</h3><p>Annual days, offsites, award nights and client evenings, with live acts, hosts and content handled.</p></div>
-      <div class="tile t-yellow"><span class="no">06</span><h3>Experiential events</h3><p>Pop-ups, brand activations and immersive experiences that people remember, film and share.</p></div>
+      <div class="tile t-yellow"><span class="no">06</span><h3>Brand experiences</h3><p>Pop-ups, brand activations and immersive experiences that people remember, film and share.</p></div>
     </div>
     <div class="side-card" style="margin-top:2.5rem">
       <div><p class="eyebrow"><span class="live-dot"></span>Announcing soon</p><h3>First events announced soon.</h3><p>Follow <a href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">@bigwebstudios</a> to hear first about open mics, gigs and festival slots.</p></div>
@@ -1087,7 +1093,7 @@ body.on-about .fab{display:none!important}
         </div>
         <div class="field"><label for="evEmail">Email</label><input id="evEmail" type="email" autocomplete="email" placeholder="you@email.com"><span class="err" id="eevEmail"></span></div>
         <div class="row">
-          <div class="field"><label for="evType">What do you need?</label><select id="evType"><option>Artist or band booking</option><option>Festival</option><option>Concert or gig</option><option>College fest</option><option>Open mic</option><option>Corporate event</option><option>Experiential event or brand activation</option><option>Brand or private event</option><option>Something else</option></select></div>
+          <div class="field"><label for="evType">What do you need?</label><select id="evType"><option>Artist or band booking</option><option>Festival</option><option>Concert or gig</option><option>College fest</option><option>Open mic</option><option>Corporate event</option><option>Brand experiences event or brand activation</option><option>Brand or private event</option><option>Something else</option></select></div>
           <div class="field"><label for="evDate">Event date</label><input id="evDate" type="date"></div>
           <div class="field"><label for="evSize">Expected audience</label><select id="evSize"><option>Under 100</option><option>100 to 500</option><option>500 to 2,000</option><option>2,000+</option><option>Not sure yet</option></select></div>
         </div>
