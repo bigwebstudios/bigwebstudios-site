@@ -468,6 +468,9 @@ footer .fl svg{width:18px;height:23px}
 .tm-vid video{width:100%;height:100%;object-fit:cover;display:block}
 .igt{position:relative;display:block;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:#000;color:#fff!important;text-decoration:none!important;box-shadow:0 24px 50px -24px rgba(0,0,0,.6)}
 .igt img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.igt .igt-hv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .25s}
+.igt.playing .igt-hv{opacity:1}.igt.playing .igt-play{opacity:0;transform:scale(.6)}
+.btc.playing .watch{opacity:.9}
 .igt:hover img{transform:scale(1.04)}
 .igt-play{position:absolute;inset:0;margin:auto;width:58px;height:58px;border-radius:50%;background:var(--yellow);color:#16131F;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(0,0,0,.6);transition:transform .25s}
 .igt:hover .igt-play{transform:scale(1.1)}
@@ -482,12 +485,12 @@ footer .fl svg{width:18px;height:23px}
 @media (max-width:900px){.testi-media.three{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.testi-media,.testi-media.three{grid-template-columns:repeat(2,minmax(0,1fr))}.igtiles{grid-auto-columns:46%}.igt-play{width:46px;height:46px}.igt-cap{padding:2.2rem .6rem .6rem}.igt-cap b{font-size:.85rem}}
 .clips{display:grid;grid-auto-flow:column;grid-auto-columns:200px;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin-top:1.4rem}
-.clip{margin:0;scroll-snap-align:start;position:relative;border-radius:var(--r);overflow:hidden;background:#000;aspect-ratio:9/16;cursor:pointer}
-.clip video{width:100%;height:100%;object-fit:cover;display:block}
-.clip figcaption{position:absolute;left:0;right:0;bottom:0;padding:2.2rem .8rem .7rem;font-size:.82rem;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75))}
-.clip .watch{position:absolute;top:.6rem;right:.6rem;display:flex;align-items:center;gap:.3rem;padding:.3rem .55rem;border-radius:99px;background:var(--yellow);color:#16131F;font-size:.72rem;font-weight:700;pointer-events:none}
-.clip .watch svg{width:11px;height:11px}
-.clip:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.btc{margin:0;scroll-snap-align:start;position:relative;border-radius:var(--r);overflow:hidden;background:#000;aspect-ratio:9/16;cursor:pointer}
+.btc video{width:100%;height:100%;object-fit:cover;display:block}
+.btc figcaption{position:absolute;left:0;right:0;bottom:0;padding:2.2rem .8rem .7rem;font-size:.82rem;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75))}
+.btc .watch{position:absolute;top:.6rem;right:.6rem;display:flex;align-items:center;gap:.3rem;padding:.3rem .55rem;border-radius:99px;background:var(--yellow);color:#16131F;font-size:.72rem;font-weight:700;pointer-events:none}
+.btc .watch svg{width:11px;height:11px}
+.btc:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
 .clipbox{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100vw;height:100dvh;margin:0;color:#fff}
 .clipbox::backdrop{background:rgba(10,8,16,.92)}
 .clipbox[open]{display:grid;place-items:center}
@@ -1019,12 +1022,12 @@ footer .fl svg{width:18px;height:23px}
     </div>
     <div class="sec-head" style="margin-top:4rem"><p class="eyebrow">Behind the scenes</p><h2>Between the takes.</h2><p>Set-ups, shoots and jam days at the studio, from the <a href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">@bigwebstudios</a> highlights.</p></div>
     <div class="clips" id="btsClips">
-      <figure class="clip" tabindex="0" role="button" aria-label="Watch: On set: a brand shoot"><video src="media/bts-shoot.mp4" poster="media/bts-shoot.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="watch"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Watch</span><figcaption>On set: a brand shoot</figcaption></figure>
-      <figure class="clip" tabindex="0" role="button" aria-label="Watch: Setting up the room"><video src="media/bts-setup.mp4" poster="media/bts-setup.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="watch"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Watch</span><figcaption>Setting up the room</figcaption></figure>
-      <figure class="clip" tabindex="0" role="button" aria-label="Watch: A jam session in the studio"><video src="media/bts-jam.mp4" poster="media/bts-jam.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="watch"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Watch</span><figcaption>A jam session in the studio</figcaption></figure>
-      <figure class="clip" tabindex="0" role="button" aria-label="Watch: Jamday at Big Web Studios"><video src="media/bts-jamday.mp4" poster="media/bts-jamday.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="watch"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Watch</span><figcaption>Jamday at Big Web Studios</figcaption></figure>
-      <figure class="clip" tabindex="0" role="button" aria-label="Watch: Portrait shoot"><video src="media/bts-portrait.mp4" poster="media/bts-portrait.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="watch"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Watch</span><figcaption>Portrait shoot</figcaption></figure>
-      <figure class="clip" tabindex="0" role="button" aria-label="Watch: Between practice sessions"><video src="media/bts-practice.mp4" poster="media/bts-practice.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="watch"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Watch</span><figcaption>Between practice sessions</figcaption></figure>
+      <figure class="btc" tabindex="0" role="button" aria-label="Watch: On set: a brand shoot"><video src="media/bts-shoot.mp4" poster="media/bts-shoot.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="watch"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Watch</span><figcaption>On set: a brand shoot</figcaption></figure>
+      <figure class="btc" tabindex="0" role="button" aria-label="Watch: Setting up the room"><video src="media/bts-setup.mp4" poster="media/bts-setup.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="watch"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Watch</span><figcaption>Setting up the room</figcaption></figure>
+      <figure class="btc" tabindex="0" role="button" aria-label="Watch: A jam session in the studio"><video src="media/bts-jam.mp4" poster="media/bts-jam.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="watch"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Watch</span><figcaption>A jam session in the studio</figcaption></figure>
+      <figure class="btc" tabindex="0" role="button" aria-label="Watch: Jamday at Big Web Studios"><video src="media/bts-jamday.mp4" poster="media/bts-jamday.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="watch"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Watch</span><figcaption>Jamday at Big Web Studios</figcaption></figure>
+      <figure class="btc" tabindex="0" role="button" aria-label="Watch: Portrait shoot"><video src="media/bts-portrait.mp4" poster="media/bts-portrait.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="watch"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Watch</span><figcaption>Portrait shoot</figcaption></figure>
+      <figure class="btc" tabindex="0" role="button" aria-label="Watch: Between practice sessions"><video src="media/bts-practice.mp4" poster="media/bts-practice.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><span class="watch"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Watch</span><figcaption>Between practice sessions</figcaption></figure>
     </div>
     <dialog class="clipbox" id="clipBox" aria-label="Video player">
       <button class="cb-btn cb-close" type="button" data-cb="close" aria-label="Close">✕</button>
@@ -1473,15 +1476,37 @@ footer .fl svg{width:18px;height:23px}
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const tv=[...document.querySelectorAll('.testi-v')];
   // silent previews for behind-the-scenes tiles
-  const figs=[...document.querySelectorAll('#btsClips .clip')];
+  const figs=[...document.querySelectorAll('#btsClips .btc')];
   const prev=figs.map(f=>f.querySelector('video'));
   let open=false, list=[], cur=0;
-  const io=new IntersectionObserver((es)=>es.forEach(e=>{
-    const v=e.target;
-    if(e.isIntersecting && !reduce && !open){ if(v.preload==='none') v.preload='auto'; v.play().catch(()=>{}); }
-    else v.pause();
-  }),{threshold:.5});
-  prev.forEach(v=>io.observe(v));
+  const canHover=matchMedia('(hover: hover) and (pointer: fine)').matches;
+  // play with sound if the browser allows it, otherwise silently
+  function hoverPlay(v){ v.preload='auto'; v.muted=false; v.play().catch(()=>{ v.muted=true; v.play().catch(()=>{}); }); }
+  if(canHover){
+    // computer: tiles play while the mouse is over them
+    figs.forEach((f,i)=>{
+      const v=prev[i];
+      f.addEventListener('mouseenter',()=>{ if(open) return; f.classList.add('playing'); hoverPlay(v); });
+      f.addEventListener('mouseleave',()=>{ f.classList.remove('playing'); v.pause(); v.muted=true; });
+    });
+    document.querySelectorAll('.igt[data-video]').forEach(a=>{
+      let v=null;
+      a.addEventListener('mouseenter',()=>{
+        if(open) return;
+        if(!v){ v=document.createElement('video'); v.className='igt-hv'; v.src=a.dataset.video; v.playsInline=true; v.loop=true; v.setAttribute('aria-hidden','true'); a.insertBefore(v,a.querySelector('.igt-play')); }
+        a.classList.add('playing'); hoverPlay(v);
+      });
+      a.addEventListener('mouseleave',()=>{ a.classList.remove('playing'); if(v){ v.pause(); v.muted=true; } });
+    });
+  } else {
+    // phone: silent previews while on screen
+    const io=new IntersectionObserver((es)=>es.forEach(e=>{
+      const v=e.target;
+      if(e.isIntersecting && !reduce && !open){ if(v.preload==='none') v.preload='auto'; v.play().catch(()=>{}); }
+      else v.pause();
+    }),{threshold:.5});
+    prev.forEach(v=>io.observe(v));
+  }
   const btsItems=figs.map(f=>{const v=f.querySelector('video');return {src:v.getAttribute('src'),poster:v.getAttribute('poster'),cap:f.querySelector('figcaption').textContent,ig:''};});
   function tileItem(a){return {src:a.dataset.video,poster:a.querySelector('img').getAttribute('src'),cap:a.querySelector('b').textContent+' · '+a.querySelector('small').textContent,ig:a.href};}
   function show(i){
@@ -1493,7 +1518,7 @@ footer .fl svg{width:18px;height:23px}
     bv.muted=false; bv.play().catch(()=>{});
   }
   function openList(items,i){
-    list=items; open=true; prev.forEach(v=>v.pause()); tv.forEach(t=>t.pause());
+    list=items; open=true; prev.forEach(v=>v.pause()); tv.forEach(t=>t.pause()); document.querySelectorAll('.igt-hv').forEach(v=>v.pause()); document.querySelectorAll('.playing').forEach(e=>e.classList.remove('playing'));
     if(box.showModal) box.showModal(); else box.setAttribute('open','');
     show(i);
   }
