@@ -1672,8 +1672,8 @@ body.on-about .fab{display:none!important}
     hdr.querySelectorAll(".links a").forEach(a=>a.addEventListener("click",()=>{ hdr.classList.remove("open"); mbtn.setAttribute("aria-expanded","false"); mbtn.querySelector(".lbl").textContent="Menu"; })); }
   // Phone "who we work with" tabs
   const whoBtns=[...document.querySelectorAll(".who-tabs button")];
-  function setWho(k){ document.body.classList.remove("who-artists","who-creators","who-brands"); document.body.classList.add("who-"+k); whoBtns.forEach(b=>b.setAttribute("aria-selected",String(b.dataset.who===k))); }
-  whoBtns.forEach(b=>b.addEventListener("click",()=>{ setWho(b.dataset.who); }));
+  function setWho(k){ window.__whoNow=k; document.body.classList.remove("who-artists","who-creators","who-brands"); document.body.classList.add("who-"+k); whoBtns.forEach(b=>b.setAttribute("aria-selected",String(b.dataset.who===k))); }
+  whoBtns.forEach(b=>b.addEventListener("click",()=>{ setWho(b.dataset.who); if(window.__setUrl) window.__setUrl(b.dataset.who); }));
   setWho("artists");
   window.__whoFor=function(el){ for(const k of ["artists","creators","brands"]){ const sec=document.getElementById(k); if(sec&&(sec===el||sec.contains(el))){ setWho(k); return; } } };
   // Phone: space-card gear lists open on tap
@@ -1686,6 +1686,10 @@ body.on-about .fab{display:none!important}
   const storyEls=[...document.querySelectorAll(".scene")];
   let first=true;
   function setNav(t){document.querySelectorAll("[data-nav]").forEach(a=>{a.dataset.nav===t?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current");});}
+  // Keep the address bar on a shareable link (/brands, /spaces …) for the section in view.
+  const SHARE=["artists","creators","brands","spaces","work","events","about"];
+  function setUrl(id){ const p=SHARE.includes(id)?"/"+id:"/"; if(location.pathname+location.hash!==p){ try{ history.replaceState(null,"",p+location.search); }catch(_){} } }
+  window.__setUrl=setUrl;
   function route(){
     const h=(location.hash||"").slice(1);
     const el=h&&document.getElementById(h);
@@ -1696,7 +1700,7 @@ body.on-about .fab{display:none!important}
     storyEls.forEach(v=>{v.hidden=inAbout;});
     about.hidden=!inAbout;
     document.body.classList.toggle("on-about",inAbout);
-    if(inAbout){ setNav("about"); if(el&&el!==about) el.scrollIntoView(); else window.scrollTo(0,0); }
+    if(inAbout){ setNav("about"); setUrl("about"); if(el&&el!==about) el.scrollIntoView(); else window.scrollTo(0,0); }
     else if(el){ el.scrollIntoView({behavior:first?"auto":"smooth"}); }
     else if(!first) window.scrollTo({top:0,behavior:"smooth"});
     if(window.loadIG) window.loadIG();
@@ -1704,8 +1708,8 @@ body.on-about .fab{display:none!important}
   }
   // highlight the section you're reading
   const spy=new IntersectionObserver(es=>{ if(document.body.classList.contains("on-about")) return;
-    es.forEach(e=>{ if(e.isIntersecting) setNav(e.target.id); }); },{rootMargin:"-45% 0px -50% 0px"});
-  STORY.forEach(id=>{const v=document.getElementById(id); if(v) spy.observe(v);});
+    es.forEach(e=>{ if(!e.isIntersecting) return; let id=e.target.id; if(id==="who") id=window.__whoNow||"artists"; else setNav(id); setUrl(id); }); },{rootMargin:"-45% 0px -50% 0px"});
+  STORY.concat(["who"]).forEach(id=>{const v=document.getElementById(id); if(v) spy.observe(v);});
   window.addEventListener("hashchange",route);
   document.addEventListener("click",e=>{const a=e.target.closest('a[href^="#"]'); if(a&&a.getAttribute("href")===location.hash){e.preventDefault(); route();}});
   route();
