@@ -1701,7 +1701,7 @@ body.on-about .fab{display:none!important}
     about.hidden=!inAbout;
     document.body.classList.toggle("on-about",inAbout);
     if(inAbout){ setNav("about"); setUrl("about"); if(el&&el!==about) el.scrollIntoView(); else window.scrollTo(0,0); }
-    else if(el){ el.scrollIntoView({behavior:first?"auto":"smooth"}); }
+    else if(el){ const whoEl=document.getElementById("who"); const tgt=(["artists","creators","brands"].includes(el.id)&&whoEl&&whoEl.offsetParent!==null)?whoEl:el; tgt.scrollIntoView({behavior:first?"auto":"smooth"}); }
     else if(!first) window.scrollTo({top:0,behavior:"smooth"});
     if(window.loadIG) window.loadIG();
     first=false;
