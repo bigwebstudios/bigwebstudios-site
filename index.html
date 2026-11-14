@@ -615,6 +615,87 @@ footer .fl svg{width:18px;height:23px}
 .chap .chn{display:inline-grid;place-items:center;min-width:2.1em;height:2.1em;margin-right:.55em;border-radius:999px;background:var(--ink);color:var(--paper);font-weight:600;letter-spacing:0}
 .stage .chap .chn{background:var(--yellow);color:#16131F}
 @media (max-width:760px){.page-head h2.ch{font-size:2.3rem}.stage h2.ch{font-size:2.5rem}}
+
+/* ===== Phone layout (desktop untouched) ===== */
+.facts,.menu-btn,.who,.incl-btn{display:none}
+@media (max-width:760px){
+  /* header: logo + Menu; links open as a panel */
+  .nav{flex-wrap:nowrap}
+  .menu-btn{display:inline-flex;align-items:center;gap:.55rem;margin-left:auto;padding:.55rem .95rem;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:600 .95rem var(--f-body)}
+  .menu-btn .lines,.menu-btn .lines::before,.menu-btn .lines::after{display:block;width:16px;height:2px;border-radius:2px;background:currentColor;position:relative;transition:transform .2s}
+  .menu-btn .lines::before,.menu-btn .lines::after{content:"";position:absolute;left:0}
+  .menu-btn .lines::before{top:-5px}.menu-btn .lines::after{top:5px}
+  header.top.open .menu-btn .lines{background:transparent}
+  header.top.open .menu-btn .lines::before{transform:translateY(5px) rotate(45deg)}
+  header.top.open .menu-btn .lines::after{transform:translateY(-5px) rotate(-45deg)}
+  .links{display:none!important}
+  header.top.open .links{display:grid!important;position:absolute;left:0;right:0;top:100%;gap:0;padding:.4rem 16px 1rem;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 20px 40px -20px rgba(0,0,0,.45);overflow:visible}
+  header.top.open .links a:not(.btn){display:block;padding:.85rem .2rem;border-bottom:1px solid var(--line);font-size:1.1rem}
+  header.top.open .links a[aria-current="page"]::after{display:none}
+  header.top.open .links a[aria-current="page"]{color:var(--purple)}
+  header.top.open .links .btn{margin:1rem 0 0;justify-content:center}
+
+  /* studio first: order of sections on phones */
+  main#top{display:flex;flex-direction:column}
+  #home{order:1}#spaces{order:2}#work{order:3}#who{order:4}#artists,#creators,#brands{order:5}#events{order:6}#reach{order:7}#about{order:8}
+  .aud span{display:none}
+
+  /* hero: say "studio you can book" in one screen */
+  .home-hero{padding-block:1.6rem 2rem}
+  .hh h1{font-size:2.4rem}
+  .lede{font-size:1rem}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;list-style:none;margin:1.2rem 0 0;padding:0}
+  .facts li{display:grid;gap:.15rem;padding:.75rem .6rem;border-radius:14px;background:var(--surface);border:1px solid var(--line)}
+  .facts b{font:800 1.15rem/1 var(--f-display);color:var(--ink);white-space:nowrap}
+  .facts b small{font:500 .7rem var(--f-body);color:var(--muted)}
+  .facts span{font-size:.72rem;line-height:1.3;color:var(--muted)}
+  .facts li:nth-child(3) b{font-size:.98rem}
+  .home-hero .ctas{margin-top:1.2rem}
+  .logo-panel{display:none}
+  #home > section:nth-of-type(2){display:none}
+
+  /* who we work with: tabs, one audience at a time */
+  .who{display:block;border-top:8px solid transparent!important;border-image:linear-gradient(90deg,var(--purple) 0 33%,var(--blue) 33% 66%,var(--yellow) 66%) 1!important}
+  .who-in{padding-block:2rem .5rem}
+  .who h2{font-size:1.9rem;margin-top:.4rem}
+  .who-tabs{display:flex;gap:8px;margin-top:1rem;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+  .who-tabs button{flex:1;padding:.65rem .5rem;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:600 .92rem var(--f-body)}
+  .who-tabs button[aria-selected="true"]{background:var(--ac);color:var(--at);border-color:var(--ac)}
+  body:not(.who-creators):not(.who-brands) #creators,body:not(.who-creators):not(.who-brands) #brands,
+  body.who-creators #artists,body.who-creators #brands,body.who-brands #artists,body.who-brands #creators{display:none}
+  #artists,#creators,#brands{border-top:0!important}
+  #artists .page-head,#creators .page-head,#brands .page-head{padding-top:1rem}
+  #artists .aud,#creators .aud,#brands .aud{display:none}
+  .flow,#brands .sec-head{display:none}
+  .hero-story{padding:20px}
+  .agency-grid{grid-template-columns:1fr 1fr!important;gap:16px!important;margin-top:1.4rem!important}
+  .svc h3{font-size:1.05rem}.svc p{font-size:.88rem}
+
+  /* spaces: swipeable cards, gear list on tap, no floor plan */
+  #space-list{padding-top:1.4rem!important}
+  .spaces{display:grid;grid-auto-flow:column;grid-template-columns:none!important;grid-auto-columns:86%;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:16px;gap:12px;margin-inline:-16px;padding:0 16px 8px;scrollbar-width:none}
+  .spaces .space{scroll-snap-align:start}
+  .space .body ul.closed{display:none}
+  .incl-btn{display:inline-flex;align-items:center;gap:.4rem;margin:.2rem 0 .4rem;padding:0;border:0;background:none;color:var(--blue-text);font:600 .95rem var(--f-body)}
+  #floor{display:none}
+
+  /* work: shorter feature text */
+  .feature-txt > p:not(.eyebrow){display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .feature-txt .tags{display:none}
+  .feature + .feature{margin-top:2rem}
+
+  .testi-media,.testi-media.three{display:grid!important;grid-auto-flow:column;grid-template-columns:none!important;grid-auto-columns:46%!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px!important;margin-top:1rem!important;padding-bottom:6px;scrollbar-width:none}
+  .testi-media .tm{scroll-snap-align:start;max-width:none!important;justify-self:stretch!important}
+  .testi{padding:16px!important;margin-top:2rem!important}
+  .testi-txt p{font-size:.95rem!important}
+  .feature-txt > p:not(.eyebrow){-webkit-line-clamp:2}
+  /* events: shorter stage, swipeable tiles */
+  .stage{padding-block:3rem 3.2rem}
+  .stage-in > p:not(.eyebrow):not(.aud){display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .tiles{display:grid;grid-auto-flow:column;grid-template-columns:none!important;grid-auto-columns:72%;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:16px;gap:12px;margin-inline:-16px;padding:0 16px 8px;scrollbar-width:none}
+  .tile{min-height:0;scroll-snap-align:start}
+  #events section[style*="padding-top:4rem"]{padding-top:2rem!important}
+}
 /* ---- single-page story ---- */
 .booker > *,.booker form,.steps,.step{min-width:0}
 
@@ -674,7 +755,8 @@ body.on-about .fab{display:none!important}
 <header class="top">
   <div class="wrap nav">
     <a class="brand" href="#home" aria-label="Big Web Studios home"><svg class="logo" viewBox="0 0 600 776" aria-hidden="true"><defs><clipPath id="lg-h"><path d="M0 0H288A200 200 0 0 1 288 400H0Z"/></clipPath></defs><path d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#9255A2"/><path d="M0 0H288A200 200 0 0 1 288 400H0Z" fill="#40BEEE"/><path clip-path="url(#lg-h)" d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#5789C8"/><circle cx="152" cy="624" r="152" fill="#FEC200"/></svg><span class="wm"><b>bigweb</b><small>STUDIOS</small></span></a>
-    <nav class="links" aria-label="Main">
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainNav"><span class="lines" aria-hidden="true"></span><span class="lbl">Menu</span></button>
+    <nav class="links" id="mainNav" aria-label="Main">
       <a href="#artists" data-nav="artists">Artists</a><a href="#creators" data-nav="creators">Creators</a><a href="#brands" data-nav="brands">Brands</a><a href="#spaces" data-nav="spaces">Spaces</a><a href="#work" data-nav="work">Work</a><a href="#events" data-nav="events">Events</a><a href="#about" data-nav="about">About</a><a href="/blog/">Blog</a>
       <a class="btn" href="#book">Book Now</a>
     </nav>
@@ -686,9 +768,14 @@ body.on-about .fab{display:none!important}
 <section class="home-hero">
   <div class="wrap hh">
     <div>
-      <p class="eyebrow">Artists · Creators · Brands · New Delhi</p>
+      <p class="eyebrow">Podcast &amp; content studio · Dwarka, New Delhi</p>
       <h1 style="margin-top:1rem"><span class="s">From the studio</span> to the <span class="t">spotlight.</span></h1>
       <p class="lede">A podcast and content studio in Dwarka, New Delhi that you can book by the hour, and a team that helps musicians, creators and brands make their work, promote it and take it on stage.</p>
+      <ul class="facts">
+        <li><b>₹1,800<small>/hr</small></b><span>Podcast studio · up to 6</span></li>
+        <li><b>₹999<small>/hr</small></b><span>Content shoot · up to 4</span></li>
+        <li><b>10am–10pm</b><span>Open daily · 10% off 3+ hrs</span></li>
+      </ul>
       <div class="ctas">
         <a class="btn yellow" href="#book">Book the studio</a>
         <a class="btn ghost" href="https://wa.me/919871920493" target="_blank" rel="noopener">WhatsApp us</a>
@@ -712,6 +799,17 @@ body.on-about .fab{display:none!important}
 </section>
 </div>
 
+<div class="scene who" id="who">
+<section class="who-in"><div class="wrap">
+  <p class="eyebrow">Who we work with</p>
+  <h2>Find what's for you.</h2>
+  <div class="who-tabs" role="tablist" aria-label="Who it's for">
+    <button type="button" role="tab" data-who="artists" style="--ac:var(--purple);--at:#fff">Musicians</button>
+    <button type="button" role="tab" data-who="creators" style="--ac:var(--blue);--at:#0B2533">Creators</button>
+    <button type="button" role="tab" data-who="brands" style="--ac:var(--yellow);--at:#16131F">Brands</button>
+  </div>
+</div></section>
+</div>
 <div data-view="artists" id="artists" class="scene">
 <section class="page-head"><div class="wrap"><p class="aud" style="--ac:var(--purple);--at:#fff"><b>For musicians &amp; bands</b><span>02 · Make it</span></p><h2 class="ch">Record. Release. <span style="background:var(--purple);color:var(--purple-ink);padding:0 .1em;border-radius:.12em">Rise.</span></h2><p>Start from scratch and end on stage. Each step builds on the one before, so you only take on what you need right now.</p></div></section>
 <section style="padding-top:3rem">
@@ -1567,6 +1665,21 @@ body.on-about .fab{display:none!important}
   if(bookSec&&matchMedia("(max-width:760px)").matches) bookSec.classList.add("bk-closed");
   window.__openBook=function(){ if(!bookSec||!bookSec.classList.contains("bk-closed")) return; bookSec.classList.remove("bk-closed"); if(bookBtn) bookBtn.setAttribute("aria-expanded","true"); };
   if(bookBtn) bookBtn.addEventListener("click",()=>{ window.__openBook(); bookSec.querySelector(".booker").scrollIntoView({behavior:"smooth",block:"start"}); });
+
+  // Phone header menu
+  const hdr=document.querySelector("header.top"), mbtn=hdr&&hdr.querySelector(".menu-btn");
+  if(mbtn){ mbtn.addEventListener("click",()=>{ const o=hdr.classList.toggle("open"); mbtn.setAttribute("aria-expanded",String(o)); mbtn.querySelector(".lbl").textContent=o?"Close":"Menu"; });
+    hdr.querySelectorAll(".links a").forEach(a=>a.addEventListener("click",()=>{ hdr.classList.remove("open"); mbtn.setAttribute("aria-expanded","false"); mbtn.querySelector(".lbl").textContent="Menu"; })); }
+  // Phone "who we work with" tabs
+  const whoBtns=[...document.querySelectorAll(".who-tabs button")];
+  function setWho(k){ document.body.classList.remove("who-artists","who-creators","who-brands"); document.body.classList.add("who-"+k); whoBtns.forEach(b=>b.setAttribute("aria-selected",String(b.dataset.who===k))); }
+  whoBtns.forEach(b=>b.addEventListener("click",()=>{ setWho(b.dataset.who); }));
+  setWho("artists");
+  window.__whoFor=function(el){ for(const k of ["artists","creators","brands"]){ const sec=document.getElementById(k); if(sec&&(sec===el||sec.contains(el))){ setWho(k); return; } } };
+  // Phone: space-card gear lists open on tap
+  if(matchMedia("(max-width:760px)").matches) document.querySelectorAll(".space .body ul").forEach(ul=>{
+    ul.classList.add("closed"); const b=document.createElement("button"); b.type="button"; b.className="incl-btn"; b.textContent="What's included ↓";
+    b.addEventListener("click",()=>{ const c=ul.classList.toggle("closed"); b.textContent=c?"What's included ↓":"Hide ↑"; }); ul.parentNode.insertBefore(b,ul); });
   // One scrolling story (home → events) plus a separate About page.
   const STORY=["home","artists","creators","brands","spaces","work","events"];
   const about=document.getElementById("about");
@@ -1576,6 +1689,7 @@ body.on-about .fab{display:none!important}
   function route(){
     const h=(location.hash||"").slice(1);
     const el=h&&document.getElementById(h);
+    if(el&&window.__whoFor) window.__whoFor(el);
     if(el&&window.__openForm) window.__openForm(el);
     if(el&&bookSec&&(el===bookSec||bookSec.contains(el))) window.__openBook();
     const inAbout=h==="about"||(el&&about.contains(el));
