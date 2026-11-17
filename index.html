@@ -696,6 +696,37 @@ footer .fl svg{width:18px;height:23px}
   .tile{min-height:0;scroll-snap-align:start}
   #events section[style*="padding-top:4rem"]{padding-top:2rem!important}
 }
+
+/* Zenova Fest + Zerion Atelier partner */
+.fest{margin-top:2.5rem;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;padding:clamp(22px,4vw,40px);border-radius:var(--r);color:#F5F4F8;background:radial-gradient(circle at 85% 30%,rgba(146,85,162,.55),transparent 55%),radial-gradient(circle at 10% 110%,rgba(64,190,238,.35),transparent 50%),#0D0B12;border:1px solid #2E2A3B}
+.fest .eyebrow{color:#FEC200;display:flex;align-items:center;gap:.5rem}
+.fest h3{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;letter-spacing:-.03em;margin:.5rem 0 .8rem;line-height:1}
+.fest h3 span{color:#40BEEE;font-weight:600}
+.fest p:not(.eyebrow){max-width:56ch;opacity:.85}
+.fest-cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.3rem}
+.fest-cta .btn svg{width:18px;height:18px}
+.fest .btn.ghost{border-color:#F5F4F8;color:#F5F4F8;background:transparent}
+.fest-mark{display:grid;justify-items:center;line-height:.8}
+.fest-mark b{font:800 clamp(6rem,14vw,10rem) var(--f-display);background:linear-gradient(135deg,#40BEEE,#9255A2 55%,#FEC200);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fest-mark small{font:500 1rem var(--f-mono);letter-spacing:.4em;color:#FEC200;margin-top:.6rem}
+.partner{margin-top:1.4rem;display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:clamp(1.4rem,4vw,3rem);align-items:center;padding:clamp(20px,3.5vw,36px);border-radius:var(--r);background:var(--surface);border:1px solid var(--line)}
+.partner-logo{display:grid;place-items:center;background:#fff;border-radius:18px;padding:18px;box-shadow:0 18px 40px -24px rgba(0,0,0,.5)}
+.partner-logo img{width:100%;height:auto;display:block}
+.partner h3{font-size:clamp(1.6rem,3.6vw,2.4rem);font-weight:800;letter-spacing:-.025em;margin:.5rem 0 .8rem;line-height:1.05}
+.partner h3 span{color:var(--purple)}
+.partner-txt > p:not(.eyebrow):not(.partner-links){color:var(--muted);max-width:60ch}
+.roles{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:1.2rem}
+.roles div{padding:14px 16px;border-radius:14px;background:var(--paper);border:1px solid var(--line);display:grid;gap:.25rem}
+.roles small{font:500 .72rem var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--purple)}
+.roles div:nth-child(2) small{color:var(--blue-text)}
+.roles b{font-size:.95rem;line-height:1.35}
+.partner-links{display:flex;flex-wrap:wrap;gap:1.2rem;margin-top:1.1rem;font-weight:600}
+.partner-links a{color:var(--blue-text)}
+@media (max-width:760px){
+  .fest{grid-template-columns:1fr;gap:.5rem}.fest-mark{display:none}
+  .partner{grid-template-columns:1fr}.partner-logo{max-width:220px}
+  .roles{grid-template-columns:1fr}
+}
 /* ---- single-page story ---- */
 .booker > *,.booker form,.steps,.step{min-width:0}
 
@@ -895,7 +926,7 @@ body.on-about .fab{display:none!important}
       <div class="svc"><h3>Artist &amp; creator sponsorships</h3><p>Get featured in music videos and creator content, matched to your audience and pitched as backing new talent.</p></div>
       <div class="svc"><h3>Product &amp; brand shoots</h3><p>Product photography and brand photo shoots in our studio, with bold backdrops built for camera.</p></div>
       <div class="svc"><h3>Brand videos &amp; content</h3><p>Brand films, reels and social content, planned, shot and edited by one team.</p></div>
-      <div class="svc"><h3>Event partnerships</h3><p>Sponsor open mics, concerts and festivals. <a href="#events">See Events ↓</a></p></div>
+      <div class="svc"><h3>Event partnerships</h3><p>Sponsor open mics, concerts and festivals, including Zenova Fest 2027. <a href="#events">See Events ↓</a></p></div>
     </div>
     <div class="enquire" style="background:var(--yellow);color:var(--yellow-ink)">
       <div>
@@ -1188,9 +1219,27 @@ body.on-about .fab{display:none!important}
       <div class="tile t-purple"><span class="no">05</span><h3>Corporate events</h3><p>Annual days, offsites, award nights and client evenings, with live acts, hosts and content handled.</p></div>
       <div class="tile t-yellow"><span class="no">06</span><h3>Brand experiences</h3><p>Pop-ups, brand activations and immersive experiences that people remember, film and share.</p></div>
     </div>
-    <div class="side-card" style="margin-top:2.5rem">
-      <div><p class="eyebrow"><span class="live-dot"></span>Announcing soon</p><h3>First events announced soon.</h3><p>Follow <a href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">@bigwebstudios</a> to hear first about open mics, gigs and festival slots.</p></div>
-      <a class="btn ghost" href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">Follow on Instagram</a>
+    <div class="fest">
+      <div class="fest-txt">
+        <p class="eyebrow"><span class="live-dot"></span>Coming 2027</p>
+        <h3>Zenova Fest <span>· The South Verse</span></h3>
+        <p>A new festival built around the sound of the South, presented by Zerion Atelier, with Big Web Studios on marketing and brand partnerships. Line-up, city and dates drop soon.</p>
+        <div class="fest-cta"><a class="btn yellow" href="https://www.instagram.com/zenova.fest/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg> Follow @zenova.fest</a><a class="btn ghost" href="#brForm">Sponsor the fest</a></div>
+      </div>
+      <div class="fest-mark" aria-hidden="true"><b>Z</b><small>2027</small></div>
+    </div>
+    <div class="partner">
+      <a class="partner-logo" href="https://zerionatelier.com/" target="_blank" rel="noopener" aria-label="Zerion Atelier website"><img src="media/zerion-atelier-logo.png" alt="Zerion Atelier: Experience, Experiment, Expectation" width="600" height="546" loading="lazy"></a>
+      <div class="partner-txt">
+        <p class="eyebrow">Official partner</p>
+        <h3>Zerion Atelier builds the stage. <span>We make sure the world shows up.</span></h3>
+        <p>Big Web Studios is the official marketing and brand sponsorship partner of Zerion Atelier, the stage production and artist representation house behind Zenova Fest. They craft the show; we take it from first announcement to a packed crowd, and bring in the brands that want to be part of the moment.</p>
+        <div class="roles">
+          <div><small>Zerion Atelier</small><b>Stage production, artist representation, show management</b></div>
+          <div><small>Big Web Studios</small><b>Marketing &amp; promotion, brand sponsorships, content &amp; coverage</b></div>
+        </div>
+        <p class="partner-links"><a href="https://zerionatelier.com/" target="_blank" rel="noopener">zerionatelier.com ↗</a><a href="https://www.instagram.com/zerion_atelier/" target="_blank" rel="noopener">@zerion_atelier ↗</a></p>
+      </div>
     </div>
     <div class="ev-forms">
       <form class="panel y" id="evForm" novalidate><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
