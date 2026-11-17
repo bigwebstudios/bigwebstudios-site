@@ -344,6 +344,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .d-blue{background:var(--blue);color:var(--blue-ink)}
 .d-purple{background:var(--purple);color:var(--purple-ink)}
 .d-yellow{background:var(--yellow);color:var(--yellow-ink)}
+.d-ink{background:#16131F;color:#F5F4F8;border:1px solid #2E2A3B}
+.d-ink .k{color:#FEC200;opacity:1}
+#home .doors{grid-template-columns:repeat(4,1fr)}
+@media (max-width:1100px){#home .doors{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){#home .doors{grid-template-columns:1fr}}
 .status{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .status span{display:inline-flex;align-items:center;gap:.5rem;font:500 .85rem var(--f-mono);padding:.5rem .9rem;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
 .status i{width:9px;height:9px;border-radius:50%;background:var(--ok)}
@@ -911,11 +916,12 @@ body.on-about .fab{display:none!important}
 </section>
 <section class="hp-sec" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">Who we work with</p><h2>Brands, artists and creators.</h2></div>
+    <div class="sec-head"><p class="eyebrow">Who we work with</p><h2>Brands, artists, creators and events.</h2></div>
     <div class="doors">
       <a class="door d-yellow" href="#brands"><span class="k">For Brands</span><h3>Spot. Sponsor. Stand out.</h3><ul><li>Artist and creator partnerships</li><li>Event sponsorships</li><li>Campaigns and brand content</li></ul><span class="go">Put your brand on stage →</span></a>
       <a class="door d-purple" href="#artists"><span class="k">For Artists · musicians &amp; bands</span><h3>Record. Release. Rise.</h3><ul><li>Music production and distribution</li><li>Music videos and promotion</li><li>Live shows and stage bookings</li></ul><span class="go">Explore artist packages →</span></a>
       <a class="door d-blue" href="#creators"><span class="k">For Creators · podcasters &amp; influencers</span><h3>Shoot. Share. Shine.</h3><ul><li>Content strategy and production</li><li>Shoot, edit and fully managed posting</li><li>Brand deals, PR and events</li></ul><span class="go">Start creating →</span></a>
+      <a class="door d-ink" href="#events"><span class="k">For Event organisers · festivals, colleges &amp; corporates</span><h3>Plan. Promote. Pack the house.</h3><ul><li>Event marketing and promotion</li><li>Brand sponsors for your event</li><li>Artist bookings</li></ul><span class="go">Plan your event →</span></a>
     </div>
   </div>
 </section>
