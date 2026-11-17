@@ -765,6 +765,21 @@ body:not([data-page="spaces"]) .fab{display:none!important}
   .work-teaser a{scroll-snap-align:start}
   .doors{gap:10px}
 }
+
+/* Marketing page */
+.mk-cards{grid-template-columns:repeat(3,1fr)}
+@media (max-width:1000px){.mk-cards{grid-template-columns:1fr 1fr}}
+.mk-steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:mk}
+.mk-steps li{counter-increment:mk;display:grid;gap:.4rem;padding:22px 20px;border-radius:var(--r);background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--c)}
+.mk-steps li::before{content:"0" counter(mk);font:500 .78rem var(--f-mono);letter-spacing:.12em;color:var(--muted)}
+.mk-steps b{font:800 1.5rem var(--f-display);letter-spacing:-.02em}
+.mk-steps span{color:var(--muted);font-size:.95rem}
+.mk-now{margin-top:2rem;display:grid;gap:.35rem;padding:22px 24px;border-radius:var(--r);text-decoration:none;color:#F5F4F8;background:radial-gradient(circle at 90% 20%,rgba(146,85,162,.5),transparent 55%),#0D0B12;border:1px solid #2E2A3B}
+.mk-now .eyebrow{color:#FEC200;display:flex;align-items:center;gap:.5rem}
+.mk-now b{font:800 clamp(1.6rem,4vw,2.3rem) var(--f-display);letter-spacing:-.02em}
+.mk-now > span:last-child{opacity:.8}
+@media (max-width:760px){.mk-cards{grid-template-columns:1fr 1fr}.mk-steps{grid-template-columns:1fr 1fr;gap:10px}.mk-steps li{padding:16px 14px}.mk-steps b{font-size:1.2rem}.mk-steps span{font-size:.85rem}}
+body[data-page="home"] .reach .btn[href="#book"]{display:none}
 /* ---- single-page story ---- */
 .booker > *,.booker form,.steps,.step{min-width:0}
 
@@ -826,7 +841,7 @@ body.on-about .fab{display:none!important}
     <a class="brand" href="#home" aria-label="Big Web Studios home"><svg class="logo" viewBox="0 0 600 776" aria-hidden="true"><defs><clipPath id="lg-h"><path d="M0 0H288A200 200 0 0 1 288 400H0Z"/></clipPath></defs><path d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#9255A2"/><path d="M0 0H288A200 200 0 0 1 288 400H0Z" fill="#40BEEE"/><path clip-path="url(#lg-h)" d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#5789C8"/><circle cx="152" cy="624" r="152" fill="#FEC200"/></svg><span class="wm"><b>bigweb</b><small>STUDIOS</small></span></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainNav"><span class="lines" aria-hidden="true"></span><span class="lbl">Menu</span></button>
     <nav class="links" id="mainNav" aria-label="Main">
-      <a href="#artists" data-nav="artists">Artists</a><a href="#creators" data-nav="creators">Creators</a><a href="#brands" data-nav="brands">Brands</a><a href="#spaces" data-nav="spaces">Studio</a><a href="#work" data-nav="work">Work</a><a href="#events" data-nav="events">Events</a><a href="#about" data-nav="about">About</a><a href="/blog/">Blog</a>
+      <a href="#marketing" data-nav="marketing">Marketing</a><a href="#artists" data-nav="artists">Artists</a><a href="#creators" data-nav="creators">Creators</a><a href="#brands" data-nav="brands">Brands</a><a href="#spaces" data-nav="spaces">Studio</a><a href="#work" data-nav="work">Work</a><a href="#events" data-nav="events">Events</a><a href="#about" data-nav="about">About</a><a href="/blog/">Blog</a>
       <a class="btn" href="#reach">Let's talk</a>
     </nav>
   </div>
@@ -842,7 +857,7 @@ body.on-about .fab{display:none!important}
       <p class="lede">Big Web Studios is a one-stop marketing agency for artists, creators and brands. We plan it, make it in our own studio, promote it across the web and put it in the spotlight.</p>
       <div class="ctas">
         <a class="btn yellow" href="#reach">Work with us</a>
-        <a class="btn ghost" href="#work">See our work</a>
+        <a class="btn ghost" href="#what">What we do</a>
       </div>
     </div>
     <div class="logo-panel">
@@ -853,11 +868,11 @@ body.on-about .fab{display:none!important}
   </div>
   </div>
 </section>
-<section class="hp-sec" style="padding-top:0">
+<section class="hp-sec" id="what" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head"><p class="eyebrow">What we do</p><h2>One agency. Every step to the spotlight.</h2><p>Strategy, content, promotion, sponsorships and the stage, handled by one team that has its own studio.</p></div>
     <div class="svc-cards">
-      <a class="sc" href="#brands" style="--c:var(--purple)"><span class="n">01</span><h3>Marketing &amp; promotion</h3><p>Launch plans, Instagram and social media, paid promotion and the content that keeps people watching.</p><span class="go">Learn more →</span></a>
+      <a class="sc" href="#marketing" style="--c:var(--purple)"><span class="n">01</span><h3>Marketing &amp; promotion</h3><p>Launch plans, Instagram and social media, paid promotion and the content that keeps people watching.</p><span class="go">Learn more →</span></a>
       <a class="sc" href="#brands" style="--c:var(--yellow)"><span class="n">02</span><h3>Brand sponsorships</h3><p>We match brands with the artists, creators and events their audience already loves.</p><span class="go">For brands →</span></a>
       <a class="sc" href="#spaces" style="--c:var(--blue)"><span class="n">03</span><h3>Content production</h3><p>Podcasts, reels, music videos and brand films, shot in our own studio and edited in-house.</p><span class="go">See the studio →</span></a>
       <a class="sc" href="#events" style="--c:var(--ink)"><span class="n">04</span><h3>Events &amp; artist bookings</h3><p>Festivals, concerts, campus and corporate events, from line-up to a packed crowd.</p><span class="go">See events →</span></a>
@@ -897,32 +912,38 @@ body.on-about .fab{display:none!important}
     <div class="sec-head"><p class="eyebrow">Who we work with</p><h2>Artists, creators and brands.</h2></div>
     <div class="doors">
       <a class="door d-purple" href="#artists"><span class="k">For Artists · musicians &amp; bands</span><h3>Record. Release. Rise.</h3><ul><li>Music production and distribution</li><li>Music videos and promotion</li><li>Live shows and stage bookings</li></ul><span class="go">Explore artist packages →</span></a>
-      <a class="door d-blue" href="#creators"><span class="k">For Creators · open now</span><h3>Shoot. Share. Shine.</h3><ul><li>Podcast and content space by the hour</li><li>Camera person and editor packages</li><li>Fully managed content</li></ul><span class="go">Start creating →</span></a>
+      <a class="door d-blue" href="#creators"><span class="k">For Creators · podcasters &amp; influencers</span><h3>Shoot. Share. Shine.</h3><ul><li>Content strategy and production</li><li>Shoot, edit and fully managed posting</li><li>Brand deals, PR and events</li></ul><span class="go">Start creating →</span></a>
       <a class="door d-yellow" href="#brands"><span class="k">For Brands</span><h3>Spot. Sponsor. Stand out.</h3><ul><li>Features in artist and creator content</li><li>Product and brand shoots</li><li>Event partnerships</li></ul><span class="go">Put your brand on stage →</span></a>
     </div>
   </div>
 </section>
-<section class="hp-sec" style="padding-top:0">
-  <div class="wrap studio-teaser">
-    <div class="st-img"><img src="media/ig-DFjpL_SSyE5.jpg" alt="A session in the Big Web Studios studio" loading="lazy"><span>Our studio · Dwarka, New Delhi</span></div>
-    <div>
-      <p class="eyebrow">An agency with its own studio</p>
-      <h2>Shoot it here. Scale it everywhere.</h2>
-      <p class="st-lede">Brands, artists and creators shoot podcasts, reels and brand films in our studio. Then we turn them into content that works across the web: cut for every platform and promoted to the right people.</p>
-      <ul class="st-chips"><li><b>₹1,800/hr</b> podcast studio</li><li><b>₹999/hr</b> content shoot</li><li><b>10% off</b> 3+ hours</li></ul>
-      <div class="ctas"><a class="btn" href="#spaces">See the studio</a><a class="btn ghost" href="#book">Book a session</a></div>
-    </div>
-  </div>
-</section>
-<section class="hp-sec" style="padding-top:0">
+</div>
+
+<div data-view="marketing" id="marketing" class="scene">
+<section class="page-head"><div class="wrap"><p class="aud" style="--ac:var(--purple);--at:#fff"><b>For brands, artists, creators &amp; events</b></p><h2 class="ch">Marketing that puts you in the <span style="background:var(--purple);color:var(--purple-ink);padding:0 .1em;border-radius:.12em">spotlight.</span></h2><p>We plan the launch, make the content, run the promotion and bring in the right partners, so your brand, release or event gets seen by the people who matter.</p></div></section>
+<section style="padding-top:3rem">
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">Our work</p><h2>Made here. Seen everywhere.</h2></div>
-    <div class="work-teaser">
-      <a href="#work"><img src="https://i.ytimg.com/vi/zADmBGpJlTE/maxresdefault.jpg" alt="" loading="lazy"><span><em>Music video</em>Yaad School Ki</span></a>
-      <a href="#work"><img src="https://i.ytimg.com/vi/OSxY08nQVpc/maxresdefault.jpg" alt="" loading="lazy"><span><em>Short film</em>This Moment, Live It Up.</span></a>
-      <a href="#work"><img src="media/ig-DafhG90JX12.jpg" alt="" loading="lazy"><span><em>Brand reel</em>Zouk × @sheslayyyss</span></a>
+    <div class="svc-cards mk-cards">
+      <div class="sc" style="--c:var(--purple)"><span class="n">01</span><h3>Launch &amp; campaign planning</h3><p>Positioning, timeline and a plan for every channel, worked out before anything goes live.</p></div>
+      <div class="sc" style="--c:var(--blue)"><span class="n">02</span><h3>Social media &amp; Instagram</h3><p>Content calendars, reels and posting that build a real audience, not just a feed.</p></div>
+      <div class="sc" style="--c:var(--yellow)"><span class="n">03</span><h3>Paid promotion</h3><p>Ads on Instagram, Facebook and Google, aimed at the people most likely to act, and tracked to the rupee.</p></div>
+      <div class="sc" style="--c:var(--purple)"><span class="n">04</span><h3>Creator collaborations</h3><p>We bring in creators whose audiences already trust them, and build the content around your launch.</p></div>
+      <a class="sc" href="#brands" style="--c:var(--yellow)"><span class="n">05</span><h3>Brand sponsorships</h3><p>We match brands with artists, creators and events, and handle the deal from pitch to post.</p><span class="go">For brands →</span></a>
+      <a class="sc" href="#events" style="--c:var(--blue)"><span class="n">06</span><h3>Event promotion</h3><p>From the first announcement to a packed crowd, for festivals, concerts, campus and corporate events.</p><span class="go">See events →</span></a>
     </div>
-    <p style="margin-top:1.4rem"><a class="btn ghost" href="#work">See all our work →</a></p>
+    <div class="sec-head" style="margin-top:4rem"><p class="eyebrow">How we work</p><h2>From the first idea to the final number.</h2></div>
+    <ol class="mk-steps">
+      <li style="--c:var(--purple)"><b>Plan</b><span>Goals, audience, message and a launch calendar.</span></li>
+      <li style="--c:var(--blue)"><b>Make</b><span>Content shot in our own studio and edited in-house.</span></li>
+      <li style="--c:var(--yellow)"><b>Promote</b><span>Social, paid ads, creators and partners, all moving together.</span></li>
+      <li style="--c:var(--ink)"><b>Grow</b><span>We track what works, cut what doesn't and scale the winners.</span></li>
+    </ol>
+    <a class="mk-now" href="#events">
+      <span class="eyebrow"><span class="live-dot"></span>Now marketing</span>
+      <b>Zenova Fest 2027</b>
+      <span>Official marketing &amp; brand sponsorship partner of Zerion Atelier. See the partnership →</span>
+    </a>
+    <div class="cta-band" style="margin-top:2rem"><h2>Launching something? Tell us about it.</h2><div style="display:flex;gap:.8rem;flex-wrap:wrap"><a class="btn yellow" href="https://wa.me/919871920493" target="_blank" rel="noopener">WhatsApp us</a><a class="btn ghost" href="#brForm">Send a brief</a></div></div>
   </div>
 </section>
 </div>
@@ -1829,7 +1850,7 @@ body.on-about .fab{display:none!important}
     b.addEventListener("click",()=>{ const c=ul.classList.toggle("closed"); b.textContent=c?"What's included ↓":"Hide ↑"; }); ul.parentNode.insertBefore(b,ul); });
   // Separate pages: one view at a time, each with its own link (/brands, /studio …).
   // (The single-page scroll version is saved as git tag restore/single-page-2026-11-17.)
-  const PAGES=["home","artists","creators","brands","spaces","work","events","about"];
+  const PAGES=["home","marketing","artists","creators","brands","spaces","work","events","about"];
   const ALIAS={studio:"spaces"};
   const reach=document.getElementById("reach");
   let first=true, cur="home";
