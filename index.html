@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Big Web Studios, New Delhi. Studio, agency and stage for musicians, creators and brands. From the studio to the spotlight.">
+<meta name="description" content="Big Web Studios is a one-stop marketing agency with its own studio in New Delhi: marketing & promotion, brand sponsorships, content production and events for artists, creators and brands.">
 <meta property="og:title" content="BigWeb Studios">
 <meta property="og:site_name" content="BigWeb Studios">
 <meta property="og:type" content="website">
@@ -13,14 +13,14 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.bigwebstudios.com/og-image.jpg">
-<meta property="og:description" content="From the studio to the spotlight. For artists, creators and brands in New Delhi.">
+<meta property="og:description" content="A one-stop marketing agency with its own studio. Marketing, brand sponsorships, content and events for artists, creators and brands.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>BigWeb Studios</title>
 <link rel="canonical" href="https://www.bigwebstudios.com/">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "@id": "https://www.bigwebstudios.com/#business", "name": "Big Web Studios", "description": "Podcast studio, content shoot studio and creative agency for musicians, creators and brands in New Delhi.", "url": "https://www.bigwebstudios.com/", "telephone": "+91-98719-20493", "email": "bigwebstudio.com@gmail.com", "image": "https://www.bigwebstudios.com/og-image.jpg", "priceRange": "₹999–₹1,800 per hour", "address": {"@type": "PostalAddress", "streetAddress": "Plot 45, Qutub Vihar Phase 1, opp. Dwarka Sector 19", "addressLocality": "New Delhi", "postalCode": "110071", "addressRegion": "Delhi", "addressCountry": "IN"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "10:00", "closes": "22:00"}], "geo": {"@type": "GeoCoordinates", "latitude": 28.5781847, "longitude": 77.0358273}, "hasMap": "https://www.google.com/maps/dir/?api=1&destination=28.5781847,77.0358273", "sameAs": ["https://www.instagram.com/bigwebstudios/"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "@id": "https://www.bigwebstudios.com/#business", "name": "Big Web Studios", "description": "Marketing agency with its own podcast and content studio in New Delhi: marketing & promotion, brand sponsorships, content production and events for artists, creators and brands.", "url": "https://www.bigwebstudios.com/", "telephone": "+91-98719-20493", "email": "bigwebstudio.com@gmail.com", "image": "https://www.bigwebstudios.com/og-image.jpg", "priceRange": "₹999–₹1,800 per hour", "address": {"@type": "PostalAddress", "streetAddress": "Plot 45, Qutub Vihar Phase 1, opp. Dwarka Sector 19", "addressLocality": "New Delhi", "postalCode": "110071", "addressRegion": "Delhi", "addressCountry": "IN"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "10:00", "closes": "22:00"}], "geo": {"@type": "GeoCoordinates", "latitude": 28.5781847, "longitude": 77.0358273}, "hasMap": "https://www.google.com/maps/dir/?api=1&destination=28.5781847,77.0358273", "sameAs": ["https://www.instagram.com/bigwebstudios/"]}</script>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +46,7 @@
   --purple:#B07FCB; --purple-ink:#140F1C; --blue:#40BEEE; --blue-ink:#0B2533; --blue-text:#40BEEE; --yellow:#FEC200; --yellow-ink:#16131F;
   --soft:#241E35; --ok:#4CC08A; --danger:#F07A72; color-scheme:dark}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:auto}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
@@ -617,7 +617,9 @@ footer .fl svg{width:18px;height:23px}
 @media (max-width:760px){.page-head h2.ch{font-size:2.3rem}.stage h2.ch{font-size:2.5rem}}
 
 /* ===== Phone layout (desktop untouched) ===== */
-.facts,.menu-btn,.who,.incl-btn{display:none}
+.menu-btn,.incl-btn{display:none}
+.who,.facts{display:none!important}
+.aud span{display:none}
 @media (max-width:760px){
   /* header: logo + Menu; links open as a panel */
   .nav{flex-wrap:nowrap}
@@ -652,7 +654,6 @@ footer .fl svg{width:18px;height:23px}
   .facts li:nth-child(3) b{font-size:.98rem}
   .home-hero .ctas{margin-top:1.2rem}
   .logo-panel{display:none}
-  #home > section:nth-of-type(2){display:none}
 
   /* who we work with: tabs, one audience at a time */
   .who{display:block;border-top:8px solid transparent!important;border-image:linear-gradient(90deg,var(--purple) 0 33%,var(--blue) 33% 66%,var(--yellow) 66%) 1!important}
@@ -661,8 +662,6 @@ footer .fl svg{width:18px;height:23px}
   .who-tabs{display:flex;gap:8px;margin-top:1rem;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
   .who-tabs button{flex:1;padding:.65rem .5rem;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:600 .92rem var(--f-body)}
   .who-tabs button[aria-selected="true"]{background:var(--ac);color:var(--at);border-color:var(--ac)}
-  body:not(.who-creators):not(.who-brands) #creators,body:not(.who-creators):not(.who-brands) #brands,
-  body.who-creators #artists,body.who-creators #brands,body.who-brands #artists,body.who-brands #creators{display:none}
   #artists,#creators,#brands{border-top:0!important}
   #artists .page-head,#creators .page-head,#brands .page-head{padding-top:1rem}
   #artists .aud,#creators .aud,#brands .aud{display:none}
@@ -727,6 +726,45 @@ footer .fl svg{width:18px;height:23px}
   .partner{grid-template-columns:1fr}.partner-logo{max-width:130px}
   .roles{grid-template-columns:1fr}
 }
+
+/* ===== Multi-page + agency homepage ===== */
+body:not([data-page="spaces"]) .fab{display:none!important}
+.hp-sec .sec-head{margin-bottom:1.6rem}
+.svc-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media (max-width:1000px){.svc-cards{grid-template-columns:1fr 1fr}}
+.sc{display:flex;flex-direction:column;gap:.6rem;padding:24px 22px;border-radius:var(--r);background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--c);color:var(--ink);text-decoration:none;transition:transform .18s}
+.sc:hover{transform:translateY(-4px)}
+.sc .n{font:500 .8rem var(--f-mono);letter-spacing:.12em;color:var(--muted)}
+.sc h3{font-size:1.35rem}
+.sc p{color:var(--muted);font-size:.95rem;line-height:1.55}
+.sc .go{margin-top:auto;font-weight:600;color:var(--blue-text)}
+.fest-role{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin-top:1rem}
+.fest-role span{font:500 .72rem var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:#C9C6D3;margin-right:.2rem}
+.fest-role b{padding:.4rem .8rem;border-radius:999px;background:rgba(254,194,0,.14);border:1px solid rgba(254,194,0,.45);color:#FEC200;font-size:.88rem}
+.studio-teaser{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:center}
+.st-img{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;background:#000}
+.st-img img{width:100%;height:100%;object-fit:cover;object-position:center 85%;display:block}
+.st-img span{position:absolute;left:14px;bottom:14px;background:rgba(22,19,31,.85);color:#F5F4F8;font:600 .85rem var(--f-body);padding:.45rem .8rem;border-radius:999px}
+.studio-teaser h2{margin-top:.6rem}
+.st-lede{color:var(--muted);margin-top:.9rem;max-width:52ch}
+.st-chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:1.2rem 0 0}
+.st-chips li{padding:.5rem .85rem;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:.9rem;color:var(--muted)}
+.st-chips b{color:var(--ink)}
+.studio-teaser .ctas{margin-top:1.4rem}
+.work-teaser{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.work-teaser a{position:relative;display:block;aspect-ratio:16/10;border-radius:var(--r);overflow:hidden;background:#000}
+.work-teaser img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.work-teaser a:hover img{transform:scale(1.04)}
+.work-teaser span{position:absolute;left:12px;right:12px;bottom:12px;display:grid;gap:2px;background:rgba(22,19,31,.86);color:#F5F4F8;font:700 .95rem/1.25 var(--f-body);padding:.6rem .8rem;border-radius:12px}
+.work-teaser em{font:500 .66rem var(--f-mono);font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:#FEC200}
+@media (max-width:760px){
+  .svc-cards{grid-template-columns:1fr 1fr;gap:10px}
+  .sc{padding:16px 14px}.sc h3{font-size:1.05rem}.sc p{font-size:.84rem}
+  .studio-teaser{grid-template-columns:1fr}.st-img{max-width:300px}
+  .work-teaser{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-16px;padding:0 16px 8px;scrollbar-width:none}
+  .work-teaser a{scroll-snap-align:start}
+  .doors{gap:10px}
+}
 /* ---- single-page story ---- */
 .booker > *,.booker form,.steps,.step{min-width:0}
 
@@ -788,8 +826,8 @@ body.on-about .fab{display:none!important}
     <a class="brand" href="#home" aria-label="Big Web Studios home"><svg class="logo" viewBox="0 0 600 776" aria-hidden="true"><defs><clipPath id="lg-h"><path d="M0 0H288A200 200 0 0 1 288 400H0Z"/></clipPath></defs><path d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#9255A2"/><path d="M0 0H288A200 200 0 0 1 288 400H0Z" fill="#40BEEE"/><path clip-path="url(#lg-h)" d="M0 280H353A247 247 0 0 1 353 774H0Z" fill="#5789C8"/><circle cx="152" cy="624" r="152" fill="#FEC200"/></svg><span class="wm"><b>bigweb</b><small>STUDIOS</small></span></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainNav"><span class="lines" aria-hidden="true"></span><span class="lbl">Menu</span></button>
     <nav class="links" id="mainNav" aria-label="Main">
-      <a href="#artists" data-nav="artists">Artists</a><a href="#creators" data-nav="creators">Creators</a><a href="#brands" data-nav="brands">Brands</a><a href="#spaces" data-nav="spaces">Spaces</a><a href="#work" data-nav="work">Work</a><a href="#events" data-nav="events">Events</a><a href="#about" data-nav="about">About</a><a href="/blog/">Blog</a>
-      <a class="btn" href="#book">Book Now</a>
+      <a href="#artists" data-nav="artists">Artists</a><a href="#creators" data-nav="creators">Creators</a><a href="#brands" data-nav="brands">Brands</a><a href="#spaces" data-nav="spaces">Studio</a><a href="#work" data-nav="work">Work</a><a href="#events" data-nav="events">Events</a><a href="#about" data-nav="about">About</a><a href="/blog/">Blog</a>
+      <a class="btn" href="#reach">Let's talk</a>
     </nav>
   </div>
 </header>
@@ -799,17 +837,12 @@ body.on-about .fab{display:none!important}
 <section class="home-hero">
   <div class="wrap hh">
     <div>
-      <p class="eyebrow">Podcast &amp; content studio · Dwarka, New Delhi</p>
+      <p class="eyebrow">Marketing agency · Studio · Events · New Delhi</p>
       <h1 style="margin-top:1rem"><span class="s">From the studio</span> to the <span class="t">spotlight.</span></h1>
-      <p class="lede">A podcast and content studio in Dwarka, New Delhi that you can book by the hour, and a team that helps musicians, creators and brands make their work, promote it and take it on stage.</p>
-      <ul class="facts">
-        <li><b>₹1,800<small>/hr</small></b><span>Podcast studio · up to 6</span></li>
-        <li><b>₹999<small>/hr</small></b><span>Content shoot · up to 4</span></li>
-        <li><b>10am–10pm</b><span>Open daily · 10% off 3+ hrs</span></li>
-      </ul>
+      <p class="lede">Big Web Studios is a one-stop marketing agency for artists, creators and brands. We plan it, make it in our own studio, promote it across the web and put it in the spotlight.</p>
       <div class="ctas">
-        <a class="btn yellow" href="#book">Book the studio</a>
-        <a class="btn ghost" href="https://wa.me/919871920493" target="_blank" rel="noopener">WhatsApp us</a>
+        <a class="btn yellow" href="#reach">Work with us</a>
+        <a class="btn ghost" href="#work">See our work</a>
       </div>
     </div>
     <div class="logo-panel">
@@ -818,14 +851,78 @@ body.on-about .fab{display:none!important}
       <div class="wm"><b>bigweb</b><small>STUDIOS</small></div>
     </div>
   </div>
+  </div>
 </section>
-<section style="padding-top:0">
+<section class="hp-sec" style="padding-top:0">
   <div class="wrap">
-    <div class="doors">
-      <a class="door d-purple" href="#artists"><span class="k">02 · For Artists · musicians &amp; bands</span><h3>Record. Release. Rise.</h3><ul><li>Music production and distribution</li><li>Music videos and promotion</li><li>Live shows and stage bookings</li></ul><span class="go">Explore artist packages →</span></a>
-      <a class="door d-blue" href="#creators"><span class="k">03 · For Creators · open now</span><h3>Shoot. Share. Shine.</h3><ul><li>Podcast and content space by the hour</li><li>Camera person and editor packages</li><li>Fully managed content</li></ul><span class="go">Start creating →</span></a>
-      <a class="door d-yellow" href="#brands"><span class="k">04 · For Brands</span><h3>Spot. Sponsor. Stand out.</h3><ul><li>Features in artist and creator content</li><li>Product and brand shoots</li><li>Event partnerships</li></ul><span class="go">Put your brand on stage →</span></a>
+    <div class="sec-head"><p class="eyebrow">What we do</p><h2>One agency. Every step to the spotlight.</h2><p>Strategy, content, promotion, sponsorships and the stage, handled by one team that has its own studio.</p></div>
+    <div class="svc-cards">
+      <a class="sc" href="#brands" style="--c:var(--purple)"><span class="n">01</span><h3>Marketing &amp; promotion</h3><p>Launch plans, Instagram and social media, paid promotion and the content that keeps people watching.</p><span class="go">Learn more →</span></a>
+      <a class="sc" href="#brands" style="--c:var(--yellow)"><span class="n">02</span><h3>Brand sponsorships</h3><p>We match brands with the artists, creators and events their audience already loves.</p><span class="go">For brands →</span></a>
+      <a class="sc" href="#spaces" style="--c:var(--blue)"><span class="n">03</span><h3>Content production</h3><p>Podcasts, reels, music videos and brand films, shot in our own studio and edited in-house.</p><span class="go">See the studio →</span></a>
+      <a class="sc" href="#events" style="--c:var(--ink)"><span class="n">04</span><h3>Events &amp; artist bookings</h3><p>Festivals, concerts, campus and corporate events, from line-up to a packed crowd.</p><span class="go">See events →</span></a>
     </div>
+  </div>
+</section>
+<section class="hp-sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Featured partnership</p><h2>Zenova Fest 2027, with Zerion Atelier.</h2></div>
+    <div class="fest">
+      <div class="fest-txt">
+        <p class="eyebrow"><span class="live-dot"></span>Coming 2027</p>
+        <h3>Zenova Fest <span>2027</span></h3>
+        <p>Something big is coming in 2027. Presented by Zerion Atelier, with Big Web Studios as the marketing and brand sponsorship partner. More will be revealed soon.</p>
+        <p class="fest-role"><span>Our role</span><b>Marketing &amp; promotion</b><b>Brand sponsorships</b></p>
+        <div class="fest-cta"><a class="btn yellow" href="https://www.instagram.com/zenova.fest/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg> Follow @zenova.fest</a><a class="btn ghost" href="#brForm">Sponsor the fest</a></div>
+      </div>
+      <div class="fest-mark" aria-hidden="true"><b>Z</b><small>2027</small></div>
+    </div>
+    <div class="partner">
+      <a class="partner-logo" href="https://zerionatelier.com/" target="_blank" rel="noopener" aria-label="Zerion Atelier website"><img src="media/zerion-atelier-logo.png" alt="Zerion Atelier: Experience, Experiment, Expectation" width="600" height="546" loading="lazy"></a>
+      <div class="partner-txt">
+        <p class="eyebrow">Official partner</p>
+        <h3>Zerion Atelier builds the stage. <span>We make sure the world shows up.</span></h3>
+        <p>Big Web Studios is the official marketing and brand sponsorship partner of Zerion Atelier, the stage production and artist representation house behind Zenova Fest. They craft the show; we take it from first announcement to a packed crowd, and bring in the brands that want to be part of the moment.</p>
+        <div class="roles">
+          <div><small>Zerion Atelier</small><b>Stage production, artist representation, show management</b></div>
+          <div><small>Big Web Studios</small><b>Marketing &amp; promotion, brand sponsorships, content &amp; coverage</b></div>
+        </div>
+        <p class="partner-links"><a href="https://zerionatelier.com/" target="_blank" rel="noopener">zerionatelier.com ↗</a><a href="https://www.instagram.com/zerion_atelier/" target="_blank" rel="noopener">@zerion_atelier ↗</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hp-sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Who we work with</p><h2>Artists, creators and brands.</h2></div>
+    <div class="doors">
+      <a class="door d-purple" href="#artists"><span class="k">For Artists · musicians &amp; bands</span><h3>Record. Release. Rise.</h3><ul><li>Music production and distribution</li><li>Music videos and promotion</li><li>Live shows and stage bookings</li></ul><span class="go">Explore artist packages →</span></a>
+      <a class="door d-blue" href="#creators"><span class="k">For Creators · open now</span><h3>Shoot. Share. Shine.</h3><ul><li>Podcast and content space by the hour</li><li>Camera person and editor packages</li><li>Fully managed content</li></ul><span class="go">Start creating →</span></a>
+      <a class="door d-yellow" href="#brands"><span class="k">For Brands</span><h3>Spot. Sponsor. Stand out.</h3><ul><li>Features in artist and creator content</li><li>Product and brand shoots</li><li>Event partnerships</li></ul><span class="go">Put your brand on stage →</span></a>
+    </div>
+  </div>
+</section>
+<section class="hp-sec" style="padding-top:0">
+  <div class="wrap studio-teaser">
+    <div class="st-img"><img src="media/ig-DFjpL_SSyE5.jpg" alt="A session in the Big Web Studios studio" loading="lazy"><span>Our studio · Dwarka, New Delhi</span></div>
+    <div>
+      <p class="eyebrow">An agency with its own studio</p>
+      <h2>Shoot it here. Scale it everywhere.</h2>
+      <p class="st-lede">Brands, artists and creators shoot podcasts, reels and brand films in our studio. Then we turn them into content that works across the web: cut for every platform and promoted to the right people.</p>
+      <ul class="st-chips"><li><b>₹1,800/hr</b> podcast studio</li><li><b>₹999/hr</b> content shoot</li><li><b>10% off</b> 3+ hours</li></ul>
+      <div class="ctas"><a class="btn" href="#spaces">See the studio</a><a class="btn ghost" href="#book">Book a session</a></div>
+    </div>
+  </div>
+</section>
+<section class="hp-sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Our work</p><h2>Made here. Seen everywhere.</h2></div>
+    <div class="work-teaser">
+      <a href="#work"><img src="https://i.ytimg.com/vi/zADmBGpJlTE/maxresdefault.jpg" alt="" loading="lazy"><span><em>Music video</em>Yaad School Ki</span></a>
+      <a href="#work"><img src="https://i.ytimg.com/vi/OSxY08nQVpc/maxresdefault.jpg" alt="" loading="lazy"><span><em>Short film</em>This Moment, Live It Up.</span></a>
+      <a href="#work"><img src="media/ig-DafhG90JX12.jpg" alt="" loading="lazy"><span><em>Brand reel</em>Zouk × @sheslayyyss</span></a>
+    </div>
+    <p style="margin-top:1.4rem"><a class="btn ghost" href="#work">See all our work →</a></p>
   </div>
 </section>
 </div>
@@ -1224,6 +1321,7 @@ body.on-about .fab{display:none!important}
         <p class="eyebrow"><span class="live-dot"></span>Coming 2027</p>
         <h3>Zenova Fest <span>2027</span></h3>
         <p>Something big is coming in 2027. Presented by Zerion Atelier, with Big Web Studios as the marketing and brand sponsorship partner. More will be revealed soon.</p>
+        <p class="fest-role"><span>Our role</span><b>Marketing &amp; promotion</b><b>Brand sponsorships</b></p>
         <div class="fest-cta"><a class="btn yellow" href="https://www.instagram.com/zenova.fest/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg> Follow @zenova.fest</a><a class="btn ghost" href="#brForm">Sponsor the fest</a></div>
       </div>
       <div class="fest-mark" aria-hidden="true"><b>Z</b><small>2027</small></div>
@@ -1275,12 +1373,12 @@ body.on-about .fab{display:none!important}
   <div class="wrap reach-in">
     <div>
       <p class="eyebrow">Get in touch</p>
-      <h2>Come see the room, or tell us what you're making.</h2>
+      <h2>Tell us what you're working on.</h2>
       <p class="reach-sub">Studio open daily, 10:00–22:00 · Plot 45, Qutub Vihar Phase 1, opp. Dwarka Sector 19, New Delhi</p>
     </div>
     <div class="reach-btns">
-      <a class="btn yellow" href="#book">Book the studio</a>
-      <a class="btn ghost" href="https://wa.me/919871920493" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn yellow" href="https://wa.me/919871920493" target="_blank" rel="noopener">WhatsApp us</a>
+      <a class="btn ghost" href="#book">Book the studio</a>
       <a class="btn ghost" href="tel:+919871920493">Call</a>
       <a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=28.5781847,77.0358273" target="_blank" rel="noopener">Directions</a>
       <a class="btn ghost" href="https://www.instagram.com/bigwebstudios/" target="_blank" rel="noopener">Instagram</a>
@@ -1729,41 +1827,43 @@ body.on-about .fab{display:none!important}
   if(matchMedia("(max-width:760px)").matches) document.querySelectorAll(".space .body ul").forEach(ul=>{
     ul.classList.add("closed"); const b=document.createElement("button"); b.type="button"; b.className="incl-btn"; b.textContent="What's included ↓";
     b.addEventListener("click",()=>{ const c=ul.classList.toggle("closed"); b.textContent=c?"What's included ↓":"Hide ↑"; }); ul.parentNode.insertBefore(b,ul); });
-  // One scrolling story (home → events) plus a separate About page.
-  const STORY=["home","artists","creators","brands","spaces","work","events"];
-  const about=document.getElementById("about");
-  const storyEls=[...document.querySelectorAll(".scene")];
-  let first=true;
+  // Separate pages: one view at a time, each with its own link (/brands, /studio …).
+  // (The single-page scroll version is saved as git tag restore/single-page-2026-11-17.)
+  const PAGES=["home","artists","creators","brands","spaces","work","events","about"];
+  const ALIAS={studio:"spaces"};
+  const reach=document.getElementById("reach");
+  let first=true, cur="home";
   function setNav(t){document.querySelectorAll("[data-nav]").forEach(a=>{a.dataset.nav===t?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current");});}
-  // Keep the address bar on a shareable link (/brands, /spaces …) for the section in view.
-  const SHARE=["artists","creators","brands","spaces","work","events","about"];
-  function setUrl(id){ const p=SHARE.includes(id)?"/"+id:"/"; if(location.pathname+location.hash!==p){ try{ history.replaceState(null,"",p+location.search); }catch(_){} } }
-  window.__setUrl=setUrl;
+  function setUrl(pg){ const path=pg==="home"?"/":"/"+(pg==="spaces"?"studio":pg); if(location.pathname+location.hash!==path){ try{ history.replaceState(null,"",path+location.search); }catch(_){} } }
+  window.__setUrl=function(){};
+  function pageOf(el){ if(!el) return null; if(reach&&reach.contains(el)) return cur; const v=el.closest("[data-view]"); return v?v.dataset.view:null; }
   function route(){
     const h=(location.hash||"").slice(1);
-    const el=h&&document.getElementById(h);
-    if(el&&window.__whoFor) window.__whoFor(el);
+    let el=h?document.getElementById(h):null;
+    let pg=PAGES.includes(h)?h:(ALIAS[h]||pageOf(el));
+    if(!pg){ const pth=location.pathname.replace(/^\/+|\/+$/g,""); pg=PAGES.includes(pth)?pth:(ALIAS[pth]||"home"); }
+    if(el&&(el.id===pg||PAGES.includes(el.id))) el=null;
     if(el&&window.__openForm) window.__openForm(el);
     if(el&&bookSec&&(el===bookSec||bookSec.contains(el))) window.__openBook();
-    const inAbout=h==="about"||(el&&about.contains(el));
-    storyEls.forEach(v=>{v.hidden=inAbout;});
-    about.hidden=!inAbout;
-    document.body.classList.toggle("on-about",inAbout);
-    if(inAbout){ setNav("about"); setUrl("about"); if(el&&el!==about) el.scrollIntoView(); else window.scrollTo(0,0); }
-    else if(el){ const whoEl=document.getElementById("who"); const tgt=(["artists","creators","brands"].includes(el.id)&&whoEl&&whoEl.offsetParent!==null)?whoEl:el; tgt.scrollIntoView({behavior:first?"auto":"smooth"});
+    document.querySelectorAll("[data-view]").forEach(v=>{ v.hidden=v.dataset.view!==pg; });
+    if(reach) reach.hidden=pg==="about";
+    document.body.dataset.page=pg;
+    document.body.classList.toggle("on-about",pg==="about");
+    setNav(pg); setUrl(pg);
+    if(el){ el=el.closest(".enquire,.panel")||el; el.scrollIntoView({behavior:first||pg!==cur?"instant":"smooth"});
       if(first){ let moved=false; const stop=()=>{moved=true;}; ["wheel","touchstart","keydown"].forEach(ev=>addEventListener(ev,stop,{once:true,passive:true}));
-        const again=()=>{ if(!moved) tgt.scrollIntoView({behavior:"auto"}); };
+        const again=()=>{ if(!moved) el.scrollIntoView({behavior:"auto"}); };
         addEventListener("load",again,{once:true}); setTimeout(again,700); setTimeout(again,1600); } }
-    else if(!first) window.scrollTo({top:0,behavior:"smooth"});
+    else { window.scrollTo({top:0,left:0,behavior:"instant"}); setTimeout(()=>window.scrollTo({top:0,left:0,behavior:"instant"}),0); }
     if(window.loadIG) window.loadIG();
-    first=false;
+    cur=pg; first=false;
   }
-  // highlight the section you're reading
-  const spy=new IntersectionObserver(es=>{ if(document.body.classList.contains("on-about")) return;
-    es.forEach(e=>{ if(!e.isIntersecting) return; let id=e.target.id; if(id==="who") id=window.__whoNow||"artists"; else setNav(id); setUrl(id); }); },{rootMargin:"-45% 0px -50% 0px"});
-  STORY.concat(["who"]).forEach(id=>{const v=document.getElementById(id); if(v) spy.observe(v);});
   window.addEventListener("hashchange",route);
-  document.addEventListener("click",e=>{const a=e.target.closest('a[href^="#"]'); if(a&&a.getAttribute("href")===location.hash){e.preventDefault(); route();}});
+  window.addEventListener("popstate",route);
+  // In-site links switch pages without the browser's own jump-to-anchor.
+  document.addEventListener("click",e=>{ const a=e.target.closest('a[href^="#"]'); if(!a||e.defaultPrevented||e.metaKey||e.ctrlKey||e.shiftKey||e.button!==0) return;
+    const href=a.getAttribute("href"); if(href.length<2) return; e.preventDefault();
+    if(href!==location.hash){ try{ history.pushState(null,"",href); }catch(_){ location.hash=href; return; } } route(); });
   route();
   // floating Book button: hide while the booking form is on screen
   const fab=document.getElementById("fab"), bk=document.getElementById("book");
