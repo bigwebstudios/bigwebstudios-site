@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Big Web Studios is a one-stop marketing agency with its own studio in New Delhi: marketing & promotion, brand sponsorships, content production and events for artists, creators and brands.">
+<meta name="description" content="Big Web Studios is a marketing and brand partnerships agency in New Delhi, with its own content studio. Campaigns, partnerships with artists, creators and events, and content production.">
 <meta property="og:title" content="BigWeb Studios">
 <meta property="og:site_name" content="BigWeb Studios">
 <meta property="og:type" content="website">
@@ -13,7 +13,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.bigwebstudios.com/og-image.jpg">
-<meta property="og:description" content="A one-stop marketing agency with its own studio. Marketing, brand sponsorships, content and events for artists, creators and brands.">
+<meta property="og:description" content="A marketing and brand partnerships agency with its own content studio in New Delhi.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -780,6 +780,23 @@ body:not([data-page="spaces"]) .fab{display:none!important}
 .mk-now > span:last-child{opacity:.8}
 @media (max-width:760px){.mk-cards{grid-template-columns:1fr 1fr}.mk-steps{grid-template-columns:1fr 1fr;gap:10px}.mk-steps li{padding:16px 14px}.mk-steps b{font-size:1.2rem}.mk-steps span{font-size:.85rem}}
 body[data-page="home"] .reach .btn[href="#book"]{display:none}
+
+/* Zenova × Zerion: one partnership block */
+.zen{position:relative;overflow:hidden;display:grid;grid-template-columns:200px 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:center;padding:clamp(22px,4vw,40px);border-radius:var(--r);color:#F5F4F8;background:radial-gradient(circle at 90% 20%,rgba(146,85,162,.5),transparent 55%),radial-gradient(circle at 0% 120%,rgba(64,190,238,.3),transparent 50%),#0D0B12;border:1px solid #2E2A3B;margin-top:2.5rem}
+.zen-logo{display:grid;place-items:center;background:#fff;border-radius:16px;padding:14px;box-shadow:0 18px 40px -24px rgba(0,0,0,.6)}
+.zen-logo img{width:100%;height:auto;display:block}
+.zen .eyebrow{color:#FEC200;display:flex;align-items:center;gap:.5rem}
+.zen h3{font:800 clamp(2.4rem,6vw,3.6rem)/1 var(--f-display);letter-spacing:-.035em;margin:.5rem 0 .6rem}
+.zen-by{font:500 .95rem var(--f-body);color:#C9C6D3}
+.zen-by a{color:#F5F4F8}
+.zen-line{margin-top:1rem;max-width:58ch;font-size:1.05rem;line-height:1.6}
+.zen-cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem}
+.zen-cta .btn svg{width:18px;height:18px}
+.zen .btn.ghost{border-color:#F5F4F8;color:#F5F4F8;background:transparent}
+.hp-sec .zen{margin-top:0}
+.svc-cards.three{grid-template-columns:repeat(3,1fr)}
+@media (max-width:1000px){.svc-cards.three{grid-template-columns:1fr}}
+@media (max-width:760px){.zen{grid-template-columns:1fr;gap:1rem}.zen-logo{max-width:130px}.svc-cards.three{grid-template-columns:1fr}}
 /* ---- single-page story ---- */
 .booker > *,.booker form,.steps,.step{min-width:0}
 
@@ -852,12 +869,12 @@ body.on-about .fab{display:none!important}
 <section class="home-hero">
   <div class="wrap hh">
     <div>
-      <p class="eyebrow">Marketing agency · Studio · Events · New Delhi</p>
+      <p class="eyebrow">Marketing &amp; brand partnerships agency · New Delhi</p>
       <h1 style="margin-top:1rem"><span class="s">From the studio</span> to the <span class="t">spotlight.</span></h1>
-      <p class="lede">Big Web Studios is a one-stop marketing agency for artists, creators and brands. We plan it, make it in our own studio, promote it across the web and put it in the spotlight.</p>
+      <p class="lede">We connect brands with the artists, creators and live moments their audience cares about, and build the campaigns that get them seen. Strategy, content and promotion, with our own studio in-house.</p>
       <div class="ctas">
-        <a class="btn yellow" href="#reach">Work with us</a>
-        <a class="btn ghost" href="#what">What we do</a>
+        <a class="btn yellow" href="#reach">Start a project</a>
+        <a class="btn ghost" href="#what">Our services</a>
       </div>
     </div>
     <div class="logo-panel">
@@ -866,83 +883,60 @@ body.on-about .fab{display:none!important}
       <div class="wm"><b>bigweb</b><small>STUDIOS</small></div>
     </div>
   </div>
-  </div>
 </section>
 <section class="hp-sec" id="what" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">What we do</p><h2>One agency. Every step to the spotlight.</h2><p>Strategy, content, promotion, sponsorships and the stage, handled by one team that has its own studio.</p></div>
-    <div class="svc-cards">
-      <a class="sc" href="#marketing" style="--c:var(--purple)"><span class="n">01</span><h3>Marketing &amp; promotion</h3><p>Launch plans, Instagram and social media, paid promotion and the content that keeps people watching.</p><span class="go">Learn more →</span></a>
-      <a class="sc" href="#brands" style="--c:var(--yellow)"><span class="n">02</span><h3>Brand sponsorships</h3><p>We match brands with the artists, creators and events their audience already loves.</p><span class="go">For brands →</span></a>
-      <a class="sc" href="#spaces" style="--c:var(--blue)"><span class="n">03</span><h3>Content production</h3><p>Podcasts, reels, music videos and brand films, shot in our own studio and edited in-house.</p><span class="go">See the studio →</span></a>
-      <a class="sc" href="#events" style="--c:var(--ink)"><span class="n">04</span><h3>Events &amp; artist bookings</h3><p>Festivals, concerts, campus and corporate events, from line-up to a packed crowd.</p><span class="go">See events →</span></a>
+    <div class="sec-head"><p class="eyebrow">What we do</p><h2>Marketing, partnerships and content. One team.</h2></div>
+    <div class="svc-cards three">
+      <a class="sc" href="#marketing" style="--c:var(--purple)"><span class="n">01</span><h3>Marketing &amp; promotion</h3><p>Campaign strategy, social media, paid promotion and launches that put your brand in front of the right people.</p><span class="go">Marketing →</span></a>
+      <a class="sc" href="#brands" style="--c:var(--yellow)"><span class="n">02</span><h3>Brand partnerships</h3><p>Sponsorships with artists, creators and live events your audience already loves, run end to end.</p><span class="go">Partnerships →</span></a>
+      <a class="sc" href="#spaces" style="--c:var(--blue)"><span class="n">03</span><h3>Content production</h3><p>Films, reels and podcasts made in our own studio in New Delhi and edited in-house.</p><span class="go">Our studio →</span></a>
     </div>
   </div>
 </section>
 <section class="hp-sec" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">Featured partnership</p><h2>Zenova Fest 2027, with Zerion Atelier.</h2></div>
-    <div class="fest">
-      <div class="fest-txt">
-        <p class="eyebrow"><span class="live-dot"></span>Coming 2027</p>
-        <h3>Zenova Fest <span>2027</span></h3>
-        <p>Something big is coming in 2027. Presented by Zerion Atelier, with Big Web Studios as the marketing and brand sponsorship partner. More will be revealed soon.</p>
-        <p class="fest-role"><span>Our role</span><b>Marketing &amp; promotion</b><b>Brand sponsorships</b></p>
-        <div class="fest-cta"><a class="btn yellow" href="https://www.instagram.com/zenova.fest/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg> Follow @zenova.fest</a><a class="btn ghost" href="#brForm">Sponsor the fest</a></div>
-      </div>
-      <div class="fest-mark" aria-hidden="true"><b>Z</b><small>2027</small></div>
-    </div>
-    <div class="partner">
-      <a class="partner-logo" href="https://zerionatelier.com/" target="_blank" rel="noopener" aria-label="Zerion Atelier website"><img src="media/zerion-atelier-logo.png" alt="Zerion Atelier: Experience, Experiment, Expectation" width="600" height="546" loading="lazy"></a>
-      <div class="partner-txt">
-        <p class="eyebrow">Official partner</p>
-        <h3>Zerion Atelier builds the stage. <span>We make sure the world shows up.</span></h3>
-        <p>Big Web Studios is the official marketing and brand sponsorship partner of Zerion Atelier, the stage production and artist representation house behind Zenova Fest. They craft the show; we take it from first announcement to a packed crowd, and bring in the brands that want to be part of the moment.</p>
-        <div class="roles">
-          <div><small>Zerion Atelier</small><b>Stage production, artist representation, show management</b></div>
-          <div><small>Big Web Studios</small><b>Marketing &amp; promotion, brand sponsorships, content &amp; coverage</b></div>
-        </div>
-        <p class="partner-links"><a href="https://zerionatelier.com/" target="_blank" rel="noopener">zerionatelier.com ↗</a><a href="https://www.instagram.com/zerion_atelier/" target="_blank" rel="noopener">@zerion_atelier ↗</a></p>
+        <div class="zen">
+      <a class="zen-logo" href="https://zerionatelier.com/" target="_blank" rel="noopener" aria-label="Zerion Atelier"><img src="media/zerion-atelier-logo.png" alt="Zerion Atelier" width="600" height="546" loading="lazy"></a>
+      <div class="zen-txt">
+        <p class="eyebrow"><span class="live-dot"></span>Featured partnership · 2027</p>
+        <h3>Zenova Fest</h3>
+        <p class="zen-by">Presented by <a href="https://zerionatelier.com/" target="_blank" rel="noopener">Zerion Atelier</a> · Marketing &amp; brand sponsorships by Big Web Studios</p>
+        <p class="zen-line">Zerion Atelier builds the stage. We make sure the world shows up, from the first announcement to a packed crowd, along with the brands that want to be part of it.</p>
+        <div class="zen-cta"><a class="btn yellow" href="#brForm">Partner with Zenova</a><a class="btn ghost" href="https://www.instagram.com/zenova.fest/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg> @zenova.fest</a></div>
       </div>
     </div>
   </div>
 </section>
 <section class="hp-sec" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">Who we work with</p><h2>Artists, creators and brands.</h2></div>
+    <div class="sec-head"><p class="eyebrow">Who we work with</p><h2>Brands, artists and creators.</h2></div>
     <div class="doors">
+      <a class="door d-yellow" href="#brands"><span class="k">For Brands</span><h3>Spot. Sponsor. Stand out.</h3><ul><li>Artist and creator partnerships</li><li>Event sponsorships</li><li>Campaigns and brand content</li></ul><span class="go">Put your brand on stage →</span></a>
       <a class="door d-purple" href="#artists"><span class="k">For Artists · musicians &amp; bands</span><h3>Record. Release. Rise.</h3><ul><li>Music production and distribution</li><li>Music videos and promotion</li><li>Live shows and stage bookings</li></ul><span class="go">Explore artist packages →</span></a>
       <a class="door d-blue" href="#creators"><span class="k">For Creators · podcasters &amp; influencers</span><h3>Shoot. Share. Shine.</h3><ul><li>Content strategy and production</li><li>Shoot, edit and fully managed posting</li><li>Brand deals, PR and events</li></ul><span class="go">Start creating →</span></a>
-      <a class="door d-yellow" href="#brands"><span class="k">For Brands</span><h3>Spot. Sponsor. Stand out.</h3><ul><li>Features in artist and creator content</li><li>Product and brand shoots</li><li>Event partnerships</li></ul><span class="go">Put your brand on stage →</span></a>
     </div>
   </div>
 </section>
 </div>
 
 <div data-view="marketing" id="marketing" class="scene">
-<section class="page-head"><div class="wrap"><p class="aud" style="--ac:var(--purple);--at:#fff"><b>For brands, artists, creators &amp; events</b></p><h2 class="ch">Marketing that puts you in the <span style="background:var(--purple);color:var(--purple-ink);padding:0 .1em;border-radius:.12em">spotlight.</span></h2><p>We plan the launch, make the content, run the promotion and bring in the right partners, so your brand, release or event gets seen by the people who matter.</p></div></section>
+<section class="page-head"><div class="wrap"><p class="aud" style="--ac:var(--purple);--at:#fff"><b>Marketing &amp; promotion</b></p><h2 class="ch">Marketing that puts you in the <span style="background:var(--purple);color:var(--purple-ink);padding:0 .1em;border-radius:.12em">spotlight.</span></h2><p>Strategy, content and promotion for brands, artists and events, planned and run by one team.</p></div></section>
 <section style="padding-top:3rem">
   <div class="wrap">
     <div class="svc-cards mk-cards">
-      <div class="sc" style="--c:var(--purple)"><span class="n">01</span><h3>Launch &amp; campaign planning</h3><p>Positioning, timeline and a plan for every channel, worked out before anything goes live.</p></div>
-      <div class="sc" style="--c:var(--blue)"><span class="n">02</span><h3>Social media &amp; Instagram</h3><p>Content calendars, reels and posting that build a real audience, not just a feed.</p></div>
-      <div class="sc" style="--c:var(--yellow)"><span class="n">03</span><h3>Paid promotion</h3><p>Ads on Instagram, Facebook and Google, aimed at the people most likely to act, and tracked to the rupee.</p></div>
-      <div class="sc" style="--c:var(--purple)"><span class="n">04</span><h3>Creator collaborations</h3><p>We bring in creators whose audiences already trust them, and build the content around your launch.</p></div>
-      <a class="sc" href="#brands" style="--c:var(--yellow)"><span class="n">05</span><h3>Brand sponsorships</h3><p>We match brands with artists, creators and events, and handle the deal from pitch to post.</p><span class="go">For brands →</span></a>
-      <a class="sc" href="#events" style="--c:var(--blue)"><span class="n">06</span><h3>Event promotion</h3><p>From the first announcement to a packed crowd, for festivals, concerts, campus and corporate events.</p><span class="go">See events →</span></a>
+      <div class="sc" style="--c:var(--purple)"><span class="n">01</span><h3>Campaign strategy</h3><p>Positioning, audience and a launch plan for every channel, agreed before anything goes live.</p></div>
+      <div class="sc" style="--c:var(--blue)"><span class="n">02</span><h3>Social media &amp; content</h3><p>Content calendars, reels and community that build a real audience on Instagram and YouTube.</p></div>
+      <div class="sc" style="--c:var(--yellow)"><span class="n">03</span><h3>Paid promotion</h3><p>Ads on Instagram, Facebook and Google, aimed at the people most likely to act, and measured.</p></div>
+      <div class="sc" style="--c:var(--ink)"><span class="n">04</span><h3>Creator &amp; influencer marketing</h3><p>Creators whose audiences already trust them, matched to your brand and briefed properly.</p></div>
     </div>
     <div class="sec-head" style="margin-top:4rem"><p class="eyebrow">How we work</p><h2>From the first idea to the final number.</h2></div>
     <ol class="mk-steps">
       <li style="--c:var(--purple)"><b>Plan</b><span>Goals, audience, message and a launch calendar.</span></li>
-      <li style="--c:var(--blue)"><b>Make</b><span>Content shot in our own studio and edited in-house.</span></li>
-      <li style="--c:var(--yellow)"><b>Promote</b><span>Social, paid ads, creators and partners, all moving together.</span></li>
-      <li style="--c:var(--ink)"><b>Grow</b><span>We track what works, cut what doesn't and scale the winners.</span></li>
+      <li style="--c:var(--blue)"><b>Make</b><span>Content produced in our own studio, edited in-house.</span></li>
+      <li style="--c:var(--yellow)"><b>Promote</b><span>Social, paid and creator channels working together.</span></li>
+      <li style="--c:var(--ink)"><b>Grow</b><span>We measure, cut what doesn't work and scale what does.</span></li>
     </ol>
-    <a class="mk-now" href="#events">
-      <span class="eyebrow"><span class="live-dot"></span>Now marketing</span>
-      <b>Zenova Fest 2027</b>
-      <span>Official marketing &amp; brand sponsorship partner of Zerion Atelier. See the partnership →</span>
-    </a>
     <div class="cta-band" style="margin-top:2rem"><h2>Launching something? Tell us about it.</h2><div style="display:flex;gap:.8rem;flex-wrap:wrap"><a class="btn yellow" href="https://wa.me/919871920493" target="_blank" rel="noopener">WhatsApp us</a><a class="btn ghost" href="#brForm">Send a brief</a></div></div>
   </div>
 </section>
@@ -998,7 +992,7 @@ body.on-about .fab{display:none!important}
 <section style="padding-top:3rem">
   <div class="wrap">
     <ol class="ladder" aria-label="Creator packages">
-      <li class="rung" style="--c:var(--blue)"><span class="k">Step 1</span><h3>Rent the space</h3><p>Book the podcast and content studio by the hour and shoot on your own. Two set walls with different backdrops.</p><ul><li>From ₹999/hr · <a href="#spaces">see Spaces ↓</a></li></ul><span class="st live">Open now</span><a class="btn" href="#book">Book a slot</a></li>
+      <li class="rung" style="--c:var(--blue)"><span class="k">Step 1</span><h3>Rent the space</h3><p>Book the podcast and content studio by the hour and shoot on your own. Two set walls with different backdrops.</p><ul><li>From ₹999/hr · <a href="#spaces">see Studio →</a></li></ul><span class="st live">Open now</span><a class="btn" href="#book">Book a slot</a></li>
       <li class="rung" style="--c:var(--purple)"><span class="k">Step 2</span><h3>Shoot &amp; edit</h3><p>Add a camera person and an editor. You talk, we shoot, and you get the edited content back.</p><ul><li>Camera operator +₹1,000/hr</li><li>Editing on quote</li></ul><span class="st live">Open now</span><a class="btn" href="#book">Book with crew</a></li>
       <li class="rung" style="--c:var(--yellow)"><span class="k">Step 3</span><h3>Fully managed</h3><p>Shooting, editing, posting and content strategy, all handled by us. You just show up.</p><span class="st live">Open now</span><a class="btn ghost" href="#crForm">Enquire</a></li>
       <li class="rung" style="--c:var(--ink)"><span class="k">Step 4</span><h3>Go big</h3><p>PR, events and brand deals. We bridge you to the brands and stages that fit your audience.</p><span class="st live">Enquiries open</span><a class="btn ghost" href="#crForm">Enquire</a></li>
@@ -1029,27 +1023,20 @@ body.on-about .fab{display:none!important}
 <section style="padding-top:3rem">
   <div class="wrap">
     <div class="hero-story">
-      <p class="eyebrow">How sponsorship works</p>
-      <h2>Back a budding artist. Borrow their credibility.</h2>
-      <p>Your guitar amp in the background of a rising artist's music video. Your headphones on a creator's podcast set. We match your brand with artists and creators we work with, build the content around it, and promote it to the people who care.</p>
-    </div>
-    <div class="sec-head" style="margin-top:3.5rem"><p class="eyebrow">How it fits together</p><h2>A rising artist, a brand that believes in them, and one studio in between.</h2></div>
-    <div class="flow" aria-label="The artist and brand story" style="margin-top:0">
-      <div><span class="k">Artist</span><b>Create</b><span>Record and shoot the video with us</span></div>
-      <div><span class="k">Brand</span><b>Sponsor</b><span>Featured in the content, naturally</span></div>
-      <div><span class="k">Big Web</span><b>Promote</b><span>Promoted on Instagram and social media</span></div>
-      <div><span class="k">Everyone</span><b>Spotlight</b><span>On stage at live shows and events</span></div>
+      <p class="eyebrow">How it works</p>
+      <h2>Partner with the artists your audience already follows.</h2>
+      <p>Your bike in a rising artist's music video. Your headphones on a creator's podcast set. Your name on a festival stage. We match your brand with the right artists, creators and events, produce the content and promote it to the people who care.</p>
     </div>
     <div class="agency-grid" style="margin-top:2.5rem">
-      <div class="svc"><h3>Artist &amp; creator sponsorships</h3><p>Get featured in music videos and creator content, matched to your audience and pitched as backing new talent.</p></div>
-      <div class="svc"><h3>Product &amp; brand shoots</h3><p>Product photography and brand photo shoots in our studio, with bold backdrops built for camera.</p></div>
-      <div class="svc"><h3>Brand videos &amp; content</h3><p>Brand films, reels and social content, planned, shot and edited by one team.</p></div>
-      <div class="svc"><h3>Event partnerships</h3><p>Sponsor open mics, concerts and festivals, including Zenova Fest 2027. <a href="#events">See Events ↓</a></p></div>
+      <div class="svc"><h3>Artist &amp; creator partnerships</h3><p>Your brand in music videos, podcasts and creator content, with people your audience already follows.</p></div>
+      <div class="svc"><h3>Event sponsorships</h3><p>Festivals, concerts, campus and corporate events, including Zenova Fest 2027. <a href="#events">See events →</a></p></div>
+      <div class="svc"><h3>Brand content</h3><p>Brand films, reels and product shoots, produced in our own studio and edited in-house.</p></div>
+      <div class="svc"><h3>Campaigns &amp; promotion</h3><p>Launch plans, social media and paid promotion to make sure the partnership is seen. <a href="#marketing">Marketing →</a></p></div>
     </div>
     <div class="enquire" style="background:var(--yellow);color:var(--yellow-ink)">
       <div>
-        <h3>Let's find your artist.</h3>
-        <p>Tell us about your brand and who you want to reach. We'll come back with matches and ideas.</p>
+        <h3>Tell us what you're launching.</h3>
+        <p>Share your brand, audience and timeline. We'll come back with partnership ideas and a plan.</p>
       </div>
       <form id="brForm" novalidate><input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="row two">
@@ -1337,27 +1324,14 @@ body.on-about .fab{display:none!important}
       <div class="tile t-purple"><span class="no">05</span><h3>Corporate events</h3><p>Annual days, offsites, award nights and client evenings, with live acts, hosts and content handled.</p></div>
       <div class="tile t-yellow"><span class="no">06</span><h3>Brand experiences</h3><p>Pop-ups, brand activations and immersive experiences that people remember, film and share.</p></div>
     </div>
-    <div class="fest">
-      <div class="fest-txt">
-        <p class="eyebrow"><span class="live-dot"></span>Coming 2027</p>
-        <h3>Zenova Fest <span>2027</span></h3>
-        <p>Something big is coming in 2027. Presented by Zerion Atelier, with Big Web Studios as the marketing and brand sponsorship partner. More will be revealed soon.</p>
-        <p class="fest-role"><span>Our role</span><b>Marketing &amp; promotion</b><b>Brand sponsorships</b></p>
-        <div class="fest-cta"><a class="btn yellow" href="https://www.instagram.com/zenova.fest/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg> Follow @zenova.fest</a><a class="btn ghost" href="#brForm">Sponsor the fest</a></div>
-      </div>
-      <div class="fest-mark" aria-hidden="true"><b>Z</b><small>2027</small></div>
-    </div>
-    <div class="partner">
-      <a class="partner-logo" href="https://zerionatelier.com/" target="_blank" rel="noopener" aria-label="Zerion Atelier website"><img src="media/zerion-atelier-logo.png" alt="Zerion Atelier: Experience, Experiment, Expectation" width="600" height="546" loading="lazy"></a>
-      <div class="partner-txt">
-        <p class="eyebrow">Official partner</p>
-        <h3>Zerion Atelier builds the stage. <span>We make sure the world shows up.</span></h3>
-        <p>Big Web Studios is the official marketing and brand sponsorship partner of Zerion Atelier, the stage production and artist representation house behind Zenova Fest. They craft the show; we take it from first announcement to a packed crowd, and bring in the brands that want to be part of the moment.</p>
-        <div class="roles">
-          <div><small>Zerion Atelier</small><b>Stage production, artist representation, show management</b></div>
-          <div><small>Big Web Studios</small><b>Marketing &amp; promotion, brand sponsorships, content &amp; coverage</b></div>
-        </div>
-        <p class="partner-links"><a href="https://zerionatelier.com/" target="_blank" rel="noopener">zerionatelier.com ↗</a><a href="https://www.instagram.com/zerion_atelier/" target="_blank" rel="noopener">@zerion_atelier ↗</a></p>
+    <div class="zen">
+      <a class="zen-logo" href="https://zerionatelier.com/" target="_blank" rel="noopener" aria-label="Zerion Atelier"><img src="media/zerion-atelier-logo.png" alt="Zerion Atelier" width="600" height="546" loading="lazy"></a>
+      <div class="zen-txt">
+        <p class="eyebrow"><span class="live-dot"></span>Featured partnership · 2027</p>
+        <h3>Zenova Fest</h3>
+        <p class="zen-by">Presented by <a href="https://zerionatelier.com/" target="_blank" rel="noopener">Zerion Atelier</a> · Marketing &amp; brand sponsorships by Big Web Studios</p>
+        <p class="zen-line">Zerion Atelier builds the stage. We make sure the world shows up, from the first announcement to a packed crowd, along with the brands that want to be part of it.</p>
+        <div class="zen-cta"><a class="btn yellow" href="#brForm">Partner with Zenova</a><a class="btn ghost" href="https://www.instagram.com/zenova.fest/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg> @zenova.fest</a></div>
       </div>
     </div>
     <div class="ev-forms">
@@ -1395,7 +1369,7 @@ body.on-about .fab{display:none!important}
     <div>
       <p class="eyebrow">Get in touch</p>
       <h2>Tell us what you're working on.</h2>
-      <p class="reach-sub">Studio open daily, 10:00–22:00 · Plot 45, Qutub Vihar Phase 1, opp. Dwarka Sector 19, New Delhi</p>
+      <p class="reach-sub">Studio open daily, 10 am – 10 pm · Plot 45, Qutub Vihar Phase 1, opp. Dwarka Sector 19, New Delhi</p>
     </div>
     <div class="reach-btns">
       <a class="btn yellow" href="https://wa.me/919871920493" target="_blank" rel="noopener">WhatsApp us</a>
@@ -1427,12 +1401,12 @@ body.on-about .fab{display:none!important}
     <div>
       <div class="sec-head" style="margin-bottom:1.8rem">
         <p class="eyebrow">Our story</p>
-        <h2>The perfect studio to get set and conquer the big digital space.</h2>
+        <h2>From a college idea to an agency with its own studio.</h2>
       </div>
       <div class="timeline">
         <div class="tl"><span class="when">May 2020</span><b>The idea</b><p>Akio and a group of college friends wanted one place for branding, marketing, video, music and podcasts. We printed cards before we had a room.</p></div>
         <div class="tl"><span class="when">2022</span><b>The space</b><p>A new home in Dwarka, with the whole ground floor kept aside for a studio.</p></div>
-        <div class="tl"><span class="when">Now</span><b>From the studio to the spotlight</b><p>Big Web Studios is back as a premium studio and agency. The podcast and content space is open, the music studio is on the way, and we help musicians, creators and brands go from the first take to the stage.</p></div>
+        <div class="tl"><span class="when">Now</span><b>From the studio to the spotlight</b><p>Big Web Studios is a marketing and brand partnerships agency with its own content studio, and the official marketing and brand sponsorship partner for Zenova Fest 2027. We help brands, artists and creators go from the first idea to the spotlight.</p></div>
       </div>
     </div>
   </div>
@@ -1443,7 +1417,7 @@ body.on-about .fab{display:none!important}
       <p class="eyebrow">Visit or get in touch</p>
       <h2 style="margin-top:1rem">Come see the room, or tell us what you're making.</h2>
       <div class="hours">
-        <div><span>Studio sessions</span><span>10:00 – 22:00, daily</span></div>
+        <div><span>Studio sessions</span><span>10 am – 10 pm, daily</span></div>
         <div><span>Package calls</span><span>Mon – Sat</span></div>
         <div><span>Event enquiries</span><span>Any day, on WhatsApp</span></div>
       </div>
